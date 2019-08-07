@@ -1,0 +1,21 @@
+.navbar{
+    margin-bottom:0;
+    border-radius:0;
+    padding: 0.2% 0.05%;
+    font-size: 1.3em;
+}
+.navbar-brand{
+    float: left;
+    min-height: 60px;
+    padding: 0 15px 5px;
+}
+.navbar-expand-sm .navbar-new .active a, .navbar-expand-sm .navbar-new .active a:focus, .navbar-expand-sm .navbar-new .active a:hover{
+    color: #FFF;
+}
+
+.carousel-control .icon-prev{
+  left: 5px
+}
+.carousel-control .icon-next{
+  right: 5px
+}

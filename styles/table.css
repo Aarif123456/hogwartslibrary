@@ -1,0 +1,25 @@
+
+table {
+border: solid 1px black;
+border-collapse: collapse;
+}
+th, td {
+border: solid 1px black;
+}
+
+#title{font-family: arial;
+}
+thead {
+font-family: arial;
+background-color: #ccddee;
+}
+tfoot {
+background-color: #ddccee;
+font-family: times, serif;
+font-size: .9em;
+font-style: italic;
+}
+td:hover {
+color: white;
+background-color: #722750;
+}
