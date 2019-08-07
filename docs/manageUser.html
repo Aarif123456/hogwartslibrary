@@ -1,0 +1,27 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+		<script src="../scripts/manageUser.js"> </script>
+	</head> 
+
+	<body> 	 
+		<form id="addForm" >
+		First Name: <input type="text" id ="fname" name="fname" ><br>
+		Last Name: <input type="text" id ="lname" name="lname"><br>
+		UserName: <input type="text" onkeyup="checkUsername();" id ="username" name="username"><br>
+		Password: <input type="password" id ="password" name="password"><br>
+		Confirm password: <input type="password" id ="confirmPassword" ><br>
+		User Type: <input type="radio" onchange="displayFields();" name="userType" id ="userType" value="student" > Student   
+		<input type="radio" onchange="displayFields();"name="userType" id ="userType" value="professor"> Professor<br>
+		<div id="userCategoryText"></div> <input type="text" id ="userCategory" name="userCategory" style="display: none;">
+		<div id="houseText"></div><select name="house" id="house" form = "addForm" style="display: none;">
+			<option value = "Gryffindor">Gryffindor</option> 
+			<option value = "Hufflepuff">Hufflepuff</option>
+			<option value = "Ravenclaw">Ravenclaw</option>
+			<option value = "Slytherin">Slytherin</option>
+		</select><br><br>
+		<button type="button" onclick="createUser(false);">Create User!</button>
+		</form>
+		<p> <span id="ID"></span></p>
+	</body>   
+</html> 
