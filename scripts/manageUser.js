@@ -22,7 +22,6 @@ function createUser(valid) {
   	else{ 
 	  	//create parameter to send to server side
 	  	var par = "fname="+fname+"&lname="+lname+"&password="+password+"&username="+username+"&add=yes"+"&userType="+userType+"&userCategory="+userCategory;
-
 	  	if(userType=="student"){
 			par+="&house="+document.getElementById("house").value.trim();
 	  	}
@@ -50,6 +49,10 @@ function createUser(valid) {
 function checkUsername(callback){
 	var username =document.getElementById("username").value.trim();
 	var xmlhttp = new XMLHttpRequest();
+	if(!(/^[a-zA-Z0-9_]+$/.test(username))) {
+		console.log("Username can only be alphabets, numbers or underscores");
+		return false;
+	}
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
       	if(this.responseText.trim() == "Username not taken"){  
