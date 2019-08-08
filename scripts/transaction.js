@@ -7,7 +7,7 @@ function checkOutBook() {
 
   	//Ajax insert
     var xmlhttp = new XMLHttpRequest();
-    var url="http://arif115.myweb.cs.uwindsor.ca/60334/projects/checkout.php";
+    var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/checkout.php";
     xmlhttp.open('POST', url, true);
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
@@ -38,7 +38,7 @@ function loadPotentialBorrower(){
 		}
       }
   	}
-    xmlhttp.open('GET',"http://arif115.myweb.cs.uwindsor.ca/60334/projects/loadPotentialBorrower.php", true);
+    xmlhttp.open('GET',"https://arif115.myweb.cs.uwindsor.ca/60334/projects/loadPotentialBorrower.php", true);
     //**load potential borrower will read session and check which user to not display
     xmlhttp.withCredentials = true;
     xmlhttp.send();

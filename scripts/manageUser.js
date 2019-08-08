@@ -29,7 +29,7 @@ function createUser(valid) {
 
 	  	//Ajax insert
 	    var xmlhttp = new XMLHttpRequest();
-	    var url="http://arif115.myweb.cs.uwindsor.ca/60334/projects/manageUser.php";
+	    var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/manageUser.php";
 	    xmlhttp.open('POST', url, true);
 	    xmlhttp.onreadystatechange = function() {
 	      if (this.readyState == 4 && this.status == 200) {
@@ -75,7 +75,7 @@ function checkUsername(callback){
       }
     }
     //search using given username
-    var url="http://arif115.myweb.cs.uwindsor.ca/60334/projects/verifyUser.php";
+    var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/verifyUser.php";
     var par ="username=" + username + "&userType=user";
     xmlhttp.open('POST', url , true);
     xmlhttp.withCredentials = true;

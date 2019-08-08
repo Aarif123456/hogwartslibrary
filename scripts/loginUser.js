@@ -12,7 +12,7 @@ function verifyUser() {
 
   	//Ajax insert
     var xmlhttp = new XMLHttpRequest();
-    var url="http://arif115.myweb.cs.uwindsor.ca/60334/projects/verifyUser.php";
+    var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/verifyUser.php";
     
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {

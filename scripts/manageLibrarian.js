@@ -7,7 +7,7 @@ function createLibrarian() {
 
   	//Ajax insert
     var xmlhttp = new XMLHttpRequest();
-    var url="http://arif115.myweb.cs.uwindsor.ca/60334/projects/manageLibrarian.php";
+    var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/manageLibrarian.php";
     xmlhttp.open('POST', url, true);
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
@@ -39,7 +39,7 @@ function loadPotentialLibrarian(){
 		}
       }
   	}
-    xmlhttp.open('GET',"http://arif115.myweb.cs.uwindsor.ca/60334/projects/loadPotentialLibrarian.php", true);
+    xmlhttp.open('GET',"https://arif115.myweb.cs.uwindsor.ca/60334/projects/loadPotentialLibrarian.php", true);
     xmlhttp.withCredentials = true;
     xmlhttp.send();
 }
