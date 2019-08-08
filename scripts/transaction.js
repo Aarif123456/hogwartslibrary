@@ -2,7 +2,7 @@
 function checkOutBook() {
   	var borrowedBy=document.getElementById("borrowedBy").value.trim();
   	//create parameter to send to server side
-  	var bookBarcode =(document.getElementById("activeBox").checked)?"1":"0";
+  	var bookBarcode =(document.getElementById("bookBarcode").checked)?"1":"0";
   	var par = "borrowedBy="+borrowedBy+"&bookBarcode="+bookBarcode;
 
   	//Ajax insert
