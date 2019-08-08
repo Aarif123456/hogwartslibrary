@@ -7,7 +7,7 @@ function createLibrarian() {
 
   	//Ajax insert
     var xmlhttp = new XMLHttpRequest();
-    var url="http://hogwartslibrary.000webhostapp.com/manageLibrarian.php";
+    var url="http://arif115.myweb.cs.uwindsor.ca/60334/projects/manageLibrarian.php";
     xmlhttp.open('POST', url, true);
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
@@ -16,6 +16,7 @@ function createLibrarian() {
       }
     }
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.withCredentials = true;
     xmlhttp.send(par); 
 
     //clear fields
@@ -38,7 +39,8 @@ function loadPotentialLibrarian(){
 		}
       }
   	}
-    xmlhttp.open('GET',"http://hogwartslibrary.000webhostapp.com/loadPotentialLibrarian.php", true);
+    xmlhttp.open('GET',"http://arif115.myweb.cs.uwindsor.ca/60334/projects/loadPotentialLibrarian.php", true);
+    xmlhttp.withCredentials = true;
     xmlhttp.send();
 }
 function showAvailableUser(userJSON){ //find potential librarian from json file

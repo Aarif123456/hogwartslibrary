@@ -1,0 +1,18 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+		<script src="../scripts/transaction.js"> </script>
+	</head> 
+
+	<body> 	 
+		<form  name='checkOut' id='checkOut' onsubmit='return false;' >
+		Enter book barcode: <input type="text"  id ="bookBarcode" name="bookBarcode"><br>
+		
+		User:<div id="userList"> 
+			<select id="borrowedBy" form = "checkOut">
+			</select><br></div>
+		<button type="button" onclick="checkOutBook();">checkout!</button>
+		</form>
+		<p> <span id="hint"></span></p>
+	</body>   
+</html> 

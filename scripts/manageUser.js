@@ -29,13 +29,14 @@ function createUser(valid) {
 
 	  	//Ajax insert
 	    var xmlhttp = new XMLHttpRequest();
-	    var url="http://hogwartslibrary.000webhostapp.com/manageUser.php";
+	    var url="http://arif115.myweb.cs.uwindsor.ca/60334/projects/manageUser.php";
 	    xmlhttp.open('POST', url, true);
 	    xmlhttp.onreadystatechange = function() {
 	      if (this.readyState == 4 && this.status == 200) {
 	      	console.log( this.responseText);
 	      }
 	    }
+	    xmlhttp.withCredentials = true;
 	    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	    xmlhttp.send(par); 
 
@@ -49,6 +50,10 @@ function createUser(valid) {
 function checkUsername(callback){
 	var username =document.getElementById("username").value.trim();
 	var xmlhttp = new XMLHttpRequest();
+	if(username==""){
+		console.log("Please fill out all fields");
+		return false;
+	}
 	if(!(/^[a-zA-Z0-9_]+$/.test(username))) {
 		console.log("Username can only be alphabets, numbers or underscores");
 		return false;
@@ -70,9 +75,10 @@ function checkUsername(callback){
       }
     }
     //search using given username
-    var url="http://hogwartslibrary.000webhostapp.com/verifyUser.php";
+    var url="http://arif115.myweb.cs.uwindsor.ca/60334/projects/verifyUser.php";
     var par ="username=" + username + "&userType=user";
     xmlhttp.open('POST', url , true);
+    xmlhttp.withCredentials = true;
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send(par); 
 }

@@ -12,7 +12,7 @@ function verifyUser() {
 
   	//Ajax insert
     var xmlhttp = new XMLHttpRequest();
-    var url="http://hogwartslibrary.000webhostapp.com/verifyUser.php";
+    var url="http://arif115.myweb.cs.uwindsor.ca/60334/projects/verifyUser.php";
     
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
@@ -20,6 +20,7 @@ function verifyUser() {
       }
     }
     xmlhttp.open('POST', url , true);
+    xmlhttp.withCredentials = true;
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send(par); 
 
