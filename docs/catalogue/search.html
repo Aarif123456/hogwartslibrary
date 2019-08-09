@@ -1,0 +1,24 @@
+<!DOCTYPE html> 
+<html> <head> 
+	<link rel="stylesheet" type="text/css" href="https://aarif123456.github.io/HogwartsLibrary/styles/table.css">
+	<script src="https://aarif123456.github.io/HogwartsLibrary/scripts/search.js"> </script> 
+</head> 
+<body> 
+	<form name='search' id='search' onsubmit='return false;'>
+		User Type:<select name="searchType" id="searchType" onchange='searchBooks();' form = "search">
+			<option value = "title">Title</option> 
+			<option value = "author">Author</option>
+			<option value = "ISBN">ISBN</option>
+			<option value = "keyword">Keyword</option>
+		</select><br>
+		Search: <input name='searchWord' id='searchWord' type='text' onkeyup='searchBooks();'><br>
+	</form> 
+	<div id="books_table"> <!--create div element that is a table -->
+		<table> 
+		<thead> <tr><td>bookISBN</td> <td>Title</td><td>Author</td><td>Pages</td>
+			<td>Edition</td><td>Status</td><td>Category</td> <td>Holds</td></tr></thead> 
+		<!--Header holds elements with information to display-->
+		<tbody>
+		</tbody> </table></div>
+	</body>   
+</html> 
