@@ -2,9 +2,9 @@
  * jQuery wmuSlider v2.1
  * 
  * Copyright (c) 2011 Brice Lechatellier
- * http://brice.lechatellier.com/
+ * https://brice.lechatellier.com/
  *
- * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
+ * Licensed under the MIT license: https://www.opensource.org/licenses/mit-license.php
  */
 
 ;(function($) {
