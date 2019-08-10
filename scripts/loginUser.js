@@ -26,7 +26,7 @@ function verifyUser() {
         else if(this.responseText.trim().indexOf("ERROR: Invalid user type")!==-1){
           document.getElementById("hint").innerHTML= "According to our server you are not an active librarian<br>If this is an error please contact your administrator<br>Otherwise please try to login in as a user";
         }
-        else if(this.responseText.trim().indexOf("ERROR: Invalid password.")!==-1){
+        else if(this.responseText.trim().indexOf("Invalid password.")!==-1){
           document.getElementById("hint").innerHTML="Incorrect password";
           loginAttempt+=1;
           if(loginAttempt>=3){
