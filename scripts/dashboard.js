@@ -24,24 +24,18 @@ function searchBooks(){
 }
 
 function createBookTable(userInfoJSON){ //create table from json file
-	var key= ""; //force make key an string
-	//create Table with given header
-	var tableText = "<table><thead><tr><td>BookISBN</td><td>Title</td><td>Author</td><td>Pages</td><td>Edition</td><td>Status</td><td>Category</td><td>Holds</td></tr></thead>";
-	tableText+="<tbody>"; //Start table body 
-	for (info of userInfoJSON){
-		tableText += "<tr>"; //star new row
-		for (key in info) { //for each element in info create entry
-			tableText +="<td>";
-			if(info.hasOwnProperty(key)){ 
-				tableText +=info[key];
-			}
-			tableText +="</td>";
-		}
-		tableText += "<tr>"; //end the row
-	}
+	var welcomeText = document.getElementById("welcomeUser");
+	var dashboardItem = document.getElementById("userMenuItem");
+	var welcomeText.innerHTML = "Welcome "; //text to welcome user by name
+	welcomeText.innerHTML += userInfoJSON['fname'] +" " + userInfoJSON['lname'];
+	'<li class="nav-item"><a href="https://aarif123456.github.io/HogwartsLibrary/docs/catalogue/search" class="nav-link"> Browse catalogue</a></li> '
+	//use javascript to determine which page is active
+	//JSON data can hold arrays so get links from one array and the text in the other
+	//for loop 
+
+
 	
-	tableText+="</tbody> </table>";//close table
-	document.getElementById("books_table").innerHTML = tableText;
+
 
 	
 }

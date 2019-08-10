@@ -81,7 +81,7 @@ body a{
 .header_bottom_right{
 	float:right;
 }
-.h_menu4 {
+.userMenu {
 	text-align: center;
 	display: inline-block;
 }
@@ -197,12 +197,12 @@ ul.drdw li a:hover{
 }
 /***** Media Quries *****/
 @media screen and (max-width: 800px) {
-.h_logo4{
+.hogwartsLogo{
 	text-align:center;
 	float: none;
 	margin: 4% 0;
 }
-.h_menu4{
+.userMenu{
 	float: none;
 }
 .toggleMenu {
@@ -247,7 +247,7 @@ a.toggleMenu{
 	width: 77%;
 	text-align: center;
 }
-.h_menu4 {
+.userMenu {
 	float: right;
 	width: 100%;
 }

@@ -1,55 +1,76 @@
-<!doctype html>
-<html lang="en"><head>
-  <!-- Required meta tags -->
-  <title>Library catalogue</title>
-  <meta charset="utf-8">
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Sign in</title>
+  <link href="https://aarif123456.github.io/HogwartsLibrary/styles/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+  <link href="https://aarif123456.github.io/HogwartsLibrary/styles/style.css" rel="stylesheet" type="text/css" media="all" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- For bootstrap 4 -->
-  <!-- Optional JS-->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <!-- CSS-->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-  <!-- JS-->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-  <!-- font awesome use for logos-->
-  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <!-- Main CSS to keep consistent style  -->
-  <link href="https://aarif123456.github.io/HogwartsLibrary/styles/main.css" rel="stylesheet">
+  <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Alice' rel='stylesheet' type='text/css'>
+  <script src="https://aarif123456.github.io/HogwartsLibrary/scripts/jquery.min.js"></script>
+  <script src="https://aarif123456.github.io/HogwartsLibrary/scripts/jquery.easydropdown.js"></script>
 
-  <style>
-
-  </style>
+  <link rel="stylesheet" href="https://aarif123456.github.io/HogwartsLibrary/styles/swipebox.css">
+  <!------ Light Box ------>
+  <script src="https://aarif123456.github.io/HogwartsLibrary/scripts/jquery.swipebox.min.js"></script> 
+  <script src="https://aarif123456.github.io/HogwartsLibrary/scripts/dashboard.js"> </script>
+  <script type="text/javascript">
+    jQuery(function($) {
+      $(".swipebox").swipebox();
+    });
+  </script>
+  <!------ Eng Light Box ------>
+  <script type="text/javascript" src="https://aarif123456.github.io/HogwartsLibrary/scripts/easing.js"></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function($) {
+      $(".scroll").click(function(event){   
+        event.preventDefault();
+        $('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+      });
+    });
+  </script>
 </head>
+
 <body>
-  <!-- handling navigation bar -->
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
-    <div class="container-fluid">
-      <!-- button to toggle menu on mobile device-->
-      <!--Create that iconic menu bar you see on phones -->
-      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">&#x2630;</button> 
-      <a class="navbar-brand" href="#">
-        <img src="https://aarif123456.github.io/HogwartsLibrary/resources/images/logo.png" alt="Hogwarts logo">
-    </a>
-    <div
-    class="collapse navbar-collapse" id="myNavbar">
-    <ul class="nav navbar-nav ml-auto">
-        <li class="active nav-item"><a href="#" class="nav-link"> Home</a>
-        </li>
-        <li class="nav-item"><a href="#" class="nav-link">About us</a>
-        </li>
-        <li class="nav-item"><a href="#" class="nav-link">Contact us</a>
-        </li>
-        <li class="nav-item"><a href="#" class="nav-link">Events</a>
-        </li>
-        <li class="nav-item"><a href="#" class="nav-link">Feedback</a>
-        </li>
-        <li class="nav-item"><a href="#" class="nav-link">Hours</a>
-        </li>
-    </ul>
-</div>
-</nav>
+  <div class="banner">
+    <div class="header">
+      <div class="container">
+        <div class="head-bann">
+          <div class="logo">
+            <a href="https://aarif123456.github.io/HogwartsLibrary/"><img src="resources/images/logo.png" class="img-responsive" alt="" /></a>
+          </div>
+          <div class="head-part">
+            <ul>
+              <li><a><p> <span id="welcomeUser"></span></p></a></li> <!-- add in link to register**-->
+              <li><a href="signin">Login</a></li>
+              <div class="clearfix"> </div>
+            </ul>
+          </div>  
+          <div class="clearfix"> </div>
+        </div>
+        <!-- start userMenu -->
+        <div class="userMenu">
+          <a class="toggleMenu" href="">Menu</a>
+          <ul class="nav" id='userMenuItem'>
+            
+          </ul>
+          <script type="text/javascript" src="https://aarif123456.github.io/HogwartsLibrary/scripts/nav.js"></script>
+        </div>
+        <!-- end userMenu -->
+      </div>
+    </div> 
+    <div class="banner-info1">  
+      <div class="banner-col">
+      </div>
+
+      <div class="container">
+
+      </div>
+    </div>
+  </div>
 
 <!--after logging in direct user to the correct dashboard depending on if they are professor or student 
 			1.make sure user exist in database
@@ -61,6 +82,7 @@
 
 
 
-<!-- resources/images --></body></html>
+<!-- resources/images --></body>
+</html>
 
 

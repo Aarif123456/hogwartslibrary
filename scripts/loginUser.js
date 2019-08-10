@@ -24,7 +24,7 @@ function verifyUser() {
           document.getElementById("hint").innerHTML= "Sorry the login server is down. <br>Please try again at a later time";
         }
         else if(this.responseText.trim().indexOf("ERROR: Invalid user type")!==-1){
-          document.getElementById("hint").innerHTML= "According to our server you are not an active librarian<br>If this is an error please contact your administrator<br>Otherwise please try to login in as a user";
+          document.getElementById("hint").innerHTML="According to our server you are not an active librarian";
         }
         else if(this.responseText.trim().indexOf("Invalid password.")!==-1){
           document.getElementById("hint").innerHTML="Incorrect password";
