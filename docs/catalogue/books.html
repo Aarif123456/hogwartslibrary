@@ -1,18 +1,74 @@
 <!DOCTYPE html> 
 <html> <head> 
 	<link rel="stylesheet" type="text/css" href="https://aarif123456.github.io/HogwartsLibrary/styles/table.css">
-	<script src="https://aarif123456.github.io/HogwartsLibrary/scripts/search.js"> </script> 
+	<script>
+function markLost(bookISBN){
+	//mark book as lost 
+}
+function renewBook(bookISBN){
+	//renew the book
+}
+
+window.onload =  function (){
+	var xmlhttps = new XMLHttpRequest();
+	xmlhttps.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			//create table using info from JSON file 
+			try {
+				createCheckOut(JSON.parse(this.responseText));
+			}catch (e) {
+				console.log(this.responseText);
+			}
+		}
+	};
+	var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/loadCheckoutMenu.php";
+	xmlhttps.open("GET", url, true); //Set get request with given parameter
+	xmlhttps.send(); 
+};
+
+
+
+	function createCheckOut(transactionJSON){ //create table from json file
+	var key= ""; //force make key an string
+	//create Table with given header
+	var tableText = "<table><thead><tr><td>Title</td><td>Holds</td><td>bookBarcode</td><td>Duedate</td><td>Renewed</td><td>Lost button</td><td>Renew button</td></tr></thead>";
+	tableText+="<tbody>"; //Start table body 
+	for (transaction of transactionJSON){
+		tableText += "<tr>"; //star new row
+		tableText += "<td>"+transaction['bookInfo']['bookName'] +"</td>";
+		tableText += "<td>"+transaction['bookInfo']['holds'] +"</td>";
+		//**for now just use book name  when implementing can easily add in author+ page using loop
+		/*for(key in transaction['bookInfo']){ //for each element about book in transaction
+			tableText +="<td>";
+			if(transaction.hasOwnProperty(key)){ 
+				tableText +=transaction[key];
+			}
+			tableText +="</td>";
+		}*/
+		for(key in transaction['transactionInfo']){ //for each element about transaction
+			tableText +="<td>";
+			if(transaction.hasOwnProperty(key)){ 
+				tableText +=transaction[key];
+			}
+			tableText +="</td>";
+		}
+		tableText +="<td>" + '<button type="submit" onclick="markLost(transaction["bookItemInfo"]["bookISBN"]);">Lost</button>' +"</td>";
+		tableText +="<td>" + '<button type="submit" onclick="renewBook(transaction["bookItemInfo"]["bookISBN"]);">Renew</button>' +"</td>";
+		
+		tableText += "<tr>"; //end the row
+	}
+	
+	tableText+= "</tbody> </table>";//close table
+	document.getElementById("checkout_table").innerHTML = tableText;	
+}
+ </script> 
+ <!-- create dashboard with function pass in checkout as location-->
 </head> 
 <body> 
-	<form name='search' id='search' onsubmit='return false;'>
+	
+
+	<div id="checkout_table"> <!--create div element that is a table -->
 		
-	</form> 
-	<div id="books_table"> <!--create div element that is a table -->
-		<table> 
-		<thead> <tr><td>bookISBN</td> <td>Title</td><td>Author</td><td>Pages</td>
-			<td>Edition</td><td>Status</td><td>Category</td> <td>Holds</td></tr></thead> 
-		<!--Header holds elements with information to display-->
-		<tbody>
-		</tbody> </table></div>
+		</div>
 	</body>   
 </html> 
