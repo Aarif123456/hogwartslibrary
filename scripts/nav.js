@@ -1,4 +1,3 @@
-
 var ww = document.body.clientWidth;
 
 $(document).ready(function() {

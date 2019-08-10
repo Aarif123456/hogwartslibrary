@@ -12,8 +12,7 @@ function searchBooks(){
 				}
 				catch (e) {
 					console.log(this.responseText);
-				}
-				
+				}		
 			}
 		};
 		var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/search_div.php?";
