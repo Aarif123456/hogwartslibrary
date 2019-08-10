@@ -26,7 +26,7 @@ function searchBooks(){
 function createBookTable(userInfoJSON){ //create table from json file
 	var welcomeText = document.getElementById("welcomeUser");
 	var dashboardItem = document.getElementById("userMenuItem");
-	var welcomeText.innerHTML = "Welcome "; //text to welcome user by name
+	welcomeText.innerHTML = "Welcome "; //text to welcome user by name
 	welcomeText.innerHTML += userInfoJSON['fname'] +" " + userInfoJSON['lname'];
 	'<li class="nav-item"><a href="https://aarif123456.github.io/HogwartsLibrary/docs/catalogue/search" class="nav-link"> Browse catalogue</a></li> '
 	//use javascript to determine which page is active
