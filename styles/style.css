@@ -31,7 +31,7 @@ body a{
 	text-align:center;
 }
 .banner-info1{
-	background: url(../resources/images/banner.jpg) no-repeat center fixed;
+	background: url(https://aarif123456.github.io/HogwartsLibrary/resources/images/banner.jpg) no-repeat center fixed;
 	background-size:cover;
 	-webkit-background-size:cover; 
 	-moz-background-size:cover;
@@ -41,7 +41,7 @@ body a{
 	text-align:center;
 }
 .banner-slider{
-	background: url(../resources/images/banner.jpg) no-repeat center fixed;
+	background: url(https://aarif123456.github.io/HogwartsLibrary/resources/images/banner.jpg) no-repeat center fixed;
 	background-size:cover;
 	-webkit-background-size:cover; 
 	-moz-background-size:cover;
@@ -142,7 +142,7 @@ border: 0 !important;
 .nav li.active{
 }
 .nav > li > a.root{
-	background: url(../resources/images/arrow.png) no-repeat 87px 12px;
+	background: url(https://aarif123456.github.io/HogwartsLibrary/resources/images/arrow.png) no-repeat 87px 12px;
 	padding: 10px 30px 10px 10px;	
 }
 .nav > li {
@@ -312,7 +312,7 @@ ul.wmuSliderPagination {
 	width:50px;
 	height:80px;
 	text-indent: -9999px;
-	background: url(../resources/images/img-sprite.png)no-repeat;
+	background: url(https://aarif123456.github.io/HogwartsLibrary/resources/images/img-sprite.png)no-repeat;
 	top:35%;
 	z-index: 2;
 	cursor: pointer;
@@ -495,7 +495,7 @@ div#portfoliolist {
 	top: -152px;
 	width: 290px;
 	height: 219px;
-	background: url(../resources/images/zoom.png) center center no-repeat rgba(94, 183, 3, 0.33);
+	background: url(https://aarif123456.github.io/HogwartsLibrary/resources/images/zoom.png) center center no-repeat rgba(94, 183, 3, 0.33);
 	cursor: pointer;
 	transition: all .2s ease-in-out;
 	-webkit-transition: all .2s ease-in-out;
@@ -543,7 +543,7 @@ div#portfoliolist {
 }	
 /*-- portfolio--*/
 .project {
-	background: url(../resources/images/midbanner.jpg) no-repeat center fixed;
+	background: url(https://aarif123456.github.io/HogwartsLibrary/resources/images/midbanner.jpg) no-repeat center fixed;
 	background-size: cover;
 	padding: 2em 0em;
 }
@@ -704,7 +704,7 @@ a.use:hover{
 	width:50%;
 }
 .ourteam {
-	background: url(../resources/images/bannerteam.jpg) no-repeat center fixed;
+	background: url(https://aarif123456.github.io/HogwartsLibrary/resources/images/bannerteam.jpg) no-repeat center fixed;
 	background-size: cover;
 	padding: 5em 0em;
 	position:relative;
@@ -816,11 +816,11 @@ a.use:hover{
 }
 .nbs-flexisel-nav-left {
 	left:-1.5em;
-	background: url(../resources/images/sprite.png) no-repeat -2px -2px;
+	background: url(https://aarif123456.github.io/HogwartsLibrary/resources/images/sprite.png) no-repeat -2px -2px;
 }
 .nbs-flexisel-nav-right {
 	right:-1.5em;
-	background: url(../resources/images/sprite.png) no-repeat -41px -2px;
+	background: url(https://aarif123456.github.io/HogwartsLibrary/resources/images/sprite.png) no-repeat -41px -2px;
 }
 /*-- flexisel --*/
 .ourteam  h3{
@@ -1064,7 +1064,7 @@ ul.about-list{
 	list-style:none;
 }
 ul.about-list li {
-	list-style-image: url(../resources/images/icon_1.png);
+	list-style-image: url(https://aarif123456.github.io/HogwartsLibrary/resources/images/icon_1.png);
 	margin: 0 0px 20px 15px;
 }
 ul.about-list li a {
@@ -1215,7 +1215,7 @@ p.m_para {
 }
 .blog_btn {
 	display: inline-block;
-	background: url(../resources/images/arrow_btn.png) no-repeat 82px 15px #2aacc8;
+	background: url(https://aarif123456.github.io/HogwartsLibrary/resources/images/arrow_btn.png) no-repeat 82px 15px #2aacc8;
 	padding: 8px 32px 9px 20px;
 	color: #FFF;
 	font-size: 18px;
@@ -1240,7 +1240,7 @@ ul.sidebar h3{
 	font-size:1.5em;
 }
 ul.sidebar li {
-	list-style-image: url(../resources/images/marker2.png);
+	list-style-image: url(https://aarif123456.github.io/HogwartsLibrary/resources/images/marker2.png);
 	margin: 0 15px 10px;
 	vertical-align: bottom;
 }
@@ -1302,32 +1302,32 @@ p.single_text{
 i.blog_icon1 {
 	width: 25px;
 	height: 25px;
-	background: url(../resources/images/img-sprite.png)-117px -191px;
+	background: url(https://aarif123456.github.io/HogwartsLibrary/resources/images/img-sprite.png)-117px -191px;
 	float: left;
 	margin-right: 10px;
 }
 i.blog_icon2 {
 	width: 25px;
 	height: 25px;
-	background: url(../resources/images/img-sprite.png)-155px -191px;
+	background: url(https://aarif123456.github.io/HogwartsLibrary/resources/images/img-sprite.png)-155px -191px;
 	float: left;
 }
 i.blog_icon3 {
 	width: 25px;
 	height: 25px;
-	background: url(../resources/images/img-sprite.png)-189px -192px;
+	background: url(https://aarif123456.github.io/HogwartsLibrary/resources/images/img-sprite.png)-189px -192px;
 	float: left;
 }
 i.blog_icon4 {
 	width: 25px;
 	height: 25px;
-	background: url(../resources/images/img-sprite.png)-223px -194px;
+	background: url(https://aarif123456.github.io/HogwartsLibrary/resources/images/img-sprite.png)-223px -194px;
 	float: left;
 }
 i.blog_icon5{
 	width: 25px;
 	height: 25px;
-	background: url(../resources/images/img-sprite.png)-260px -195px;
+	background: url(https://aarif123456.github.io/HogwartsLibrary/resources/images/img-sprite.png)-260px -195px;
 	float: left;
 }
 span.icon_text {
@@ -1486,7 +1486,7 @@ ul.comment-list .desc h5 a {
 	font-size: 1.2em;
 	padding: 0.8em 2em 0.8em 3.5em;
 	text-transform: uppercase;
-	background: url(../resources/images/sub-arrow.png)no-repeat 20px 4px #26DFF2;
+	background: url(https://aarif123456.github.io/HogwartsLibrary/resources/images/sub-arrow.png)no-repeat 20px 4px #26DFF2;
 	border-radius: 0.3em;
 	-webkit-border-radius: 0.3em;
 	-o-border-radius: 0.3em;
@@ -1507,7 +1507,7 @@ ul.comment-list .desc h5 a {
 	box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5), 0px 1px 0px #94f7ff;
 }
 .form_details input[type="submit"]:hover {
- 	background: url(../resources/images/sub-arrow.png)no-repeat 20px 4px #17CCDF;
+ 	background: url(https://aarif123456.github.io/HogwartsLibrary/resources/images/sub-arrow.png)no-repeat 20px 4px #17CCDF;
 }
 .text input[type="text"], .contact_bottom-textarea textarea {
 	width: 100%;
@@ -1793,7 +1793,7 @@ a.b-home:hover{
 }
 .checkbox input + i:after {
 	content: '';
-	background: url("../resources/images/tick1.png") no-repeat 1px 2px;
+	background: url("https://aarif123456.github.io/HogwartsLibrary/resources/images/tick1.png") no-repeat 1px 2px;
 	top: -1px;
 	left: -1px;
 	width: 15px;
@@ -2683,7 +2683,7 @@ p.m_para {
 	font-size: 0.875em;
 }
 .blog_btn {
-	background: url(../resources/images/arrow_btn.png) no-repeat 75px 14px #2aacc8;
+	background: url(https://aarif123456.github.io/HogwartsLibrary/resources/images/arrow_btn.png) no-repeat 75px 14px #2aacc8;
 	font-size: 16px;
 }
 ul.sidebar h3 {
@@ -2762,10 +2762,10 @@ ul.about_right li.test_desc p {
 .form_details input[type="submit"] {
 	color: #000;
 	font-size: 1.1em;
-	background: url(../resources/images/sub-arrow.png)no-repeat 18px 1px #26DFF2;
+	background: url(https://aarif123456.github.io/HogwartsLibrary/resources/images/sub-arrow.png)no-repeat 18px 1px #26DFF2;
 }
 .form_details input[type="submit"]:hover{
-	background: url(../resources/images/sub-arrow.png)no-repeat 18px 1px  #17CCDF;
+	background: url(https://aarif123456.github.io/HogwartsLibrary/resources/images/sub-arrow.png)no-repeat 18px 1px  #17CCDF;
 }
 .map_background h6 {
 	font-size: 16px;
@@ -3029,7 +3029,7 @@ h5.m_head a {
 	padding:1em 0 0;
 }
 .blog_btn {
-	background: url(../resources/images/arrow_btn.png) no-repeat 66px 14px #2aacc8;
+	background: url(https://aarif123456.github.io/HogwartsLibrary/resources/images/arrow_btn.png) no-repeat 66px 14px #2aacc8;
 	font-size: 12px;
 }
 div.blog_top {
@@ -3137,11 +3137,11 @@ ul.about_right li.test_desc {
 }
 .form_details input[type="submit"] {
 	font-size: 1em;
-	background: url(../resources/images/sub-arrow.png)no-repeat 2px -4px #26DFF2;
+	background: url(https://aarif123456.github.io/HogwartsLibrary/resources/images/sub-arrow.png)no-repeat 2px -4px #26DFF2;
 	padding: 0.5em 1.5em 0.5em 2.5em;
 }
 .form_details input[type="submit"]:hover {
-	background: url(../resources/images/sub-arrow.png)no-repeat 2px -4px #17CCDF;
+	background: url(https://aarif123456.github.io/HogwartsLibrary/resources/images/sub-arrow.png)no-repeat 2px -4px #17CCDF;
 }
 .contact_left {
 	margin: 0em 0em 3em;

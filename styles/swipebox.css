@@ -31,7 +31,7 @@
 }
 
 #swipebox-slider .slide {
-  background: url(../resources/images/loader.gif) no-repeat center center;
+  background: url(https://aarif123456.github.io/HogwartsLibrary/resources/images/loader.gif) no-repeat center center;
   height: 100%;
   line-height: 1px;
   text-align: center;
@@ -89,7 +89,7 @@
 
 #swipebox-action #swipebox-prev, #swipebox-action #swipebox-next,
 #swipebox-action #swipebox-close {
-  background-image: url(../resources/images/icons.png);
+  background-image: url(https://aarif123456.github.io/HogwartsLibrary/resources/images/icons.png);
   background-repeat: no-repeat;
   border: none!important;
   text-decoration: none!important;
