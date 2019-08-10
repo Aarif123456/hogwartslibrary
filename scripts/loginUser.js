@@ -1,3 +1,5 @@
+//Abdullah Arif
+//Verify user login
 
 function verifyUser() {
   	var username =document.getElementById("username").value.trim();

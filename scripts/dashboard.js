@@ -1,4 +1,5 @@
-
+//Abdullah Arif
+//create dynamic dashboard for user
 function searchBooks(){
 	var keyword=document.getElementById('searchWord').value;
 	var searchType=document.getElementById('searchType').value.trim();

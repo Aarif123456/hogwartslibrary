@@ -1,4 +1,5 @@
-
+//Abdullah Arif
+//Create more librarian
 function createLibrarian() {
   	var userID=document.getElementById("librarianSelection").value.trim();
   	//create parameter to send to server side

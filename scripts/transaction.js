@@ -1,3 +1,5 @@
+//Abdullah Arif
+//Handle librarian signing books out to user
 
 function checkOutBook() {
   	var borrowedBy=document.getElementById("borrowedBy").value.trim();

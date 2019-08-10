@@ -1,3 +1,5 @@
+//Abdullah Arif 
+//Create users from scratch
 function createUser(valid) {
   	var fname =document.getElementById("fname").value.trim();
   	var lname =document.getElementById("lname").value.trim();
