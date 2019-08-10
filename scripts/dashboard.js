@@ -23,17 +23,17 @@ function searchBooks(){
 	}
 }
 
-function createBookTable(bookJSON){ //create table from json file
+function createBookTable(userInfoJSON){ //create table from json file
 	var key= ""; //force make key an string
 	//create Table with given header
 	var tableText = "<table><thead><tr><td>BookISBN</td><td>Title</td><td>Author</td><td>Pages</td><td>Edition</td><td>Status</td><td>Category</td><td>Holds</td></tr></thead>";
 	tableText+="<tbody>"; //Start table body 
-	for (book of bookJSON){
+	for (info of userInfoJSON){
 		tableText += "<tr>"; //star new row
-		for (key in book) { //for each element in book create entry
+		for (key in info) { //for each element in info create entry
 			tableText +="<td>";
-			if(book.hasOwnProperty(key)){ 
-				tableText +=book[key];
+			if(info.hasOwnProperty(key)){ 
+				tableText +=info[key];
 			}
 			tableText +="</td>";
 		}

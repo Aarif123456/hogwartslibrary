@@ -2,7 +2,7 @@
 ------------------------------------------------------------------------
 References
 template
-https://colorlib.com/wp/template/beko/
+https://w3layouts.com/4useri-corporate-multipurpose-flat-bootstrap-responsive-web-template/
 https://www.youtube.com/watch?v=eIWRbvE1B2E
 
 CSS magic.css

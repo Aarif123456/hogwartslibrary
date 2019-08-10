@@ -1,100 +1,317 @@
-<!doctype html>
-<html lang="en"><head>
-  <!-- Required meta tags -->
-  <title>Hogwart's library </title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- For bootstrap 3  -->
-  <!-- Optional JS-->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <!-- CSS-->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-  <!-- JS-->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!--
+Using W3 4Useri
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Hogwart's library</title>
+<link href="https://aarif123456.github.io/HogwartsLibrary/styles/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<link href="https://aarif123456.github.io/HogwartsLibrary/styles/style.css" rel="stylesheet" type="text/css" media="all" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Hogwarts stuff" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+<!--<link href='http://fonts.googleapis.com/css?family=Alice' rel='stylesheet' type='text/css'>-->
+<script src="https://aarif123456.github.io/HogwartsLibrary/scripts/jquery.min.js"></script>
+<script src="https://aarif123456.github.io/HogwartsLibrary/scripts/jquery.easydropdown.js"></script>
 
-  <!-- font awesome use for logos-->
-  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <!-- Main CSS to keep consistent style  -->
-  <link href="https://aarif123456.github.io/HogwartsLibrary/styles/main.css" rel="stylesheet">
+<link rel="stylesheet" href="https://aarif123456.github.io/HogwartsLibrary/styles/swipebox.css">
+ <!------ Light Box ------>
+    <script src="https://aarif123456.github.io/HogwartsLibrary/scripts/jquery.swipebox.min.js"></script> 
+    <script type="text/javascript">
+		jQuery(function($) {
+			$(".swipebox").swipebox();
+		});
+	</script>
+    <!------ Eng Light Box ------>
+	<script type="text/javascript" src="https://aarif123456.github.io/HogwartsLibrary/scripts/easing.js"></script>
+<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+				});
+			});
+		</script>
 
-  <style>
-
-  </style>
 </head>
 <body>
-  <!-- handling navigation bar -->
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
-    <div class="container-fluid">
-      <!-- button to toggle menu on mobile device-->
-      <!--Create that iconic menu bar you see on phones -->
-      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">&#x2630;</button> 
-      <a class="navbar-brand" href="#">
-        <img src="resources/images/logo.png" alt="Hogwarts logo">
-    </a>
-    <div
-    class="collapse navbar-collapse" id="myNavbar">
-    <ul class="nav navbar-nav ml-auto">
-        <li class="active nav-item"><a href="#" class="nav-link"> Home</a>
-        </li>
-        <li class="nav-item"><a href="#" class="nav-link">About us</a>
-        </li>
-        <li class="nav-item"><a href="#" class="nav-link">Contact us</a>
-        </li>
-        <li class="nav-item"><a href="#" class="nav-link">Events</a>
-        </li>
-        <li class="nav-item"><a href="#" class="nav-link">Feedback</a>
-        </li>
-        <li class="nav-item"><a href="#" class="nav-link">Hours</a>
-        </li>
-    </ul>
-</div>
-</nav>
+<!-- header -->
+	<div class="banner">
+	<div class="header">
+  	    <div class="container">
+			<div class="head-bann">
+				<div class="logo">
+					<a href="https://aarif123456.github.io/HogwartsLibrary/"><img src="resources/images/logo.png" class="img-responsive" alt="" /></a>
+				</div>
+				<div class="head-part">
+					<ul>
+						<li><a href="register">Signup</a></li> <!-- add in link to register**-->
+						<li><a href="signin">Login</a></li>
+							<div class="clearfix"> </div>
+					</ul>
+				</div>	
+					<div class="clearfix"> </div>
+			</div>
+					<!-- start h_menu4 -->
+					<div class="h_menu4">
+					<a class="toggleMenu" href="">Menu</a>
+					<ul class="nav">
+						<li class="browse nav-item"><a href="https://aarif123456.github.io/HogwartsLibrary/docs/catalogue/search" class="nav-link"> Browse catalogue</a>
+				        </li>
+				        <li class="nav-item"><a href="https://aarif123456.github.io/HogwartsLibrary/docs/home/event" class="nav-link">Events</a>
+				        </li>
+				        <li ><a href="https://aarif123456.github.io/HogwartsLibrary/docs/home/readingList" class="root">List</a>
+				        	<ul class="drdw">
+								<li><a href="products.html">By major</a></li>
+								<li><a href="products.html">By category</a></li>
+								<li><a href="products.html">All time</a></li>
+							</ul>
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
-  <!-- Information in carousel -->
-  <div class="carousel-inner">
-      <div class="active carousel-item">
-        <img src="resources/images/Q.jpg" alt="Quidditch">
-        <div class="carousel-caption">
-           <h1>Popular Event</h1>
+				        </li>
+				        <li class="nav-item"><a href="https://aarif123456.github.io/HogwartsLibrary/docs/home/about" class="nav-link">About Us</a>
+				        </li>
+				        <li class="nav-item"><a href="https://aarif123456.github.io/HogwartsLibrary/docs/home/contact" class="nav-link">Contact Us</a>
+				        </li>
+				        <li class="nav-item"><a href="https://aarif123456.github.io/HogwartsLibrary/docs/home/hours" class="nav-link">Hours</a>
+				        </li>			
+						</ul>
+						<script type="text/javascript" src="https://aarif123456.github.io/HogwartsLibrary/scripts/nav.js"></script>
+				</div>
+				<!-- end h_menu4 -->
+						
+				
+				
+			</div>
+</div> 
+<div class="banner-slider">	
+		<div class="banner-col">
+		</div>
+		
+			<div class="wmuSlider example1 section" id="section-1">
+			   <article style="position: absolute; width: 100%; opacity: 0;"> 
+			   	   	<div class="banner-info">
+				<div class="container">
+					<h1>“WE LOVE TO MAKE YOUR WEB WAY”</h1>
+				</div>
+			</div>
+				</article>
+				 <article style="position: absolute; width: 100%; opacity: 0;"> 
+			   	   	<div class="banner-info">
+				<div class="container">
+					<h1>“Lorem ipsum dolor sit amet”</h1>
+				</div>
+			</div>
+				</article>
+				 <article style="position: absolute; width: 100%; opacity: 0;"> 
+			   	   		<div class="banner-info">
+				<div class="container">
+					<h1>“Claritas est etiam processus”</h1>
+				</div>
+			</div>
+				</article>
+				<ul class="wmuSliderPagination">
+                	<li><a href="#" class="">0</a></li>
+                	<li><a href="#" class="">1</a></li>
+                	<li><a href="#" class="">2</a></li>
+                </ul>
+		  </div>		
+		
+		<!-- script -->
+          <script src="https://aarif123456.github.io/HogwartsLibrary/scripts/jquery.wmuSlider.js"></script> 
+			<script>
+       			$('.example1').wmuSlider();         
+   		    </script>
+		</div>	<!-- script -->		
+		
+	</div>
+<!-- header -->
+
+<!-- ourteam -->
+<div class="ourteam">
+      <div class="container">
+        <h3>MEET WITH OUR TEAM</h3>
+        <div class="team">
+            <ul id="flexiselDemo3">
+            <li>
+              <div class="team1">
+                <a href="#small-dialog6" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
+                <img src="resources/images/team1.jpg" class="img-responsive" alt="" /></a>
+                <div class="both">
+                  <div class="both-left">
+                  <h5>Sheak Reza</h5>
+                  <p>CEO, Both kicu</p>
+                  </div>
+                  <div class="both-right">
+                      <h6><a href="#">facebook</a> /<a href="#">twiter</a>
+                      <a href="#">dribbled </a>/<a href="#"> linkedin</a><h6>
+                  </div>
+                    <div class="clearfix"></div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="team1">
+                <a href="#small-dialog6" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
+                <img src="resources/images/team2.jpg" class="img-responsive" alt="" /></a>
+                <div class="both">
+                  <div class="both-left">
+                  <h5>Sheak Reza</h5>
+                  <p>CEO, Both kicu</p>
+                  </div>
+                  <div class="both-right">
+                      <h6><a href="#">facebook</a> /<a href="#">twiter</a>
+                      <a href="#">dribbled </a>/<a href="#"> linkedin</a><h6>
+                  </div>
+                    <div class="clearfix"></div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="team1">
+                <a href="#small-dialog6" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
+                <img src="resources/images/team3.jpg" class="img-responsive" alt="" /></a>
+                <div class="both">
+                  <div class="both-left">
+                  <h5>Sheak Reza</h5>
+                  <p>CEO, Both kicu</p>
+                  </div>
+                  <div class="both-right">
+                      <h6><a href="#">facebook</a> /<a href="#">twiter</a>
+                      <a href="#">dribbled </a>/<a href="#"> linkedin</a><h6>
+                  </div>
+                    <div class="clearfix"></div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="team1">
+                <a href="#small-dialog6" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
+                <img src="resources/images/team2.jpg" class="img-responsive" alt="" /></a>
+                <div class="both">
+                  <div class="both-left">
+                  <h5>Sheak Reza</h5>
+                  <p>CEO, Both kicu</p>
+                  </div>
+                  <div class="both-right">
+                    
+                      <h6><a href="#">facebook</a> /<a href="#">twiter</a>
+                      <a href="#">dribbled </a>/<a href="#"> linkedin</a><h6>
+                    
+                  </div>
+                    <div class="clearfix"></div>
+                </div>
+              </div>
+              </li>
+            <li>
+              <div class="team1">
+                <a href="#small-dialog6" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
+                <img src="resources/images/team1.jpg" class="img-responsive" alt="" /></a>
+                <div class="both">
+                  <div class="both-left">
+                  <h5>Sheak Reza</h5>
+                  <p>CEO, Both kicu</p>
+                  </div>
+                  <div class="both-right">
+                    
+                      <h6><a href="#">facebook</a> /<a href="#">twiter</a>
+                      <a href="#">dribbled </a>/<a href="#"> linkedin</a><h6>
+                    
+                  </div>
+                    <div class="clearfix"></div>
+                </div>
+              </div>
+              </li>
+            
+           </ul>
         </div>
-       </div>
-       <div class="carousel-item">
-        <img src="resources/images/books.png" alt="Stack of books">
-        <div class="carousel-caption">
-            <h1>Popular reading list</h1>
-        </div>
-        </div>
-        <div class="carousel-item">
-            <img src="resources/images/houses.jpg" alt="Harry potter houses">
-            <div class="carousel-caption">
-               <h1>House fines</h1>
-            </div>
-        </div>
+         <script type="text/javascript">
+          $(window).load(function() {
+            
+            $("#flexiselDemo3").flexisel({
+              visibleItems: 3,
+              animationSpeed: 1000,
+              autoPlay: true,
+              autoPlaySpeed: 3000,        
+              pauseOnHover: true,
+              enableResponsiveBreakpoints: true,
+              responsiveBreakpoints: { 
+                portrait: { 
+                  changePoint:480,
+                  visibleItems: 1
+                }, 
+                landscape: { 
+                  changePoint:640,
+                  visibleItems: 2
+                },
+                tablet: { 
+                  changePoint:768,
+                  visibleItems: 3
+                }
+              }
+            });
+            
+          });
+            </script>
+            <script type="text/javascript" src="https://aarif123456.github.io/HogwartsLibrary/scripts/jquery.flexisel.js"></script>
     </div>
+  </div>
+<!-- ourteam -->
 
-
-
-    <!-- Arrows to go back and forth -->
-    <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </a>
-    <a class="carousel-control-next" href="#myCarousel" data-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </a>
-
-
-</div><!-- End of slider -->
-
-
-
-
-<!-- -->
-<!-- resources/images --></body></html>
+<!-- contact -->
+	<div class="contact">
+		<div class="container">
+			<h3>CONTACT WITH US</h3>
+				<div class="col-md-6 contact-left">
+						<form>
+							<input type="text" class="text" value=" Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = ' Name';}">
+							<input type="text" class="text" value=" Your mail adress" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = ' Your mail adress';}">
+							<textarea value="Message" onfocus="if(this.value == 'Message') this.value='';" onblur="if(this.value == '') this.value='Message';">Message</textarea>
+						</form>
+				</div>
+				<div class="col-md-6 contact-right">
+					<h4>A Little About Us</h4>
+					<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, </p>
+					<p>nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti soci</p>
+				</div>
+					<div class="clearfix"></div>
+			
+		</div>
+	</div>
+<!-- contact -->
+<!-- footer -->
+	<div class="footer">
+		<div class="container">
+			<div class="footer-top">
+				<div class="subsc">
+					<div class="monthly">
+						<p>Subcrive Our </p>
+						<h5>Monthly Newslatter </h5>
+						<p>for Up to Date</p>
+					</div>
+					<div class="mail">
+							<form>
+								<input type="text" class="text" value=" Your mail" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '  Your mail;}">
+								<input type="submit" value="SUBMIT">
+							</form>
+					</div>
+							<div class="clearfix"></div>
+				</div>
+			</div>
+				<div class="footer-bottom">
+					<div class="footer-nav">
+						<ul>
+							<li><a href="https://aarif123456.github.io/HogwartsLibrary/">home </a></li> \
+							<li><a href="contact.html">contact </a></li> \
+							<li><a href="about.html">about</a></li> \
+								<div class="clearfix"> </div>
+						</ul>
+					</div>
+						<p>Copyrights © 2015 4useri All rights reserved | Template by <a href="http://w3layouts.com/">W3layouts</a></p>
+				</div>
+		</div>
+	</div>
+<!-- footer -->
+</body>
+</html>
