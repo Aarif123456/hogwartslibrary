@@ -20,6 +20,7 @@ function searchBooks(){
 		var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/search_div.php?";
 		var par="searchWord="+keyword+"&searchType="+searchType;
 		xmlhttps.open("GET", url + par, true); //Set get request with given parameter
+		//xmlhttp.withCredentials = true; don't need because you don't need authentication to search
 		xmlhttps.send(); 
 	}
 }
