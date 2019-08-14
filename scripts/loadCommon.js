@@ -65,7 +65,7 @@ function createHomeNavbar(){
 
     //default menu on home pages                 
     var defaultHomeMenu="";
-    for(var i=0;i<pageTitle.length ;i++){ 
+    for(var i=0;i<pageTitle.length-1;i++){ 
     	defaultHomeMenu += '<li class="'; //each page is part of the list
     	defaultHomeMenu += (i==0)?"browse ":""; //browse catalogue is special 
     	if(pageNum == i){
@@ -76,14 +76,14 @@ function createHomeNavbar(){
     	defaultHomeMenu += (i==0)?'catalogue/':'home/'; //catalogue links to the catalogue pages
     	defaultHomeMenu += pageLinks[i] + '" class="';
     	//if page has sub menu make it root
-    	defaultHomeMenu +=(pageList[i]>0)?('root>'+pageTitle[i] +'</a> <ul class="drdw">'):"nav-link>";
+    	defaultHomeMenu +=(pageList[i]>0)?('root">'+pageTitle[i] +'"</a> <ul class="drdw">'):'nav-link">';
     	for(var j=0;j<pageList[i];j++){
     		defaultHomeMenu += '<li><a href="https://aarif123456.github.io/HogwartsLibrary/docs/home/charts/';
     		defaultHomeMenu += pageListLinks[i][j];
-    		defaultHomeMenu += '>"' +pageListTitle[i][j] +'</a></li>'; 
+    		defaultHomeMenu += '">' +pageListTitle[i][j] +'"</a></li>'; 
     	}
-    	defaultHomeMenu +=(pageList[i]>0)?('</ul>'):(pageTitle[i] +"</a>");
-    	defaultHomeMenu +='</li>'; //end option
+    	defaultHomeMenu +=(pageList[i]>0)?('</ul></li>'):(pageTitle[i] +"</a></li>");
+    	defaultHomeMenu +=''; //end option
     }          
     //finish default user Menu          
     defaultHomeMenu += `</ul>`;
