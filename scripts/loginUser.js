@@ -30,10 +30,10 @@ function verifyUser() {
         }
         else if(this.responseText.trim().indexOf("Invalid password.")!==-1){
           document.getElementById("hint").innerHTML="Incorrect password";
-          loginAttempt+=1;
+          loginAttempt+=1;/*
           if(loginAttempt>=3){
             document.getElementById("hint").innerHTML+="<br>If you have forgotten your password. You may reset with your email by<a href='/resetPassword'>clicking here.</a> <br>Otherwise you can contact your administrator to reset your password.";
-          }
+          }*/
 
         }
         else if(this.responseText.trim().indexOf("Password is valid!")!==-1){

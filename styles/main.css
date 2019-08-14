@@ -124,16 +124,16 @@ body a{
 ul.drdw li a {
 border: 0 !important;
 }
-.nav li a:hover{
-	color:#ff00ff;
-	border-bottom:3px solid #fff;
-}
 .nav li.active a {
 	color:#ff00ff ;
 	border-bottom:3px solid #fff;
 }
 .nav li.browse a {
 	color:#ff0000 ;
+	border-bottom:3px solid #fff;
+}
+.nav li a:hover{
+	color:#ff00ff;
 	border-bottom:3px solid #fff;
 }
 .nav li {
