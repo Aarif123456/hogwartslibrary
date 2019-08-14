@@ -212,7 +212,7 @@ ul.drdw li a:hover{
 }
 a.toggleMenu{
 	padding: 5px 23px;
-	color: #780D05;	
+	color: #fff;	
 	font-size: 19px;
 	font-weight: 400;
 	text-decoration:none;
@@ -224,7 +224,7 @@ a.toggleMenu{
 	padding: 10px 15px;
 }
 .nav {
-	background: #780D05;
+	background: #780d05;
 }
 .active {
     display: block;
