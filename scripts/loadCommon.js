@@ -43,7 +43,7 @@ function loadDynamicNavbar(){ //dynamically create navbar using page number
       	}
       	else{
       		//if we arn't logged in and are not on home category pages then go to sign in page
-      		if(!(pageCategory=="home" ||(pageCategory =="catalogue" && pageNum==0 )) {
+      		if(!(pageCategory=="home" ||(pageCategory =="catalogue" && pageNum==0 ))) {
       			window.location = "https://aarif123456.github.io/HogwartsLibrary/docs/catalogue/signin";
       		}
       	}
