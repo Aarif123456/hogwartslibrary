@@ -80,7 +80,7 @@ function createHomeNavbar(){
     	for(var j=0;j<pageList[i];j++){
     		defaultHomeMenu += '<li><a href="https://aarif123456.github.io/HogwartsLibrary/docs/home/charts/';
     		defaultHomeMenu += pageListLinks[i][j];
-    		defaultHomeMenu += '">' +pageListTitle[i][j] +'"</a></li>'; 
+    		defaultHomeMenu += '">' +pageListTitle[i][j] +'</a></li>'; 
     	}
     	defaultHomeMenu +=(pageList[i]>0)?('</ul></li>'):(pageTitle[i] +"</a></li>");
     	defaultHomeMenu +=''; //end option
