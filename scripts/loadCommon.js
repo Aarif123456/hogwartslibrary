@@ -81,13 +81,13 @@ function createHomeNavbar(){
     	defaultHomeMenu += (i==0)?'catalogue/':'home/'; //catalogue links to the catalogue pages
     	defaultHomeMenu += pageLinks[i] + '" class="';
     	//if page has sub menu make it root
-    	defaultHomeMenu +=(pageList[i]>0)?('root>'+pageTitle +'</a> <ul class="drdw">'):"nav-link>";
+    	defaultHomeMenu +=(pageList[i]>0)?('root>'+pageTitle[i] +'</a> <ul class="drdw">'):"nav-link>";
     	for(int j=0;j<pageList[i];j++){
     		defaultHomeMenu += '<li><a href="https://aarif123456.github.io/HogwartsLibrary/docs/home/charts/';
     		defaultHomeMenu += pageListLinks[i][j];
     		defaultHomeMenu += '>"' +pageListTitle[i][j] +'</a></li>'; 
     	}
-    	defaultHomeMenu +=(pageList[i]>0)?('</ul>'):(pageTitle +"</a>");
+    	defaultHomeMenu +=(pageList[i]>0)?('</ul>'):(pageTitle[i] +"</a>");
     	defaultHomeMenu +='</li>'; //end option
     }          
     //finish default user Menu          
