@@ -92,8 +92,10 @@ function createHomeNavbar(){
 
 
 function loadNavbarMenu(){
+	var menu = document.getElementsByClassName("toggleMenu");
+
 	if(document.getElementById("pageCategory").value.trim()=="home"){
-		document.getElementById("optionMenu").innerHTML = createHomeNavbar();
+		menu[0].innerHTML ="Menu" + createHomeNavbar();
 	}
 	else{ //if in catalogue use custom options
 		var xmlhttp = new XMLHttpRequest();
@@ -103,7 +105,7 @@ function loadNavbarMenu(){
 		//call function to load the home or custom
 		  if (this.readyState == 4 && this.status == 200) {
 		  	if(this.responseText.trim()!="Invalid User"){
-		  		document.getElementById("optionMenu").innerHTML = this.responseText;
+		  		menu[0].innerHTML = "Menu" + this.responseText;
 		  	}
 		  	else{
 		  		if(!(pageCategory=="home" ||(pageCategory =="catalogue" && pageNum==0 ))) {
