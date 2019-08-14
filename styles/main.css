@@ -2100,6 +2100,18 @@ a.toggleMenu {
 	right: 10px;
 	width: 26%;
 }
+.nav li.active a {
+	color:#ff00ff ;
+	border-bottom:none;
+}
+.nav li.browse a {
+	color:#ff0000 ;
+	border-bottom:none;
+}
+.nav li a:hover{
+	color:#ff00ff;
+	border-bottom:none;
+}
 .header {
 	padding: 0.5em 0em;
 }
