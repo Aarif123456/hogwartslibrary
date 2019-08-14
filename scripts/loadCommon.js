@@ -2,42 +2,11 @@
 //create dynamic html pages
 window.onload() = createCommonElements; //Dynamically create page on load
 function createCommonElements(){ //create common elements
-	 loadCommonHead();
 	 loadDynamicNavbar(); //get variable values
 	 loadCommonFooter();
 }
 
-function loadCommonHead(){
-	var commonHeadText = `<link href="https://aarif123456.github.io/HogwartsLibrary/styles/bootstrap.css" rel="stylesheet" type="text/css" media="all">
-        <link href="https://aarif123456.github.io/HogwartsLibrary/styles/main.css" rel="stylesheet" type="text/css" media="all" />
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="keywords" content="Hogwarts stuff" />
-        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-        <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
-        <!--<link href='https://fonts.googleapis.com/css?family=Alice' rel='stylesheet' type='text/css'>-->
-        <script src="https://aarif123456.github.io/HogwartsLibrary/scripts/jquery/jquery.min.js"></script>
-        <script src="https://aarif123456.github.io/HogwartsLibrary/scripts/jquery/jquery.easydropdown.js"></script>
-        <link rel="stylesheet" href="https://aarif123456.github.io/HogwartsLibrary/styles/swipebox.css">
-        <!------ Light Box ------>
-        <script src="https://aarif123456.github.io/HogwartsLibrary/scripts/jquery/jquery.swipebox.min.js"></script> 
-        <script type="text/javascript">
-            jQuery(function($) {
-            	$(".swipebox").swipebox();
-            });
-        </script>
-        <!------ Eng Light Box ------>
-        <script type="text/javascript" src="https://aarif123456.github.io/HogwartsLibrary/scripts/imported/easing.js"></script>
-        <script type="text/javascript">
-            jQuery(document).ready(function($) {
-            	$(".scroll").click(function(event){		
-            		event.preventDefault();
-            		$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
-            	});
-            });
-        </script>`;
-    document.getElementById('commonHead').innerHTML = commonHeadText;
-}
+
 function loadCommonFooter(){ //load common footer -this makes it easier to make changes 
 	footerText = `<div class="footer">
         <div class="container">
@@ -74,7 +43,7 @@ function loadDynamicNavbar(){ //dynamically create navbar using page number
       	}
       	else{
       		//if we arn't logged in and are not on home category pages then go to sign in page
-      		if(!(pageCategory=="home" ||(pageCategory =="catalogue" && pageNum=0 )) {
+      		if(!(pageCategory=="home" ||(pageCategory =="catalogue" && pageNum==0 )) {
       			window.location = "https://aarif123456.github.io/HogwartsLibrary/docs/catalogue/signin";
       		}
       	}
