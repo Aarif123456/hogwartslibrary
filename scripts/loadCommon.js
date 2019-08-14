@@ -5,7 +5,7 @@ window.onload = function(){ //create common elements
 	 loadNavbarMenu()
 	 loadCommonFooter();
 	 var headpart= document.getElementsByClassName("head-part");
-	 headpart.innerHTML=`<ul>
+	 headpart[0].innerHTML=`<ul>
                                 <li><a href="https://aarif123456.github.io/HogwartsLibrary/docs/home/register">Signup</a></li>
                                 <!-- add in link to register**-->
                                 <li><a href="https://aarif123456.github.io/HogwartsLibrary/docs/catalogue/signin">Login</a></li>
