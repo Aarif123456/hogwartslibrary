@@ -1,7 +1,6 @@
 //Abdullah Arif
 //create dynamic html pages
-window.onload = createCommonElements; //Dynamically create page on load
-function createCommonElements(){ //create common elements
+window.onload = function{ //create common elements
 	 loadDynamicNavbar(); //get variable values
 	 loadCommonFooter();
 }
