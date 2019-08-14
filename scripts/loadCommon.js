@@ -1,6 +1,6 @@
 //Abdullah Arif
 //create dynamic html pages
-window.onload = function{ //create common elements
+window.onload = function(){ //create common elements
 	 loadDynamicNavbar(); //get variable values
 	 loadCommonFooter();
 }
