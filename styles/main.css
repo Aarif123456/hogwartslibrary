@@ -1031,7 +1031,7 @@ a.use:hover{
 	color:#2aacc8;
 }
 .breadcrumb > .active {
-	color: #999;
+	color: #32BCAD;
 }
 .about-desc {
 	padding-bottom: 4%;
@@ -1170,7 +1170,7 @@ div.blog_top {
 }
 .badge > div > em {
 	font-size: 12px;
-	color: #999;
+	color: #32BCAD;
 	display: block;
 	font-style: italic;
 }
@@ -1195,7 +1195,7 @@ h4.blog_title a:hover,  .blog_info a:hover {
 .blog_info {
 	font-size: 1em;
 	line-height: 18px;
-	color: #999;
+	color: #32BCAD;
 	margin-bottom: 28px;
 }
 h5.m_head{
@@ -1208,7 +1208,7 @@ h5.m_head a{
 	text-decoration:none;
 }
 p.m_para {
-	color: #999;
+	color: #32BCAD;
 	font-size: 1.1em;
 	line-height: 1.8em;
 	margin-bottom: 20px;
@@ -1245,7 +1245,7 @@ ul.sidebar li {
 	vertical-align: bottom;
 }
 ul.sidebar li a{
-	color:#999;
+	color:#32BCAD;
 	font-size:1.1em;
 	line-height:1.8em;
 }
@@ -1295,7 +1295,7 @@ ul.links ul li a {
 	font-weight: 600;
 }
 p.single_text{
-	color: #999;
+	color: #32BCAD;
 	font-size: 1.1em;
 	margin-top: 2em;
 }
@@ -1344,7 +1344,7 @@ ul.links li a {
 	padding-left: 10px;
 }
 ul.links li a:hover {
-	color:#999;
+	color:#32BCAD;
 }
 .comment h2 {
 	color: #2aacc8;
@@ -1372,7 +1372,7 @@ ul.comment-list .desc h5 a {
 	font-size:1.5em;
 }
 .desc p {
-	color: #999;
+	color: #32BCAD;
 	font-size: 1.1em;
 	line-height: 1.8em;
 	margin-bottom: 10px;
@@ -1392,7 +1392,7 @@ ul.comment-list .desc h5 a {
 }
 .comments-area label {
 	display: block;
-	color: #999;
+	color: #32BCAD;
 	font-weight: normal;
 	font-size: 1.2em;
 }
@@ -1405,7 +1405,7 @@ ul.comment-list .desc h5 a {
 .comments-area input[type="text"] {
 	padding: 14px 20px;
 	width: 70%;
-	color: #999;
+	color: #32BCAD;
 	font-size: 13px;
 	border: none;
 	background: #B9DEEB;
@@ -1415,7 +1415,7 @@ ul.comment-list .desc h5 a {
 .comments-area textarea {
 	padding:14px 20px;
 	width: 80%;
-	color: #999;
+	color: #32BCAD;
 	font-size: 13px;
 	outline: none;
 	height: 150px;
@@ -1453,7 +1453,7 @@ ul.comment-list .desc h5 a {
 	margin: 0 0 1em;	
 }
 .contact_left p{
-	color:#999;
+	color:#32BCAD;
 	font-size:1.1em;
 	line-height:1.5em;
 	margin-bottom: 1em;
@@ -1471,7 +1471,7 @@ ul.comment-list .desc h5 a {
 	font-size: 1em;
 	margin: 10px 0px;
 	border: 1px solid #E1E1E4;
-	color: #999;
+	color: #32BCAD;
 	background: none;
 	float: left;
 	outline: none;
@@ -1550,7 +1550,7 @@ ul.comment-list .desc h5 a {
 .company_ad p{
 	font-size:1.1em;
 	line-height:1.8em;
-	color: #999;
+	color: #32BCAD;
 }
 /*-- error-page --*/
 .error-page{
@@ -1739,7 +1739,7 @@ a.b-home:hover{
 	margin: 10px 0;
 }
 .register-top-grid span, .register-bottom-grid span {
-	color:#999;
+	color:#32BCAD;
 	font-size: 0.85em;
 	padding-bottom: 0.2em;
 	display: block;
