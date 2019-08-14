@@ -92,10 +92,10 @@ function createHomeNavbar(){
 
 
 function loadNavbarMenu(){
-	var menu = document.getElementsByClassName("toggleMenu");
+	var menu = document.getElementsByClassName("nav");
 
 	if(document.getElementById("pageCategory").value.trim()=="home"){
-		menu[0].innerHTML ="Menu" + createHomeNavbar();
+		menu[0].innerHTML = createHomeNavbar();
 	}
 	else{ //if in catalogue use custom options
 		var xmlhttp = new XMLHttpRequest();
