@@ -65,7 +65,7 @@ function createHomeNavbar(){
 
     //default menu on home pages                 
     var defaultHomeMenu="";
-    for(var i=0;i<pageTitle.length-1;i++){ 
+    for(var i=0;i<pageTitle.length;i++){ 
     	defaultHomeMenu += '<li class="'; //each page is part of the list
     	defaultHomeMenu += (i==0)?"browse ":""; //browse catalogue is special 
     	if(pageNum == i){
