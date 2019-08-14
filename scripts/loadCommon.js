@@ -104,7 +104,7 @@ function createNavbarHeader(navbarText){
                         <div class="logo">
                             <a href="https://aarif123456.github.io/HogwartsLibrary/"><img src="https://aarif123456.github.io/HogwartsLibrary/resources/images/logo.png" class="img-responsive" alt="Hogwarts logo"></a>
                         </div>`;                  
-    if(navBarText.trim()==""){ //if not logged in use default 
+    if(navbarText.trim()==""){ //if not logged in use default 
     	navbarText = `
 			<div class="head-part">
 		        <ul>
