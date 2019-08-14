@@ -39,7 +39,7 @@ function loadNavbarHeader(){ //dynamically create navbar using page number
     //call function to load the home or custom
       if (this.readyState == 4 && this.status == 200) {
       	if(this.responseText.trim() != "not logged in"){
-      		document.getElementById("head-part").innerHTML=this.responseText;
+      		document.getElementsByClassName("head-part").innerHTML=this.responseText;
       	}
       	else{
       		//if we arn't logged in and are not on home category pages then go to sign in page
@@ -51,7 +51,13 @@ function loadNavbarHeader(){ //dynamically create navbar using page number
     }
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.withCredentials = true;
-    xmlhttp.send();     
+    xmlhttp.send();  
+    document.getElementsByClassName("head-part").innerHTML=`<ul>
+                                <li><a href="https://aarif123456.github.io/HogwartsLibrary/docs/home/register">Signup</a></li>
+                                <!-- add in link to register**-->
+                                <li><a href="https://aarif123456.github.io/HogwartsLibrary/docs/catalogue/signin">Login</a></li>
+                                <div class="clearfix"> </div>
+                            </ul>`   ; //just a test
                       
 }
 
