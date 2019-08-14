@@ -70,7 +70,7 @@ function createHomeNavbar(){
     var defaultHomeMenu =`<div class="userMenu">
                         <a class="toggleMenu" href="">Menu</a>
                         <ul class="nav">`;
-    for(int i=0;i<pageTitle.length ;i++){ 
+    for(var i=0;i<pageTitle.length ;i++){ 
     	defaultHomeMenu += '<li class="'; //each page is part of the list
     	defaultHomeMenu += (i==0)?"browse ":""; //browse catalogue is special 
     	if(pageNum == i){
@@ -82,7 +82,7 @@ function createHomeNavbar(){
     	defaultHomeMenu += pageLinks[i] + '" class="';
     	//if page has sub menu make it root
     	defaultHomeMenu +=(pageList[i]>0)?('root>'+pageTitle[i] +'</a> <ul class="drdw">'):"nav-link>";
-    	for(int j=0;j<pageList[i];j++){
+    	for(var j=0;j<pageList[i];j++){
     		defaultHomeMenu += '<li><a href="https://aarif123456.github.io/HogwartsLibrary/docs/home/charts/';
     		defaultHomeMenu += pageListLinks[i][j];
     		defaultHomeMenu += '>"' +pageListTitle[i][j] +'</a></li>'; 
