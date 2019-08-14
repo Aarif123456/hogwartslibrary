@@ -1,7 +1,7 @@
 //Abdullah Arif
 //create dynamic html pages
 window.onload = function(){ //create common elements
-	 loadDynamicNavbar(); //get variable values
+	 loadNavbarHeader(); //get variable values
 	 loadCommonFooter();
 }
 
@@ -28,7 +28,7 @@ function loadCommonFooter(){ //load common footer -this makes it easier to make 
     document.getElementById('commonFooter').innerHTML = footerText;    
 }
 
-function loadDynamicNavbar(){ //dynamically create navbar using page number 
+function loadNavbarHeader(){ //dynamically create navbar using page number 
     var xmlhttp = new XMLHttpRequest();
     var pageCategory =document.getElementById("pageCategory").value.trim();
     var pageNum =document.getElementById("pageNum").value.trim();
@@ -38,7 +38,7 @@ function loadDynamicNavbar(){ //dynamically create navbar using page number
     //call function to load the home or custom
       if (this.readyState == 4 && this.status == 200) {
       	if(this.responseText.trim() != "not logged in"){
-      		createNavbarHeader(this.responseText);
+      		document.getElementById("head-part").innerHTML=this.responseText;
       	}
       	else{
       		//if we arn't logged in and are not on home category pages then go to sign in page
@@ -50,10 +50,7 @@ function loadDynamicNavbar(){ //dynamically create navbar using page number
     }
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.withCredentials = true;
-    xmlhttp.send(); 
-    //the function will render a defaultNavbar with a lower priority
-    createNavbarHeader(""); 
-    
+    xmlhttp.send();     
                       
 }
 
@@ -62,13 +59,11 @@ function createHomeNavbar(){
 	pageTitle = ['Browse catalogue', 'House Fines', 'Reading List','About Us','Contact Us','Hours'] ;
 	pageList = [0,0,3,0,0]; //holds the number of page items
 	pageLinks = ['search','houseFine','readingList', 'about','contact','hours'];//link to the given page
-	pageListTitle = [[],[],['By book category','By student majors', 'All Time'],[],[]]; //sub page title
-	pageListLinks =[[],[],['','',''],[],[]];
+	pageListTitle = [[],[],['By book category','By student majors', 'All Time'],[],[],[]]; //sub page title
+	pageListLinks =[[],[],['h','h','h'],[],[],[]];
 
     //default menu on home pages                 
-    var defaultHomeMenu =`<div class="userMenu">
-                        <a class="toggleMenu" href="">Menu</a>
-                        <ul class="nav">`;
+
     for(var i=0;i<pageTitle.length ;i++){ 
     	defaultHomeMenu += '<li class="'; //each page is part of the list
     	defaultHomeMenu += (i==0)?"browse ":""; //browse catalogue is special 
@@ -90,39 +85,14 @@ function createHomeNavbar(){
     	defaultHomeMenu +='</li>'; //end option
     }          
     //finish default user Menu          
-    defaultHomeMenu += `</ul>                       
-                        <script type="text/javascript" src="https://aarif123456.github.io/HogwartsLibrary/scripts/imported/nav.js"></script>
-                    </div>
-                </div>`;
+    defaultHomeMenu += `</ul>`;
     return defaultHomeMenu ;
 }
 
-function createNavbarHeader(navbarText){
-	//all navbar start the same
-	var navbarStart = `<div class="container">
-                    <div class="head-bann">
-                        <div class="logo">
-                            <a href="https://aarif123456.github.io/HogwartsLibrary/"><img src="https://aarif123456.github.io/HogwartsLibrary/resources/images/logo.png" class="img-responsive" alt="Hogwarts logo"></a>
-                        </div>`;                  
-    if(navbarText.trim()==""){ //if not logged in use default 
-    	navbarText = `
-			<div class="head-part">
-		        <ul>
-		            <li><a href="https://aarif123456.github.io/HogwartsLibrary/docs/home/register">Signup</a></li>
-		            <li><a href="https://aarif123456.github.io/HogwartsLibrary/docs/catalogue/signin">Login</a></li>
-		            <div class="clearfix"> </div>
-		        </ul>
-		    </div>
-		    <div class="clearfix"> </div>
-		</div>`;
-	}
-    renderNavbar(navbarStart +navbarText);
 
-}
-
-function renderNavbar(navBarText){
+function renderNavbarMenu(){
 	if(document.getElementById("pageCategory").value.trim()=="home"){
-		document.getElementById("dynamicNavbar").innerHTML = navBarText+createHomeNavbar();
+		document.getElementById("optionMenu").innerHTML = createHomeNavbar();
 	}
 	else{ //if in catalogue use custom options
 		var xmlhttp = new XMLHttpRequest();
@@ -132,11 +102,13 @@ function renderNavbar(navBarText){
 		//call function to load the home or custom
 		  if (this.readyState == 4 && this.status == 200) {
 		  	if(this.responseText.trim()!="Invalid User"){
-		  		document.getElementById("dynamicNavbar").innerHTML = navBarText +this.responseText;
+		  		document.getElementById("optionMenu").innerHTML = this.responseText;
 		  	}
 		  	else{
-		  		window.location = "https://aarif123456.github.io/HogwartsLibrary/docs/catalogue/signin";
-		  	}
+		  		if(!(pageCategory=="home" ||(pageCategory =="catalogue" && pageNum==0 ))) {
+	      			window.location = "https://aarif123456.github.io/HogwartsLibrary/docs/catalogue/signin";
+	      		}
+	      	}
 		  }
 		}
 		xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
