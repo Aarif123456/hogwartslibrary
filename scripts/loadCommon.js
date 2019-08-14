@@ -2,6 +2,7 @@
 //create dynamic html pages
 window.onload = function(){ //create common elements
 	 loadNavbarHeader(); //get variable values
+	 loadNavbarMenu()
 	 loadCommonFooter();
 }
 
@@ -90,7 +91,7 @@ function createHomeNavbar(){
 }
 
 
-function renderNavbarMenu(){
+function loadNavbarMenu(){
 	if(document.getElementById("pageCategory").value.trim()=="home"){
 		document.getElementById("optionMenu").innerHTML = createHomeNavbar();
 	}
