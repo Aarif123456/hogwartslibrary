@@ -4,6 +4,12 @@ window.onload = function(){ //create common elements
 	 loadNavbarHeader(); //get variable values
 	 loadNavbarMenu()
 	 loadCommonFooter();
+	 document.getElementsByClassName("head-part").innerHTML=`<ul>
+                                <li><a href="https://aarif123456.github.io/HogwartsLibrary/docs/home/register">Signup</a></li>
+                                <!-- add in link to register**-->
+                                <li><a href="https://aarif123456.github.io/HogwartsLibrary/docs/catalogue/signin">Login</a></li>
+                                <div class="clearfix"> </div>
+                            </ul>`   ; //just a test
 }
 
 
@@ -52,12 +58,6 @@ function loadNavbarHeader(){ //dynamically create navbar using page number
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.withCredentials = true;
     xmlhttp.send();  
-    document.getElementsByClassName("head-part").innerHTML=`<ul>
-                                <li><a href="https://aarif123456.github.io/HogwartsLibrary/docs/home/register">Signup</a></li>
-                                <!-- add in link to register**-->
-                                <li><a href="https://aarif123456.github.io/HogwartsLibrary/docs/catalogue/signin">Login</a></li>
-                                <div class="clearfix"> </div>
-                            </ul>`   ; //just a test
                       
 }
 
