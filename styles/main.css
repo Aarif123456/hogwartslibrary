@@ -224,7 +224,7 @@ a.toggleMenu{
 	padding: 10px 15px;
 }
 .nav {
-	background: #EdEdEd;
+	background: #000000;
 }
 .active {
     display: block;
@@ -2105,7 +2105,7 @@ a.toggleMenu {
 	border-bottom: none;
 }
 .nav li.active a {
-	color: #3b0500;
+	color: #8e8e8e;
 	border-bottom: none;
 }
 .header {
