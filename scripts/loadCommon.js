@@ -4,13 +4,6 @@ window.onload = function(){ //create common elements
 	 loadNavbarHeader(); //get variable values
 	 loadNavbarMenu()
 	 loadCommonFooter();
-	 var headpart= document.getElementsByClassName("head-part");
-	 headpart[0].innerHTML=`<ul>
-                                <li><a href="https://aarif123456.github.io/HogwartsLibrary/docs/home/register">Signup</a></li>
-                                <!-- add in link to register**-->
-                                <li><a href="https://aarif123456.github.io/HogwartsLibrary/docs/catalogue/signin">Login</a></li>
-                                <div class="clearfix"> </div>
-                            </ul>`   ; //just a test
 }
 
 
@@ -41,12 +34,13 @@ function loadNavbarHeader(){ //dynamically create navbar using page number
     var pageCategory =document.getElementById("pageCategory").value.trim();
     var pageNum =document.getElementById("pageNum").value.trim();
     var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/loadNavbarHeader";
+    var headpart= document.getElementsByClassName("head-part");
     xmlhttp.open('POST', url, true);
     xmlhttp.onreadystatechange = function() {
     //call function to load the home or custom
       if (this.readyState == 4 && this.status == 200) {
       	if(this.responseText.trim() != "not logged in"){
-      		document.getElementsByClassName("head-part").innerHTML=this.responseText;
+      		headpart[0].innerHTML=this.responseText;
       	}
       	else{
       		//if we arn't logged in and are not on home category pages then go to sign in page
