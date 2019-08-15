@@ -39,8 +39,8 @@ function renewBook(bookBarcode){
 	xmlhttps.send("bookBarcode="+bookBarcode); 
 }
 
-window.onload =  function (){
-	document.getElementById("checkout_table").innerHTML = "You have no books checked out";	
+window.addEventListener('DOMContentLoaded', (event) => {
+    document.getElementById("checkout_table").innerHTML = "You have no books checked out";	
 	var xmlhttps = new XMLHttpRequest();
 	xmlhttps.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
@@ -56,7 +56,7 @@ window.onload =  function (){
 	xmlhttps.open("GET", url, true); //Set get request with given parameter
 	xmlhttps.withCredentials = true;
 	xmlhttps.send(); 
-};
+});
 
 
 
