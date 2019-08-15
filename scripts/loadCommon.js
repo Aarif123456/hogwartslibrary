@@ -129,7 +129,7 @@ function loadNavbarMenu(){
 		xmlhttp.onreadystatechange = function() {
 		//call function to load the home or custom
 		  if (this.readyState == 4 && this.status == 200) {
-		  	if(this.responseText.trim()!="Invalid User"){
+		  	if(this.responseText.trim()!="not logged in!"){
 		  		menu[0].innerHTML =  createNavbar(JSON.parse(this.responseText));
 		  	}
 		  	else{
