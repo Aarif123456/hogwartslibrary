@@ -45,7 +45,7 @@ function loadNavbarHeader(){ //dynamically create navbar using page number
       	}
       	else{
       		//if we arn't logged in and are not on home category pages then go to sign in page
-      		if(!(pageCategory=="home" )) {
+      		if(!(pageCategory=="home" ||(pageCategory =="catalogue" && pageNum==01 ))) {
       			window.location = "https://aarif123456.github.io/HogwartsLibrary/docs/catalogue/signin";
       		}
       	}
@@ -119,7 +119,7 @@ function createNavbar(pageJSON){
 function loadNavbarMenu(){
 	var menu = document.getElementsByClassName("nav");
 
-	if(document.getElementById("pageCategory").value.trim()=="home"){
+	if(document.getElementById("pageCategory").value.trim()=="home" || (pageCategory =="catalogue" && pageNum==0)) {
 		menu[0].innerHTML = createHomeNavbar();
 	}
 	else{ //if in catalogue use custom options
@@ -133,8 +133,11 @@ function loadNavbarMenu(){
 		  		menu[0].innerHTML =  createNavbar(JSON.parse(this.responseText));
 		  	}
 		  	else{
-		  		if(!(pageCategory=="home" )) {
+		  		if(!(pageCategory=="home" ||(pageCategory =="catalogue" && pageNum==0 ))) {
 	      			window.location = "https://aarif123456.github.io/HogwartsLibrary/docs/catalogue/signin";
+	      		}
+	      		else{
+	      			menu[0].innerHTML = createHomeNavbar();
 	      		}
 	      	}
 		  }
