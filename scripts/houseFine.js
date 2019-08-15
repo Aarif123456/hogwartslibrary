@@ -1,9 +1,5 @@
 //Abdullah Arif
 //Show cumulative fine for each house
-
-google.charts.load('current', {'packages':['corechart']});
-google.charts.setOnLoadCallback(drawChart);
-
 function drawChart(houseJSON) {
   var houseArray = [['Category', 'Number of Books in Category']];
   var tmpArr;
@@ -11,7 +7,7 @@ function drawChart(houseJSON) {
       tmpArr = [house.house,house.total];
       houseArray.push(tmpArr);
   }
-  var data = google.visualization.arrayToDataTable();
+  var data = google.visualization.arrayToDataTable(houseArray);
 
   var options = {
     title: 'Cumulative Fine of Hogwart houses'

@@ -40,7 +40,7 @@ function loadNavbarHeader(){ //dynamically create navbar using page number
     //call function to load the home or custom
       if (this.readyState == 4 && this.status == 200) {
       	if(this.responseText.trim() != "not logged in!"){
-      		console.log(this.responseText);
+      		//console.log(this.responseText);
       		headpart[0].innerHTML=this.responseText;
       	}
       	else{
@@ -142,7 +142,7 @@ function loadNavbarMenu(){
 		  	else{
 		  		if(pageCategory==="home" || (pageCategory ==="catalogue" && pageNum==='0' )) {
 	      			menu[0].innerHTML = createHomeNavbar();
-                    console.log("menu part" + pageCategory + pageNum);
+                    //console.log("menu part" + pageCategory + pageNum);
 	      		}
 	      		else{
                     window.location = "https://aarif123456.github.io/HogwartsLibrary/docs/catalogue/signin";
