@@ -91,6 +91,27 @@ function createHomeNavbar(){
     return defaultHomeMenu ;
 }
 
+function createNavbar(pageJSON){
+	var key =['0','1','2','3','4','5'];
+	for(var i=0;i<5;i++){ 
+		defaultHomeMenu += '<li class="'; //each page is part of the list
+    	defaultHomeMenu += (i==0)?"browse ":""; //first item is supposed to shine 
+    	if(pageNum == i){
+    		defaultHomeMenu += "active "; //if on the page make it shine 
+    	}
+    	// add the link to the page
+    	defaultHomeMenu += 'nav-item"><a href="https://aarif123456.github.io/HogwartsLibrary/docs/'; 
+    	defaultHomeMenu += pageJSON['pageLinks'][key[i]] + '" class="';
+    	//if page has sub menu make it root
+    	defaultHomeMenu +='nav-link">';
+    	defaultHomeMenu +=pageJSON['pageTitle'][key[i]] +"</a></li>";
+    	defaultHomeMenu +=''; //end option
+    }          
+    //finish default user Menu          
+    defaultHomeMenu += `</ul>`;
+    return defaultHomeMenu ;
+
+}
 
 function loadNavbarMenu(){
 	var menu = document.getElementsByClassName("nav");
@@ -106,7 +127,7 @@ function loadNavbarMenu(){
 		//call function to load the home or custom
 		  if (this.readyState == 4 && this.status == 200) {
 		  	if(this.responseText.trim()!="Invalid User"){
-		  		menu[0].innerHTML = "Menu" + this.responseText;
+		  		menu[0].innerHTML =  createNavbar(JSON.parse(this.responseText));
 		  	}
 		  	else{
 		  		if(!(pageCategory=="home" ||(pageCategory =="catalogue" && pageNum==0 ))) {
