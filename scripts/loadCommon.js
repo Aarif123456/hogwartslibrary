@@ -96,6 +96,7 @@ function createNavbar(pageJSON){
 	pageNum = document.getElementById("pageNum").value;
 	var key =['0','1','2','3','4','5'];
 	console.log(pageJSON);
+	var defaultHomeMenu ="";
 	for(var i=0;i<5;i++){ 
 		defaultHomeMenu += '<li class="'; //each page is part of the list
     	defaultHomeMenu += (i==0)?"browse ":""; //first item is supposed to shine 
