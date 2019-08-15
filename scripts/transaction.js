@@ -26,7 +26,9 @@ function checkOutBook() {
 }
 
 //load after page loads
-window.onload =loadPotentialBorrower();
+window.addEventListener('DOMContentLoaded', (event) => {
+    loadPotentialBorrower();
+});
 
 function loadPotentialBorrower(){
 	var xmlhttp = new XMLHttpRequest();
