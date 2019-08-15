@@ -46,15 +46,14 @@ function loadNavbarHeader(){ //dynamically create navbar using page number
       	else{
       		//if we arn't logged in and are not on home category pages then go to sign in page
       		if(pageCategory=="home" || (pageCategory =="catalogue" && pageNum==0 )) {
-                console.log("headpart" + pageCategory + pageNum);
-      			window.location = "https://aarif123456.github.io/HogwartsLibrary/docs/catalogue/signin";
-      		}
-            else{
-                headpart[0].innerHTML=this.responseText = `<ul>
+      			headpart[0].innerHTML=this.responseText = `<ul>
                             <li><a href="https://aarif123456.github.io/HogwartsLibrary/docs/home/register">Signup</a></li> 
                             <li><a href="https://aarif123456.github.io/HogwartsLibrary/docs/catalogue/signin">Login</a></li>
                                 <div class="clearfix"> </div>
                         </ul> `;
+      		}
+            else{
+                window.location = "https://aarif123456.github.io/HogwartsLibrary/docs/catalogue/signin";
             }
       	}
       }
