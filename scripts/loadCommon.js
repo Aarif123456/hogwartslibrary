@@ -48,13 +48,19 @@ function loadNavbarHeader(){ //dynamically create navbar using page number
       		if(!(pageCategory=="home" ||(pageCategory =="catalogue" && pageNum==0 ))) {
       			window.location = "https://aarif123456.github.io/HogwartsLibrary/docs/catalogue/signin";
       		}
+            else{
+                headpart[0].innerHTML=this.responseText = `<ul>
+                            <li><a href="https://aarif123456.github.io/HogwartsLibrary/docs/home/register">Signup</a></li> 
+                            <li><a href="https://aarif123456.github.io/HogwartsLibrary/docs/catalogue/signin">Login</a></li>
+                                <div class="clearfix"> </div>
+                        </ul> `;
+            }
       	}
       }
     }
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.withCredentials = true;
-    xmlhttp.send();  
-                      
+    xmlhttp.send();                        
 }
 
 function createHomeNavbar(){
@@ -118,8 +124,8 @@ function createNavbar(pageJSON){
 
 function loadNavbarMenu(){
 	var menu = document.getElementsByClassName("nav");
-
-	if(document.getElementById("pageCategory").value.trim()=="home" || (pageCategory =="catalogue" && pageNum==0)) {
+    var pageCategory = document.getElementById("pageCategory").value.trim();
+	if( pageCategory=="home") {
 		menu[0].innerHTML = createHomeNavbar();
 	}
 	else{ //if in catalogue use custom options
