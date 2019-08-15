@@ -57,7 +57,9 @@
            	 var options = {
 	        title: 'Cumulative Fine of Hogwart houses'
 	      	};
+	      	console.log(arr);
 	      	 var data = new google.visualization.DataTable(arr);
+	      	 console.log(data);
 	      	 var chart = new google.visualization.PieChart(document.getElementById('piechart'));
       		chart.draw(data, options);
       		},
