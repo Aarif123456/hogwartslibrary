@@ -139,11 +139,11 @@ function loadNavbarMenu(){
 		  		menu[0].innerHTML =  createNavbar(JSON.parse(this.responseText));
 		  	}
 		  	else{
-		  		if(pageCategory=="home" || (pageCategory =="catalogue" && pageNum==0)) {
-	      			window.location = "https://aarif123456.github.io/HogwartsLibrary/docs/catalogue/signin";
+		  		if(pageCategory=="home" || (pageCategory =="catalogue" && pageNum==0 )) {
+	      			menu[0].innerHTML = createHomeNavbar();
 	      		}
 	      		else{
-	      			menu[0].innerHTML = createHomeNavbar();
+                    window.location = "https://aarif123456.github.io/HogwartsLibrary/docs/catalogue/signin";
 	      		}
 	      	}
 		  }
