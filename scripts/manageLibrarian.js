@@ -26,9 +26,7 @@ function createLibrarian() {
 
 
 //load after page loads
-window.onload =loadPotentialLibrarian();
-
-function loadPotentialLibrarian(){
+window.addEventListener('DOMContentLoaded', (event) => {
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
@@ -43,7 +41,8 @@ function loadPotentialLibrarian(){
     xmlhttp.open('GET',"https://arif115.myweb.cs.uwindsor.ca/60334/projects/loadPotentialLibrarian.php", true);
     xmlhttp.withCredentials = true;
     xmlhttp.send();
-}
+};
+
 function showAvailableUser(userJSON){ //find potential librarian from json file
 	var potentialLibrarianText = "<select id='librarianSelection' form = 'addLibrarian'>";
 	for (user of userJSON){
