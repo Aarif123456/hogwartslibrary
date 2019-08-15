@@ -25,7 +25,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     //Ajax insert
     var xmlhttp = new XMLHttpRequest();
     var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/guestCharts";
-    var par = "chartType='houseFine'";
+    var par = "chartType=houseFine";
     xmlhttp.open('POST', url, true);
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
