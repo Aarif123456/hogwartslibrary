@@ -142,7 +142,7 @@ border: 0 !important;
 .nav li.active{
 }
 .nav > li > a.root{
-	background: url(https://aarif123456.github.io/HogwartsLibrary/resources/images/arrow.png) no-repeat 87px 20px;
+	
 	padding: 10px 30px 10px 10px;	
 }
 .nav > li {
