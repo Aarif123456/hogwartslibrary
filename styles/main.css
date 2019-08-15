@@ -141,10 +141,7 @@ border: 0 !important;
 }
 .nav li.active{
 }
-.nav > li > a.root{
-	
-	padding: 10px 30px 10px 10px;	
-}
+
 .nav > li {
     float:left;
 }
