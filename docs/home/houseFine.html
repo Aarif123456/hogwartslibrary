@@ -49,7 +49,7 @@
           dataType: "json",
           async: false
           }).responseText;
-      var data = new google.visualization.DataTable(jsonData);
+      var data = new google.visualization.DataTable(JSON.parse(jsonData));
       console.log(data);
       console.log(jsonData);
 
