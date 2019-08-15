@@ -40,6 +40,7 @@ function loadNavbarHeader(){ //dynamically create navbar using page number
     //call function to load the home or custom
       if (this.readyState == 4 && this.status == 200) {
       	if(this.responseText.trim() != "not logged in!"){
+      		console.log(this.responseText);
       		headpart[0].innerHTML=this.responseText;
       	}
       	else{
@@ -94,6 +95,7 @@ function createHomeNavbar(){
 function createNavbar(pageJSON){
 	pageNum = document.getElementById("pageNum").value;
 	var key =['0','1','2','3','4','5'];
+	console.log(pageJSON);
 	for(var i=0;i<5;i++){ 
 		defaultHomeMenu += '<li class="'; //each page is part of the list
     	defaultHomeMenu += (i==0)?"browse ":""; //first item is supposed to shine 
