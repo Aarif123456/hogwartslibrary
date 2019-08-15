@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Manage Librarian</title>
+        <title>Manage Enrollment</title>
         <link href="https://aarif123456.github.io/HogwartsLibrary/styles/bootstrap.css" rel="stylesheet" type="text/css" media="all">
         <link href="https://aarif123456.github.io/HogwartsLibrary/styles/main.css" rel="stylesheet" type="text/css" media="all" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,11 +30,11 @@
             	});
             });
         </script>
-        <input type="hidden" id="pageNum" value="0" >
+        <input type="hidden" id="pageNum" value="4" >
         <input type="hidden" id="pageCategory" value="headmaster" >
         <script src="https://aarif123456.github.io/HogwartsLibrary/scripts/loadCommon.js"></script> 
 	<link rel="stylesheet" type="text/css" href="https://aarif123456.github.io/HogwartsLibrary/styles/table.css">
-	<script src="https://aarif123456.github.io/HogwartsLibrary/scripts/manageLibrarian.js"> </script> 
+	
 </head> 
 <body>
 	<div class="banner">
@@ -45,12 +45,6 @@
             <a href="https://aarif123456.github.io/HogwartsLibrary/"><img src="https://aarif123456.github.io/HogwartsLibrary/resources/images/logo.png" class="img-responsive" alt="" /></a>
           </div>
           <div class="head-part">
-            <ul>
-                <li><a href="https://aarif123456.github.io/HogwartsLibrary/docs/home/register">Signup</a></li>
-                <!-- add in link to register**-->
-                <li><a href="https://aarif123456.github.io/HogwartsLibrary/docs/catalogue/signin">Login</a></li>
-                <div class="clearfix"> </div>
-            </ul>
           </div>  
           <div class="clearfix"> </div>
         </div>
@@ -74,15 +68,6 @@
       </div>
     </div>
   </div>
-  
-	<form name='addLibrarian' id='addLibrarian' onsubmit='return false;'>
-		Potential Librarian:<div id="librarianMenu"> 
-			<select id="librarianSelection" form = "addLibrarian">
-			</select><br></div>
-		<input type="checkbox" id ="activeBox" name="activeBox" checked="checked"> Active <br>
-		<button type="button" onclick="createLibrarian();">Create librarian!</button>
-	</form> 
-
 
 	</body>   
 	<div id="commonFooter"></div>
