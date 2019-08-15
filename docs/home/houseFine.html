@@ -50,6 +50,8 @@
           async: false
           }).responseText;
       var data = new google.visualization.DataTable(jsonData);
+      console.log(data);
+      console.log(jsonData);
 
       var options = {
         title: 'Cumulative Fine of Hogwart houses'
