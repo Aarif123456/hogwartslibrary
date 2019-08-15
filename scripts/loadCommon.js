@@ -51,6 +51,7 @@ function loadNavbarHeader(){ //dynamically create navbar using page number
                             <li><a href="https://aarif123456.github.io/HogwartsLibrary/docs/catalogue/signin">Login</a></li>
                                 <div class="clearfix"> </div>
                         </ul> `;
+                console.log(pageCategory +pageNum);
       		}
             else{
                 window.location = "https://aarif123456.github.io/HogwartsLibrary/docs/catalogue/signin";
