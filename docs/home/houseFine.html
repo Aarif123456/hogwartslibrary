@@ -47,7 +47,7 @@
       var jsonData = $.ajax({
           url: "https://arif115.myweb.cs.uwindsor.ca/60334/projects/guestCharts?chartType=houseFine",
           dataType: "json",
-          async: false
+          async: true
           }).responseText;
       var data = new google.visualization.DataTable(JSON.parse(jsonData));
       console.log(data);
