@@ -95,7 +95,6 @@ function createHomeNavbar(){
 function createNavbar(pageJSON){
 	pageNum = document.getElementById("pageNum").value;
 	var key =['0','1','2','3','4','5'];
-	console.log(pageJSON);
 	var defaultHomeMenu ="";
 	for(var i=0;i<5;i++){ 
 		defaultHomeMenu += '<li class="'; //each page is part of the list
@@ -105,10 +104,10 @@ function createNavbar(pageJSON){
     	}
     	// add the link to the page
     	defaultHomeMenu += 'nav-item"><a href="https://aarif123456.github.io/HogwartsLibrary/docs/'; 
-    	defaultHomeMenu += pageJSON['pageLinks'][key[i]] + '" class="';
+    	defaultHomeMenu += pageJSON.pageLinks[key[i]] + '" class="';
     	//if page has sub menu make it root
     	defaultHomeMenu +='nav-link">';
-    	defaultHomeMenu +=pageJSON['pageTitle'][key[i]] +"</a></li>";
+    	defaultHomeMenu +=pageJSON.pageTitle[key[i]] +"</a></li>";
     	defaultHomeMenu +=''; //end option
     }          
     //finish default user Menu          
