@@ -52,7 +52,7 @@
           	console.log(data);
             var arr = [['House', 'Fines']];    // Define an array and assign columns for the chart.
             $.each(data, function (index, value) {
-                arr.push([value.house,(int) value.total+1]);
+                arr.push([value.house,parseInt(value.total)+0.1]);
            	});
            	 var options = {
 	        title: 'Cumulative Fine of Hogwart houses'
