@@ -92,6 +92,7 @@ function createHomeNavbar(){
 }
 
 function createNavbar(pageJSON){
+	pageNum = document.getElementById("pageNum").value;
 	var key =['0','1','2','3','4','5'];
 	for(var i=0;i<5;i++){ 
 		defaultHomeMenu += '<li class="'; //each page is part of the list
