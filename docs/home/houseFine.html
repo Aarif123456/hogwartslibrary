@@ -48,7 +48,7 @@
           url: "https://arif115.myweb.cs.uwindsor.ca/60334/projects/guestCharts?chartType=houseFine",
           dataType: "json",
           type: "GET",
-          contentType: "application/json",
+         
           success: function (data) {
             var arr = [['House', 'Fines']];    // Define an array and assign columns for the chart.
             $.each(data, function (index, value) {
