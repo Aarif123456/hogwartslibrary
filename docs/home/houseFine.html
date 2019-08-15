@@ -44,23 +44,30 @@
 		google.charts.setOnLoadCallback(drawChart);
 		function drawChart() {
 
-      var jsonData = $.ajax({
+      $.ajax({
           url: "https://arif115.myweb.cs.uwindsor.ca/60334/projects/guestCharts?chartType=houseFine",
           dataType: "json",
-          async: false
-          }).responseText;
-      var data = new google.visualization.DataTable(jsonData);
-      console.log(data);
-      console.log(jsonData);
+          type: "GET",
+          contentType: "application/json; charset=utf-8",
+          success: function (data) {
+            var arr = [['House', 'Fines']];    // Define an array and assign columns for the chart.
+            $.each(data, function (index, value) {
+                arr.push([value.house, value.total]);
+           	});
+           	 var options = {
+	        title: 'Cumulative Fine of Hogwart houses'
+	      	};
+	      	 var data = new google.visualization.DataTable(arr);
+	      	 var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+      		chart.draw(data, options);
+      		},
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert('Got an Error');
+            }
+        });
+  	}
 
-      var options = {
-        title: 'Cumulative Fine of Hogwart houses'
-      };
-
-      var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-      chart.draw(data, options);
           
-	}
 	</script>
 	
 	<script type="text/javascript" src="https://aarif123456.github.io/HogwartsLibrary/scripts/houseFine.js"></script>

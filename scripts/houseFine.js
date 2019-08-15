@@ -1,6 +1,7 @@
 //Abdullah Arif
 //Show cumulative fine for each house
-function drawChart(houseJSON) {/*
+/*
+function drawChart(houseJSON) {
   var houseArray = [['Category', 'Number of Books in Category']];
   var tmpArr;
   for(var house in houseJSON  ){
@@ -9,11 +10,11 @@ function drawChart(houseJSON) {/*
   }
   var data = google.visualization.arrayToDataTable(houseArray);
 
-  */
+  
 }
 //load after page loads
 window.addEventListener('DOMContentLoaded', (event) => {
-    //Ajax insert
+    /*Ajax insert
     var xmlhttp = new XMLHttpRequest();
     var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/guestCharts";
     var par = "chartType=houseFine";
@@ -25,5 +26,5 @@ window.addEventListener('DOMContentLoaded', (event) => {
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.withCredentials = true; 
     xmlhttp.send(par); 
-});
+});*/
 
