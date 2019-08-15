@@ -62,6 +62,7 @@
 	      	 console.log(data);
 	      	 var chart = new google.visualization.PieChart(document.getElementById('piechart'));
       		chart.draw(data, options);
+      		console.log(chart);
       		},
             error: function (XMLHttpRequest, textStatus, errorThrown) {
                 alert('Got an Error');
