@@ -39,7 +39,7 @@ function loadNavbarHeader(){ //dynamically create navbar using page number
     xmlhttp.onreadystatechange = function() {
     //call function to load the home or custom
       if (this.readyState == 4 && this.status == 200) {
-      	if(this.responseText.trim() != "not logged in"){
+      	if(this.responseText.trim() != "not logged in!"){
       		headpart[0].innerHTML=this.responseText;
       	}
       	else{
