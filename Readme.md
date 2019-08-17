@@ -14,3 +14,14 @@ https://websitebeaver.com/prepared-statements-in-php-mysqli-to-prevent-sql-injec
 Token storage
 https://stackoverflow.com/questions/1354999/keep-me-logged-in-the-best-approach
 
+Images 
+-Hogwarts wall paper
+https://wallpapercave.com/hogwarts-castle-wallpaper
+-Hermoine picture
+https://survivingcollege.com/how-to-be-hermione-without-being-annoying/
+-Luna
+https://wallhere.com/en/wallpaper/523081
+-Snape
+https://unanimous.ai/harrypotter/
+Hogwarts logo
+
