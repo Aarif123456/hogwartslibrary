@@ -129,7 +129,7 @@ border: 0 !important;
 	border-bottom:3px solid #fff;
 }
 .nav li.browse a {
-	color:#ff0000 ;
+	color:#ff0000 ; 
 	border-bottom:3px solid #fff;
 }
 .nav li a:hover{
@@ -822,14 +822,14 @@ a.use:hover{
 .ourteam  h3{
 	font-size:3.5em;
 	font-family: 'harry_pregular', serif;
-	color:#4a4a4a;
+	color:#ffffff;
 	margin:0em 0em 2em;
 	text-align:left;
 }
 .contact h3{
 	font-size:3.5em;
 	font-family: 'harry_pregular', serif;
-	color:#4a4a4a;
+	color:#ffffff;
 	margin:1em 0em ;
 	text-align:left;
 }
