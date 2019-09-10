@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Manage Users</title>
+        <title>Register Users</title>
         <link href="https://aarif123456.github.io/HogwartsLibrary/styles/bootstrap.css" rel="stylesheet" type="text/css" media="all">
         <link href="https://aarif123456.github.io/HogwartsLibrary/styles/main.css" rel="stylesheet" type="text/css" media="all" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,10 +30,11 @@
             	});
             });
         </script>
-        <input type="hidden" id="pageNum" value="1" >
+        <input type="hidden" id="pageNum" value="0" >
         <input type="hidden" id="pageCategory" value="headmaster" >
         <script src="https://aarif123456.github.io/HogwartsLibrary/scripts/loadCommon.js"></script> 
 	<link rel="stylesheet" type="text/css" href="https://aarif123456.github.io/HogwartsLibrary/styles/table.css">
+  <script src="https://aarif123456.github.io/HogwartsLibrary/scripts/manageUser.js"> </script>
 	
 </head> 
 <body>
@@ -68,6 +69,24 @@
       </div>
     </div>
   </div>
+
+    <form id="addForm" >
+    First Name: <input type="text" id ="fname" name="fname" ><br>
+    Last Name: <input type="text" id ="lname" name="lname"><br>
+    User Type: <input type="radio" onchange="displayFields();" name="userType" id ="studentUserType" value="student" > Student   
+    <input type="radio" onchange="displayFields();"name="userType" id ="teacherUserType" value="professor"> Professor<br>
+    <div id="userCategoryText"></div> <input type="text" id ="userCategory" name="userCategory" style="display: none;">
+    <div id="houseText"></div><select name="house" id="house" form = "addForm" style="display: none;">
+      <option value = "Gryffindor">Gryffindor</option> 
+      <option value = "Hufflepuff">Hufflepuff</option>
+      <option value = "Ravenclaw">Ravenclaw</option>
+      <option value = "Slytherin">Slytherin</option>
+    </select><br><br>
+    <button type="button" onclick="createUser(false);">Create User!</button>
+    </form>
+    <p> <span id="ID"></span></p>
+
+    
 
 	</body>   
 	<div id="commonFooter"></div>

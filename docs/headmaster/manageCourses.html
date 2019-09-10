@@ -68,6 +68,17 @@
       </div>
     </div>
   </div>
+  <select name="modeSelection" id="modeSelection" form = "addForm" >
+        <option value = "add">Add Courses</option> 
+        <option value = "delete">Delete Courses</option>
+      </select><br><br>
+
+   <form id="deleteForm" onsubmit='return false;' >
+    <div id="courseMenu"> 
+      <select id="courseSelection" form = "deleteForm">
+      </select><br></div>
+    <button type="button" onclick="deleteCourse(false);">Delete course!</button>
+    </form>
 
 	</body>   
 	<div id="commonFooter"></div>
