@@ -74,15 +74,21 @@
       </div>
     </div>
   </div>
-  
-	<form name='addLibrarian' id='addLibrarian' onsubmit='return false;'>
-		Potential Librarian:<div id="librarianMenu"> 
-			<select id="librarianSelection" form = "addLibrarian">
-			</select><br></div>
-		<input type="checkbox" id ="activeBox" name="activeBox" checked="checked"> Active <br>
-		<button type="button" onclick="createLibrarian();">Create librarian!</button>
-	</form> 
 
+
+  <input type="radio" id='addMode' name='mode' value='add' checked  onchange="displayForm();">
+  <label for="addMode" >Add Librarian    </label>
+  <input type="radio" id='deleteMode' name='mode' value='delete' onchange="displayForm();">
+  <label for="deleteMode" >Delete Librarian</label>
+ 
+  <div id='librarianForm'> <!-- Form will change depending on mode-->
+	 <form name="addLibrarian" id="addLibrarian" onsubmit="return false;">
+       Potential Librarian:<div id="librarianMenu"> 
+         <select id="librarianSelection" form = "addLibrarian">
+         </select><br></div>
+       <button type="button" onclick="createLibrarian();">Create librarian!</button>
+    </form> 
+  </div>
 
 	</body>   
 	<div id="commonFooter"></div>

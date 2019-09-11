@@ -1,10 +1,9 @@
 //Abdullah Arif
 //Create more librarian
-function createLibrarian() {
+function modifyLibrarian(mode) {
   	var userID=document.getElementById("librarianSelection").value.trim();
   	//create parameter to send to server side
-  	var active =(document.getElementById("activeBox").checked)?"1":"0";
-  	var par = "userID="+userID+"&add=yes"+"&active="+active;
+  	var par = "userID="+userID+"&"+mode+"=yes";
 
   	//Ajax insert
     var xmlhttp = new XMLHttpRequest();
@@ -13,7 +12,7 @@ function createLibrarian() {
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
       	console.log( this.responseText);
-        loadPotentialLibrarian();
+        loaduserList();
       }
     }
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -21,40 +20,66 @@ function createLibrarian() {
     xmlhttp.send(par); 
 
     //clear fields
-    document.getElementById("addLibrarian").reset();
+    document.getElementById("updateLibrarian").reset();
 }
+function displayForm(){
+      //Set variables needed
+      var mode=document.getElementsByName("mode");
+      var librarianForm=document.getElementById("librarianForm");
+            
+      if(mode[0].checked){ //check if added
+        librarianForm.innerHTML = `<form name="updateLibrarian" id="updateLibrarian" onsubmit="return false;">
+    Potential Librarian:<div id="librarianMenu"> 
+      <select id="librarianSelection" form = "updateLibrarian">
+      </select><br></div>
+    <button type="button" onclick="modifyLibrarian('add');">Create librarian!</button>
+  </form> `;
+        loadLibrarianList("loadPotentialLibrarian"); //load the list of potential Librarian
+      }
+      if(mode[1].checked){ //if delete form
+         librarianForm.innerHTML =`<form name="updateLibrarian" id="updateLibrarian" onsubmit="return false;">
+    Librarians:<div id="librarianMenu"> 
+      <select id="librarianSelection" form = "updateLibrarian">
+      </select><br></div> 
+    <button type="button" onclick="modifyLibrarian('inactive');">Inactivate librarian</button>
+  </form>`;
+  loadLibrarianList("loadLibrarian");
+      }
+    }
 
-
+function loadLibrarianList(listName){
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          try {
+        getPotentialLibrarian(JSON.parse(this.responseText));
+      }
+      catch (e) {
+        console.log(this.responseText);
+      }
+        }
+      }
+      xmlhttp.open('POST',"https://arif115.myweb.cs.uwindsor.ca/60334/projects/loadList", true);
+      xmlhttp.withCredentials = true;
+      xmlhttp.send("listType="+listName );
+}
 //load after page loads
 window.addEventListener('DOMContentLoaded', (event) => {
-	var xmlhttp = new XMLHttpRequest();
-	xmlhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-      	try {
-			showAvailableUser(JSON.parse(this.responseText));
-		}
-		catch (e) {
-			console.log(this.responseText);
-		}
-      }
-  	}
-    xmlhttp.open('GET',"https://arif115.myweb.cs.uwindsor.ca/60334/projects/loadPotentialLibrarian.php", true);
-    xmlhttp.withCredentials = true;
-    xmlhttp.send();
+  loadLibrarianList("loadPotentialLibrarian");
 };
 
-function showAvailableUser(userJSON){ //find potential librarian from json file
-	var potentialLibrarianText = "<select id='librarianSelection' form = 'addLibrarian'>";
+function getUserList(userJSON){ //find potential librarian from json file
+	var userListText = "<select id='librarianSelection' form = 'updateLibrarian'>";
 	for (user of userJSON){
 		//set user's ID as value
-		potentialLibrarianText +="<option value = '" + user['memberID'] + "'>" ;
+		userListText +="<option value = '" + user['memberID'] + "'>" ;
 		//display Id and Name in selection
-		potentialLibrarianText +=  user['memberID']+":     " + user["fname"] +" " +user["lname"];
-		potentialLibrarianText += "</option> ";
+		userListText +=  user['memberID']+":     " + user["fname"] +" " +user["lname"];
+		userListText += "</option> ";
 	}
 	
-	potentialLibrarianText += "</select> <br> </div>";
-	document.getElementById("librarianMenu").innerHTML = potentialLibrarianText;
+	userListText += "</select> <br> </div>";
+	document.getElementById("librarianMenu").innerHTML = userListText;
 
-	
 }
+
