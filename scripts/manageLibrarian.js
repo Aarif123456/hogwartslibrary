@@ -66,7 +66,7 @@ function loadLibrarianList(listName){
 //load after page loads
 window.addEventListener('DOMContentLoaded', (event) => {
   loadLibrarianList("loadPotentialLibrarian");
-};
+});
 
 function getUserList(userJSON){ //find potential librarian from json file
 	var userListText = "<select id='librarianSelection' form = 'updateLibrarian'>";
