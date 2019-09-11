@@ -52,7 +52,7 @@ function loadLibrarianList(listName){
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
           try {
-        getPotentialLibrarian(JSON.parse(this.responseText));
+        getUserList(JSON.parse(this.responseText));
       }
       catch (e) {
         console.log(this.responseText);
