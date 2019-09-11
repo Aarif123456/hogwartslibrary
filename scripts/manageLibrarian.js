@@ -70,7 +70,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 function getUserList(userJSON){ //find potential librarian from json file
-	var userListText = "<ul class='drdw'> id='librarianSelection' form = 'updateLibrarian'>";
+	var userListText = "<ul class='drdw' id='librarianSelection' form = 'updateLibrarian'>";
 	for (user of userJSON){
 		//set user's ID as value
 		userListText +="<li value = '" + user['memberID'] + "'>" ;
