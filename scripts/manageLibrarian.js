@@ -47,7 +47,7 @@ function displayForm(){
       }
     }
 
-function loadLibrarianList(listName){
+function loadLibrarianList(listName){ //use Ajax to get list of librarian or potential librarian
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -61,7 +61,8 @@ function loadLibrarianList(listName){
       }
       xmlhttp.open('POST',"https://arif115.myweb.cs.uwindsor.ca/60334/projects/loadList", true);
       xmlhttp.withCredentials = true;
-      xmlhttp.send("listType="+listName );
+      xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xmlhttp.send("listType="+listName);
 }
 //load after page loads
 window.addEventListener('DOMContentLoaded', (event) => {
