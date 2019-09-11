@@ -70,16 +70,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 function getUserList(userJSON){ //find potential librarian from json file
-	var userListText = "<ul class='drdw' id='librarianSelection' form = 'updateLibrarian'>";
+	var userListText = "<select id='librarianSelection' form = 'updateLibrarian'>";
 	for (user of userJSON){
 		//set user's ID as value
-		userListText +="<li value = '" + user['memberID'] + "'>" ;
+		userListText +="<option value = '" + user['memberID'] + "'>" ;
 		//display Id and Name in selection
 		userListText +=  user['memberID']+":     " + user["fname"] +" " +user["lname"];
-		userListText += "</li> ";
+		userListText += "</option> ";
 	}
 	
-	userListText += "</ul> <br> </div>";
+	userListText += "</select> <br> </div>";
 	document.getElementById("librarianMenu").innerHTML = userListText;
 
 }
