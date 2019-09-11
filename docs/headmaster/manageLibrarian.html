@@ -82,12 +82,12 @@
   <label for="deleteMode" >Delete Librarian</label>
  
   <div id='librarianForm'> <!-- Form will change depending on mode-->
-	 <form name="addLibrarian" id="addLibrarian" onsubmit="return false;">
+	 <form name="updateLibrarian" id="updateLibrarian" onsubmit="return false;">
        Potential Librarian:<div id="librarianMenu"> 
-         <select id="librarianSelection" form = "addLibrarian">
+         <select id="librarianSelection" form = "updateLibrarian">
          </select><br></div>
-       <button type="button" onclick="createLibrarian();">Create librarian!</button>
-    </form> 
+       <button type="button" onclick="modifyLibrarian('add');">Create librarian!</button>
+     </form> 
   </div>
 
 	</body>   
