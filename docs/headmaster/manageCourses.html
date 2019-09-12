@@ -33,7 +33,7 @@
         <input type="hidden" id="pageNum" value="3" >
         <input type="hidden" id="pageCategory" value="headmaster" >
         <script src="https://aarif123456.github.io/HogwartsLibrary/scripts/loadCommon.js"></script> 
-	<link rel="stylesheet" type="text/css" href="https://aarif123456.github.io/HogwartsLibrary/styles/table.css">
+        <script src="https://aarif123456.github.io/HogwartsLibrary/scripts/manageCourses.js"> </script>
 	
 </head> 
 <body>
@@ -68,17 +68,14 @@
       </div>
     </div>
   </div>
-  <select name="modeSelection" id="modeSelection" form = "addForm" >
-        <option value = "add">Add Courses</option> 
-        <option value = "delete">Delete Courses</option>
-      </select><br><br>
+  <input type="radio" id='addMode' name='mode' value='add' checked  onchange="displayForm();">
+  <label for="addMode" >Add Courses    </label>
+  <input type="radio" id='deleteMode' name='mode' value='delete' onchange="displayForm();">
+  <label for="deleteMode" >Delete Courses</label>
 
-   <form id="deleteForm" onsubmit='return false;' >
-    <div id="courseMenu"> 
-      <select id="courseSelection" form = "deleteForm">
-      </select><br></div>
-    <button type="button" onclick="deleteCourse(false);">Delete course!</button>
-    </form>
+   <div id='coursesForm'> <!-- Form will change depending on mode-->
+        
+  </div>
 
 	</body>   
 	<div id="commonFooter"></div>

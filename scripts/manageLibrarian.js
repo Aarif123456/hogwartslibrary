@@ -45,7 +45,7 @@ function displayForm(){
   </form>`;
   loadLibrarianList("loadLibrarian");
       }
-    }
+  }
 
 function loadLibrarianList(listName){ //use Ajax to get list of librarian or potential librarian
     var xmlhttp = new XMLHttpRequest();
