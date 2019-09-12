@@ -85,7 +85,7 @@ function deleteEnrollment(){
          <br>
            <button type="button" onclick="deleteEnrollment();">Delete Enrollment</button>
          </form>`;
-         loadList(getEnrollmentList,"load");//load list of current enrollment
+         loadList(getEnrollmentList,"loadEnrollment");//load list of current enrollment
         
     }
 }
