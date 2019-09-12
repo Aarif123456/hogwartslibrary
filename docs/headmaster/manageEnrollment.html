@@ -33,7 +33,7 @@
         <input type="hidden" id="pageNum" value="4" >
         <input type="hidden" id="pageCategory" value="headmaster" >
         <script src="https://aarif123456.github.io/HogwartsLibrary/scripts/loadCommon.js"></script> 
-	<link rel="stylesheet" type="text/css" href="https://aarif123456.github.io/HogwartsLibrary/styles/table.css">
+        <script src="https://aarif123456.github.io/HogwartsLibrary/scripts/manageEnrollment.js"> </script>
 	
 </head> 
 <body>
@@ -68,7 +68,14 @@
       </div>
     </div>
   </div>
+  <input type="radio" id='addMode' name='mode' value='add' checked  onchange="displayForm();">
+  <label for="addMode" >Enroll student    </label>
+  <input type="radio" id='deleteMode' name='mode' value='delete' onchange="displayForm();">
+  <label for="deleteMode" >Delete enrollment</label>
 
+   <div id='enrollmentForm'> <!-- Form will change depending on mode-->
+        
+  </div>
 	</body>   
 	<div id="commonFooter"></div>
 </html> 
