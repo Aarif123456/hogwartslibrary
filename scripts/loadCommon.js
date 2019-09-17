@@ -8,7 +8,8 @@ window.onload = function(){ //create common elements
 
 
 function loadCommonFooter(){ //load common footer -this makes it easier to make changes 
-	footerText = `<div class="footer">
+	var d = new Date();
+    footerText = `<div class="footer">
         <div class="container">
             <div class="footer-top">
                 <div class="subsc">
@@ -22,7 +23,10 @@ function loadCommonFooter(){ //load common footer -this makes it easier to make 
                             <div class="clearfix"> </div>
                         </ul>
                     </div>
-                    <p>Copyrights © 2015 4useri All rights reserved | Template by <a href="https://w3layouts.com/">W3layouts</a></p>
+                    <p>Copyrights ©`;
+    
+    footerText += d.getFullYear();
+    footerText +=` 4useri All rights reserved | Template by <a href="https://w3layouts.com/">W3layouts</a></p>
                 </div>
             </div>
         </div>`;
