@@ -32,7 +32,8 @@
         </script>
         <input type="hidden" id="pageNum" value="1" >
         <input type="hidden" id="pageCategory" value="librarian" >
-        <script src="https://aarif123456.github.io/HogwartsLibrary/scripts/loadCommon.js"></script> 		
+        <script src="https://aarif123456.github.io/HogwartsLibrary/scripts/loadCommon.js"></script>
+        <script src="https://aarif123456.github.io/HogwartsLibrary/scripts/return.js"> </script> 		
 	</head> 
 
 	<body> 	 
@@ -67,6 +68,13 @@
 				</div>
 			</div>
 		</div>
+		<form  name='return' id='return' onsubmit='return false;' >
+		Enter book barcode: <input type="text"  id ="bookBarcode" name="bookBarcode"><br>
+		
+		
+		<button type="button" onclick="returnBook();">Return book!</button>
+		</form>
+		<p> <span id="hint"></span></p>
 
 		<div id="commonFooter"></div>
 	</body>   
