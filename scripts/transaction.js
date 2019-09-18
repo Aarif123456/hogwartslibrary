@@ -9,7 +9,7 @@ function checkOutBook() {
 
   	//Ajax insert
     var xmlhttp = new XMLHttpRequest();
-    var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/checkOut.php";
+    var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/checkOut";
     xmlhttp.open('POST', url, true);
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
@@ -42,10 +42,10 @@ function loadPotentialBorrower(){
 		}
       }
   	}
-    xmlhttp.open('GET',"https://arif115.myweb.cs.uwindsor.ca/60334/projects/loadPotentialBorrower.php", true);
-    //**load potential borrower will read session and check which user to not display
+    xmlhttp.open('POST',"https://arif115.myweb.cs.uwindsor.ca/60334/projects/loadList", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.withCredentials = true;
-    xmlhttp.send();
+    xmlhttp.send("listType=loadPotentialBorrower");
 }
 function showAvailableUser(userJSON){ //find potential librarian from json file
 	var potentialUserText = "<select id='borrowedBy' form = 'checkOut'>";
