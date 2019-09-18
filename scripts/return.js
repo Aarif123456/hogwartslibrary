@@ -5,7 +5,7 @@
 //function suggestBarcode(barcode){}
 
 function returnBook() {
-    var bookBarcode =document.getElementById("bookBarcode").value;
+    var bookBarcode =document.getElementById("bookBarcode").value.trim();
     var par ="bookBarcode="+bookBarcode;
 
     //Ajax insert

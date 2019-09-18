@@ -49,10 +49,11 @@
           dataType: "json",
           type: "GET",
           success: function (data) {
-          	console.log(data);
+          	//console.log(data);
             var arr = [['House', 'Fines']];    // Define an array and assign columns for the chart.
             $.each(data, function (index, value) {
-                arr.push([value.house,parseInt(value.total)]);
+                arr.push([value.house,parseFloat(value.total)]);
+                console.log(value.total);
            	});
            	 var options = {
 	        title: 'Cumulative Fine of Hogwart houses'
@@ -73,8 +74,7 @@
           
 	</script>
 	
-	<script type="text/javascript" src="https://aarif123456.github.io/HogwartsLibrary/scripts/houseFine.js"></script>
-
+	
 </head>
 <body>
 <!-- header -->

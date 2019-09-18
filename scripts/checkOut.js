@@ -4,7 +4,7 @@
 function checkOutBook() {
   	var borrowedBy=document.getElementById("borrowedBy").value.trim();
   	//create parameter to send to server side
-  	var bookBarcode =document.getElementById("bookBarcode").value;
+  	var bookBarcode =document.getElementById("bookBarcode").value.trim();
   	var par = "borrowedBy="+borrowedBy+"&bookBarcode="+bookBarcode;
 
   	//Ajax insert
