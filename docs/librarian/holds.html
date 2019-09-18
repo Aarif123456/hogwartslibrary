@@ -32,7 +32,9 @@
         </script>
         <input type="hidden" id="pageNum" value="2" >
         <input type="hidden" id="pageCategory" value="librarian" >
-        <script src="https://aarif123456.github.io/HogwartsLibrary/scripts/loadCommon.js"></script> 		
+        <script src="https://aarif123456.github.io/HogwartsLibrary/scripts/loadCommon.js"></script>
+        <script src="https://aarif123456.github.io/HogwartsLibrary/scripts/checkOut.js"> </script> 
+        		
 	</head> 
 
 	<body> 	 
@@ -67,7 +69,17 @@
 				</div>
 			</div>
 		</div>
-
+		<form  name='checkOut' id='checkOut' onsubmit='return false;' >
+		<label for="bookISBN" >Enter book ISBN:  </label>
+		<input type="text"  id ="bookISBN" name="bookISBN"><br>
+		
+		User:<div id="userList"> 
+			<select id="borrowedBy" form = "checkOut">
+			</select><br></div>
+		<button type="button" onclick="holdBook();">checkout!</button>
+		</form>
+		<p> <span id="hint"></span></p>
+		
 		<div id="commonFooter"></div>
 	</body>   
 </html> 

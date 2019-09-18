@@ -26,6 +26,30 @@ function checkOutBook() {
     document.getElementById("checkOut").reset();
 }
 
+function holdBook(){
+    var userID=document.getElementById("borrowedBy").value.trim();
+    //create parameter to send to server side
+    var bookISBN =document.getElementById("bookISBN").value.trim();
+    var par = "userID="+userID+"&bookISBN="+bookISBN;
+
+    //Ajax insert
+    var xmlhttp = new XMLHttpRequest();
+    var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/holdBooks";
+    xmlhttp.open('POST', url, true);
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        console.log( this.responseText);
+        document.getElementById("hint").innerHTML = this.responseText;
+        //loadPotentialBorrower();
+      }
+    }
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.withCredentials = true;
+    
+    xmlhttp.send(par); 
+    //clear fields
+    document.getElementById("checkOut").reset();
+}
 //load after page loads
 window.addEventListener('DOMContentLoaded', (event) => {
     loadPotentialBorrower();
