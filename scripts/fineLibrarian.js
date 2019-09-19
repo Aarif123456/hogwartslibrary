@@ -58,7 +58,7 @@ function showAvailableUser(userJSON){ //show all users with fines from json file
 		//set user's ID as value
 		potentialUserText +="<option value = '" + user['memberID'] + "'>" ;
 		//display Id and Name in selection
-		potentialUserText +=  user['memberID']+":   " + user["fname"] +" " +user["lname"] +" - " user['fines'];
+		potentialUserText +=  user['memberID']+":   " + user["fname"] +" " +user["lname"] +" - " +user['fines'];
 		potentialUserText += "</option> ";
 	}
 	
