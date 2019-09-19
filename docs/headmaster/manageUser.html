@@ -70,10 +70,17 @@
   </div>
 
     <form id="addForm" >
-    First Name: <input type="text" id ="fname" name="fname" ><br>
-    Last Name: <input type="text" id ="lname" name="lname"><br>
-    User Type: <input type="radio" onchange="displayFields();" name="userType" id ="studentUserType" value="student" > Student   
-    <input type="radio" onchange="displayFields();"name="userType" id ="teacherUserType" value="professor"> Professor<br>
+    <label for="fname" > First Name: </label>
+    <input type="text" id ="fname" name="fname" ><br>
+    <label for="lname" >Last Name:  </label>
+    <input type="text" id ="lname" name="lname"><br>
+
+    <label for="studentUserType" >User Type:   </label>
+    <input type="radio" onchange="displayFields();" name="userType" id ="studentUserType" value="student" > 
+    <label for="studentUserType" >Student   </label>
+    <input type="radio" onchange="displayFields();"name="userType" id ="teacherUserType" value="professor">
+    <label for="teacherUserType" >Professor  </label>
+    <br>
     <div id="userCategoryText"></div> <input type="text" id ="userCategory" name="userCategory" style="display: none;">
     <div id="houseText"></div><select name="house" id="house" form = "addForm" style="display: none;">
       <option value = "Gryffindor">Gryffindor</option> 

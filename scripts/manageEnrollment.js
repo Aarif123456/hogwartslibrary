@@ -59,14 +59,13 @@ function deleteEnrollment(){
     if(mode[0].checked){ //check if added
       enrollmentForm.innerHTML = `
       <form name="addForm" id="addForm" onsubmit="return false;">
+      <label for="courseSelection" >Courses: </label>
         <div id="courseMenu"> 
-          <label for="courseSelection" >Courses:   </label>
            <select id="courseSelection" form = "addForm">
            </select></div>
          <br>
-        
+        <label for="studentSelection" >Students:   </label>
          <div id="studentMenu"> 
-          <label for="studentSelection" >Students:   </label>
            <select id="studentSelection" form = "addForm">
            </select></div>
 
@@ -78,8 +77,8 @@ function deleteEnrollment(){
     if(mode[1].checked){ //if delete form
        enrollmentForm.innerHTML =`
       <form name="deleteForm" id="deleteForm" onsubmit="return false;">
+       <label for="enrollmentSelection" >Enrollment: </label>
         <div id="enrollmentMenu"> 
-          <label for="enrollmentSelection" >Enrollment:   </label>
            <select id="enrollmentSelection" form = "deleteForm">
            </select></div>
          <br>
@@ -90,8 +89,7 @@ function deleteEnrollment(){
     }
 }
 function getStudentList(studentJSON){ //display list of students in drop-down box
-  var studentListText = `<label for="studentSelection" >students:   </label>
-       <select id="studentSelection" form = "addForm"> `;
+  var studentListText = ` <select id="studentSelection" form = "addForm"> `;
   
   for (student of studentJSON){
     //set student's ID as value
@@ -107,8 +105,7 @@ function getStudentList(studentJSON){ //display list of students in drop-down bo
 }
 
 function getCourseList(courseJSON){ //display list of courses in drop-down box
-  var courseListText = `<label for="courseSelection" >Courses:   </label>
-  <select id='courseSelection' form = 'addForm'>`;
+  var courseListText = `<select id='courseSelection' form = 'addForm'>`;
   for (course of courseJSON){
     //set course's ID as value
     courseListText +="<option value = '" + course['courseID'] + "'>" ;
@@ -123,8 +120,7 @@ function getCourseList(courseJSON){ //display list of courses in drop-down box
 }
 
 function getEnrollmentList(enrollmentJSON){ //display list of enrollments in drop-down box
-  var enrollmentListText = `<label for="enrollmentSelection" >Courses:   </label>
-  <select id='enrollmentSelection' form = 'deleteForm'>`;
+  var enrollmentListText = ` <select id='enrollmentSelection' form = 'deleteForm'>`;
   for (enrollment of enrollmentJSON){
     //set enrollment's ID as value
     enrollmentListText +="<option value = '" + enrollment['enrollmentID'] + "'>" ;

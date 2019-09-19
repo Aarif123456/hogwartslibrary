@@ -28,17 +28,21 @@ function displayForm(){
       var librarianForm=document.getElementById("librarianForm");
             
       if(mode[0].checked){ //check if added
-        librarianForm.innerHTML = `<form name="updateLibrarian" id="updateLibrarian" onsubmit="return false;">
-    Potential Librarian:<div id="librarianMenu"> 
-      <select id="librarianSelection" form = "updateLibrarian">
-      </select><br></div>
-    <button type="button" onclick="modifyLibrarian('add');">Create librarian!</button>
-  </form> `;
+        librarianForm.innerHTML = 
+        `<form name="updateLibrarian" id="updateLibrarian" onsubmit="return false;">
+          <label for="librarianSelection" >Potential Librarian:</label>
+          <div id="librarianMenu"> 
+        <select id="librarianSelection" form = "updateLibrarian">
+        </select><br></div>
+        <button type="button" onclick="modifyLibrarian('add');">Create librarian!</button>
+      </form> `;
         loadLibrarianList("loadPotentialLibrarian"); //load the list of potential Librarian
       }
       if(mode[1].checked){ //if delete form
-         librarianForm.innerHTML =`<form name="updateLibrarian" id="updateLibrarian" onsubmit="return false;">
-    Librarians:<div id="librarianMenu"> 
+         librarianForm.innerHTML =
+         `<form name="updateLibrarian" id="updateLibrarian" onsubmit="return false;">
+    <label for="librarianSelection" >Librarian:</label>
+    <div id="librarianMenu"> 
       <select id="librarianSelection" form = "updateLibrarian">
       </select><br></div> 
     <button type="button" onclick="modifyLibrarian('inactive');">Inactivate librarian</button>

@@ -48,13 +48,14 @@ function displayFields(){
  var userType= document.getElementsByName("userType");
  userCategory.style.display = "inline";
  if(userType[0].checked){ //run if student selected 
-   userCategoryText.innerHTML = "Major<br>";
+
+   userCategoryText.innerHTML = "<label for='userCategoryText' >Major </label><br>";
    house.style.display = "inline";
-   houseText.innerHTML="House<br>";
+   houseText.innerHTML="<label for='house' >House </label><br>";
    return userType[0].value; //return student
  }
  if(userType[1].checked){ //code if professor is selected
-   userCategoryText.innerHTML="Department<br>";
+   userCategoryText.innerHTML="<label for='userCategoryText' >Department </label><br>";
    house.style.display = "none";
    houseText.innerHTML="";
    return userType[1].value; //return professor

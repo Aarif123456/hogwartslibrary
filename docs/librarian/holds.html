@@ -72,8 +72,8 @@
 		<form  name='checkOut' id='checkOut' onsubmit='return false;' >
 		<label for="bookISBN" >Enter book ISBN:  </label>
 		<input type="text"  id ="bookISBN" name="bookISBN"><br>
-		
-		User:<div id="userList"> 
+		<label for="borrowedBy" >User:   </label>
+		<div id="userList"> 
 			<select id="borrowedBy" form = "checkOut">
 			</select><br></div>
 		<button type="button" onclick="holdBook();">Hold book!</button>

@@ -60,25 +60,23 @@ function deleteCourses(){
       courseForm.innerHTML = `<form name="addCoursesForm" id="addCoursesForm" onsubmit="return false;">
   <label for="courseText" >Course Name:   </label>
   <input type='text' id='courseText' name='courseText'>
-  
   <br>
   <label for="termOffered" >Term Offered:   </label>
    <input type='text' id='termOffered' name='termOffered'>
    <br>
-  
-     <div id="professorMenu"> 
-      <label for="professorSelection" >Professors:   </label>
+    <label for="professorSelection" >Professors:   </label>
+    <div id="professorMenu"> 
        <select id="professorSelection" form = "addCoursesForm">
-       </select></div>
-
+       </select>
+    </div>
      <button type="button" onclick="addCourses();">Create course!</button>
    </form>`;
       loadList( getProfessorList,"loadProfessor"); //load list of professor  
     }
     if(mode[1].checked){ //if delete form
        courseForm.innerHTML =`<form name="deleteCoursesForm" id="deleteCoursesForm" onsubmit="return false;">
+       <label for="courseSelection" >Courses: </label>
          <div id="courseMenu"> 
-          <label for="courseSelection" >Courses:   </label>
            <select id="courseSelection" form = "deleteCoursesForm">
            </select></div>
         <button type="button" onclick="deleteCourses();">Delete course</button>
@@ -87,8 +85,7 @@ function deleteCourses(){
     }
 }
 function getProfessorList(professorJSON){ //display list of professors in drop-down box
-  var professorListText = `<label for="professorSelection" >Professors:   </label>
-       <select id="professorSelection" form = "addCoursesForm"> `;
+  var professorListText = `<select id="professorSelection" form = "addCoursesForm"> `;
   
   for (professor of professorJSON){
     //set professor's ID as value
@@ -104,8 +101,7 @@ function getProfessorList(professorJSON){ //display list of professors in drop-d
 }
 
 function getCourseList(courseJSON){ //display list of courses in drop-down box
-  var courseListText = `<label for="courseSelection" >Courses:   </label>
-  <select id='courseSelection' form = 'deleteCoursesForm'>`;
+  var courseListText = `<select id='courseSelection' form = 'deleteCoursesForm'>`;
   for (course of courseJSON){
     //set course's ID as value
     courseListText +="<option value = '" + course['courseID'] + "'>" ;
