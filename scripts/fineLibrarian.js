@@ -16,7 +16,7 @@ function payFine() {
       	//console.log( this.responseText);
         var response="The fine is paid";
         if(this.responseText>0){
-          response+="<br>The change is $"+this.responseText.toFixed(2);
+          response+="<br>The change is $"+parseFloat(Math.round(this.responseText*100)/100).toFixed(2);
         }
         document.getElementById("hint").innerHTML = response;
         loadFinedUsers();
