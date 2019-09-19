@@ -70,7 +70,7 @@ function loadLibrarianList(listName){ //use Ajax to get list of librarian or pot
 }
 //load after page loads
 window.addEventListener('DOMContentLoaded', (event) => {
-  loadLibrarianList("loadPotentialLibrarian");
+  displayForm();
 });
 
 function getUserList(userJSON){ //find potential librarian from json file
