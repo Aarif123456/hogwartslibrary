@@ -43,7 +43,7 @@ function loadNavbarHeader(){ //dynamically create navbar using page number
     xmlhttp.onreadystatechange = function() {
     //call function to load the home or custom
       if (this.readyState == 4 && this.status == 200) {
-      	if(this.responseText.trim() != "not logged in!"){
+      	if(this.responseText.trim() != "not logged in!"){ //load customized header
       		//console.log(this.responseText);
       		headpart[0].innerHTML=this.responseText;
       	}
@@ -68,13 +68,13 @@ function loadNavbarHeader(){ //dynamically create navbar using page number
     xmlhttp.send();                        
 }
 
-function createHomeNavbar(){
-	pageNum = document.getElementById("pageNum").value;
-	pageTitle = ['Browse catalogue', 'House Fines', 'Reading List','About Us','Contact Us','Hours'] ;
-	pageList = [0,0,3,0,0]; //holds the number of page items
-	pageLinks = ['search','houseFine','readingList', 'about','contact','hours'];//link to the given page
-	pageListTitle = [[],[],['By book category','By student majors', 'All Time'],[],[],[]]; //sub page title
-	pageListLinks =[[],[],['h','h','h'],[],[],[]];
+function createHomeNavbar(){ //load navbar at home pages
+	var pageNum = document.getElementById("pageNum").value;
+	var pageTitle = ['Browse catalogue', 'House Fines', 'Reading List','About Us','Contact Us','Hours'] ;
+	var pageList = [0,0,3,0,0]; //holds the number of page items
+	var pageLinks = ['search','houseFine','readingList', 'about','contact','hours'];//link to the given page
+	var pageListTitle = [[],[],['By book category','By student majors', 'All Time'],[],[],[]]; //sub page title
+	var pageListLinks =[[],[],['h','h','h'],[],[],[]];
 
     //default menu on home pages                 
     var defaultHomeMenu="";
@@ -104,13 +104,14 @@ function createHomeNavbar(){
 }
 
 function createNavbar(pageJSON){
-	pageNum = document.getElementById("pageNum").value;
+	var pageNum = document.getElementById("pageNum").value;
+    var pageCategory =document.getElementById("pageCategory").value.trim();
 	var key =['0','1','2','3','4','5'];
 	var defaultHomeMenu ="";
 	for(var i=0;i<6;i++){ 
 		defaultHomeMenu += '<li class="'; //each page is part of the list
     	defaultHomeMenu += (i==0)?"browse ":""; //first item is supposed to shine 
-    	if(pageNum == i){
+    	if(pageNum == i && pageCategory != 'librarian'){
     		defaultHomeMenu += "active "; //if on the page make it shine 
     	}
     	// add the link to the page
