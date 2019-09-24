@@ -40,7 +40,7 @@
       xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
           console.log( this.responseText);
-          loadList("reservationList",getCurrentReservation,"loadReservedBooks");
+          loadReserveList("reservationList",getCurrentReservation,"loadReservedBooks");
         }
       }
       xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -55,7 +55,7 @@
     window.addEventListener('DOMContentLoaded', (event) => {
       /*load courses for both add and delete forms because the 
       courses profs teach will not change by modifying reservation*/
-      loadList("reservationList",getProfessorCourses,"loadCourses");
+      loadReserveList(getProfessorCourses,"loadCourses");
       displayForm();
     });
     //toggling add and delete form
@@ -76,7 +76,7 @@
   <button type="button" onclick="addReservation();">Reserve book for course!</button>
 </form> `;
         //get bookISBN from text-box
-        //loadList("reservationList",getBookISBN,"loadAvailableBooks");
+        //loadReserveList(getBookISBN,"loadAvailableBooks");
       }
       if(mode[1].checked){ //if delete form
        reservationForm.innerHTML =
@@ -89,12 +89,13 @@
     <br>
   <button type="button" onclick="deleteReservation();">Reserve book for course!</button>
 </form>`;
-         //getCurrentely reserved books that looks at the currently chosen course in the drop-down 
-         loadList("reservationList",getCurrentReservation,"loadReservedBooks");
+         //getCurrentely reserved books that looks at the currently chosen course in the drop-down
+         loadReserveList(getCurrentReservation,"loadReservedBooks");
        }
      }
-    function loadList(listDomain,getList,listName){ //use Ajax to create needed list
+    function loadReserveList(getList,listName){ //use Ajax to create needed list
       var xmlhttp = new XMLHttpRequest();
+      var courseID=document.getElementById("courseSelection").value.trim();
       xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
           try {
@@ -105,10 +106,10 @@
           }
         }
       }
-      xmlhttp.open('POST',"https://arif115.myweb.cs.uwindsor.ca/60334/projects/"+listDomain, true);
+      xmlhttp.open('POST',"https://arif115.myweb.cs.uwindsor.ca/60334/projects/reservationList", true);
       xmlhttp.withCredentials = true;
       xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      xmlhttp.send("listType="+listName);
+      xmlhttp.send("listType="+listName+"&courseID="+courseID);
     }
     //courses by prof drop-down 
     function getProfessorCourses(courseJSON){
