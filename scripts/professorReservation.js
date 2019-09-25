@@ -118,7 +118,7 @@
     }
     //courses by prof drop-down 
     function getProfessorCourses(courseJSON){
-      var courseListText = `<select id='courseSelection' form = 'reservationForm'>`;
+      var courseListText =`<select id='courseSelection' form='reservationForm'> onchange="displayForm();"`;
       for (course of courseJSON){
         //set course's ID as value
         courseListText +="<option value = '" + course['courseID'] + "'>" ;
