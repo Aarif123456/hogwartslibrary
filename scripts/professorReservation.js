@@ -74,7 +74,8 @@
     <input id="bookISBN" type="text" name="bookISBN" placeholder="978-0-0953-8960-0">
   </div>
   <button type="button" onclick="addReservation();">Reserve book for course!</button>
-</form> `;
+</form> 
+<div id="hint"></div>`;
         //get bookISBN from text-box
         //loadReserveList(getBookISBN,"loadAvailableBooks");
       }
@@ -85,7 +86,8 @@
   </div>
     <br>
   <button type="button" onclick="deleteReservation();">Delete reservation</button>
-</form>`;
+</form>
+<div id="hint"></div>`;
          //getCurrentely reserved books that looks at the currently chosen course in the drop-down
          loadReserveList(getCurrentReservation,"loadReservedBooks");
        }
@@ -105,6 +107,7 @@
           }
           catch (e) {
             console.log(this.responseText);
+        	console.log(e);
           }
         }
       }
