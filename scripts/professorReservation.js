@@ -15,7 +15,7 @@
       xmlhttp.open('POST', url, true);
       xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-          document.getElementById("hint")=this.responseText;
+          document.getElementById("hint").innerHTML=this.responseText;
           displayForm();
         }
       }
@@ -39,7 +39,7 @@
       xmlhttp.open('POST', url, true);
       xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-          document.getElementById("hint")=this.responseText;
+          document.getElementById("hint").innerHTML=this.responseText;
           loadReserveList("reservationList",getCurrentReservation,"loadReservedBooks");
         }
       }
