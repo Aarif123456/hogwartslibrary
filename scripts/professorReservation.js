@@ -160,7 +160,7 @@
     }*/
 
     //////////////for delete form///////////////////
-    function getCurrentReservation(reservationJSON){
+    function getCurrentReservation(bookJSON){
       var bookISBNText = `<label for="bookISBNSelection" >Books reserved for course </label>
       <select id='bookISBNSelection' form = 'reservationForm'>`;
       for (book of bookJSON){
