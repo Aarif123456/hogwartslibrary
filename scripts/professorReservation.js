@@ -82,7 +82,6 @@
        reservationForm.innerHTML =
        `<form autocomplete="off" name="reservationForm" id="reservationForm" onsubmit="return false;"> 
     <div id="bookISBNMenu">
-    </select>
   </div>
     <br>
   <button type="button" onclick="deleteReservation();">Delete reservation</button>
@@ -98,7 +97,7 @@
         if (this.readyState == 4 && this.status == 200) {
           try {
           	if(this.responseText.trim()=="No rows" && listName=="loadReservedBooks"){
-          		document.getElementById("bookMenu").innerHTML = "This course has no books reserved";
+          		document.getElementById("bookISBNMenu").innerHTML = "This course has no books reserved";
           	}
           	else{
           		getList(JSON.parse(this.responseText));
@@ -170,5 +169,5 @@
       }
       
       bookISBNText += "</select> <br> </div>";
-      document.getElementById("bookMenu").innerHTML = bookISBNText;
+      document.getElementById("bookISBNMenu").innerHTML = bookISBNText;
     }
