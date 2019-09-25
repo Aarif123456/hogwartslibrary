@@ -81,13 +81,11 @@
       if(mode[1].checked){ //if delete form
        reservationForm.innerHTML =
        `<form autocomplete="off" name="reservationForm" id="reservationForm" onsubmit="return false;"> 
-    <label for="bookISBNSelection" >Books reserved for course </label>
     <div id="bookISBNMenu">
-    <select id="bookISBNSelection" name="bookISBNSelection" placeholder="978-0-0953-8960-0">
     </select>
   </div>
     <br>
-  <button type="button" onclick="deleteReservation();">Reserve book for course!</button>
+  <button type="button" onclick="deleteReservation();">Delete reservation</button>
 </form>`;
          //getCurrentely reserved books that looks at the currently chosen course in the drop-down
          loadReserveList(getCurrentReservation,"loadReservedBooks");
@@ -99,7 +97,12 @@
       xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
           try {
-            getList(JSON.parse(this.responseText));
+          	if(this.responseText.trim()=="No rows" && listName=="loadReservedBooks"){
+          		document.getElementById("bookMenu").innerHTML = "This course has no books reserved";
+          	}
+          	else{
+          		getList(JSON.parse(this.responseText));
+          	}
           }
           catch (e) {
             console.log(this.responseText);
@@ -156,7 +159,8 @@
 
     //////////////for delete form///////////////////
     function getCurrentReservation(reservationJSON){
-      var bookISBNText = `<select id='bookISBNSelection' form = 'reservationForm'>`;
+      var bookISBNText = `<label for="bookISBNSelection" >Books reserved for course </label>
+      <select id='bookISBNSelection' form = 'reservationForm'>`;
       for (book of bookJSON){
         bookISBNText +="<option value = '" + book['bookISBN'] + "'>" ;
         //display Id and Name in selection
