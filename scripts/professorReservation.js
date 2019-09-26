@@ -225,13 +225,13 @@ function getBookISBN(bookJSON){
 
 //////////////for delete form///////////////////
 function getCurrentReservation(bookJSON){
+	var courseID=document.getElementById("courseSelection").value.trim();
 	if(bookJSON=="No rows"){
 		//don't let user try delete if there are no books reserved
 		reservationList[courseID] = "This course has no books reserved";
 		renderCurrentReservation(false);
 	}
 	else{
-		var courseID=document.getElementById("courseSelection").value.trim();
 		var bookISBNText = `<label for="bookISBNSelection" >Books reserved for course </label>
 		<select id='bookISBNSelection' form = 'reservationForm'>`;
 		for (book of bookJSON){
