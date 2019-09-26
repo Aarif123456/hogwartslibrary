@@ -133,7 +133,8 @@ function loadReserveList(getList,listName){ //use Ajax to create needed list
 //courses by prof drop-down 
 function getProfessorCourses(courseJSON){
   if(courseJSON=="No rows"){
-  	document.getElementById("courseMenu").innerHTML="This professor is not teaching any courses";
+  	document.getElementById("courseMenu").innerHTML=`This professor is not teaching any courses
+  	<input type="hidden" id="courseSelection" value="-1" >`;
   	document.getElementById("reservationMenu").innerHTML =
    `<form autocomplete="off" name="reservationForm" id="reservationForm" onsubmit="return false;"> 
 <div id="bookISBNMenu"></div>`;
@@ -156,7 +157,8 @@ function getProfessorCourses(courseJSON){
 /////////////////for librarians/////////////////////
 function getProfessors(professorJSON){
 	if(professorJSON=="No rows"){
-		document.getElementById("professorMenu").innerHTML = "This library system has no professor:(";
+		document.getElementById("professorMenu").innerHTML = `This library system has no professor:(
+		<input type="hidden" id="professorSelection" value="-1" >`;
 		document.getElementById("reservationMenu").innerHTML="";//can't reserve without professors
 	}
 	else{ 
@@ -230,6 +232,9 @@ function getCurrentReservation(bookJSON){
 
 function renderCurrentReservation(update){
 	var courseID=document.getElementById("courseSelection").value.trim();
+	if(courseID==-1){
+		return;
+	}
 	if(update || reservationList[courseID]==undefined ){
 		loadReserveList(getCurrentReservation,"loadReservedBooks");
 	}
