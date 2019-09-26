@@ -167,7 +167,7 @@ function renderProfessorCourses(update){
 		return;
 	}
 	if(update || courseList[profID]==undefined ){
-		loadReserveList(getProfessorCourse,"loadCourses");
+		loadReserveList(getProfessorCourses,"loadCourses");
 	}
 	try {
 		document.getElementById("courseMenu").innerHTML = courseList[profID];}
