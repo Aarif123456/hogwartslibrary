@@ -139,10 +139,7 @@ function getProfessorCourses(courseJSON){
 	if(courseJSON=="No rows"){
 		document.getElementById("courseMenu").innerHTML=`This professor is not teaching any courses
 		<input type="hidden" id="courseSelection" value="-1" >`;
-		document.getElementById("reservationMenu").innerHTML =
-		`<form autocomplete="off" name="reservationForm" id="reservationForm" onsubmit="return false;"> 
-		<div id="bookISBNMenu"></div>
-		</form>`;
+		displayForm();
 	}
 	else{ 
 		var courseListText =`<select id='courseSelection' form='reservationForm' onchange="displayForm();">`;
@@ -169,7 +166,7 @@ function getProfessors(professorJSON){
 	if(professorJSON=="No rows"){
 		document.getElementById("professorMenu").innerHTML = `This library system has no professor:(
 		<input type="hidden" id="professorSelection" value="0" >`;
-		document.getElementById("reservationMenu").innerHTML="";//can't reserve without professors
+		document.getElementById("reservationMenu").innerHTML="";
 	}
 	else{ 
 		var professorListText =`<select id='professorSelection' form='reservationForm' 
@@ -229,9 +226,7 @@ function getBookISBN(bookJSON){
 //////////////for delete form///////////////////
 function getCurrentReservation(bookJSON){
 	if(bookJSON=="No rows"){
-		document.getElementById("reservationMenu").innerHTML =
-		`<form autocomplete="off" name="reservationForm" id="reservationForm" onsubmit="return false;"> 
-		<div id="bookISBNMenu"></div></form>`; //don't let user try delete if there are no books reserved
+		//don't let user try delete if there are no books reserved
 		reservationList[courseID] = "This course has no books reserved";
 		renderCurrentReservation(false);
 	}
