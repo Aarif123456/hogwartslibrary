@@ -114,8 +114,8 @@ function createNavbar(pageJSON){
 	var defaultHomeMenu ="";
 	for(var i=0;i<6;i++){ 
 		defaultHomeMenu += '<li class="'; //each page is part of the list
-        //first item is supposed to shine unless you are a librarian
-    	defaultHomeMenu += (i==0 && pageCategory != 'librarian')?"browse ":""; 
+        //Make browse catalogue shine read
+    	defaultHomeMenu += (pageJSON.pageTitle[key[i]]=="Browse collection")?"browse ":""; 
     	if(pageNum == i ){
     		defaultHomeMenu += "active "; //if on the page make it shine 
     	}
