@@ -75,6 +75,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 	var bookISBN ="";
 	for (var transaction of transactionJSON){
 		tableText += "<tr>"; //one row per transaction
+		bookBarcode=transaction['bookBarcode'];
 		tableText += `<td><input type="checkbox" name='renewBoxes[]' value ='`+bookBarcode+`'></td>`;
 		tableText += `<td><input type="checkbox" name='lostBoxes[]' value ='`+bookBarcode+`'></td>`;
 		tableText +="<td>"+ transaction['bookName'] +"</td>";
@@ -84,7 +85,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
 		tableText +="<td>"+ transaction['holds'] +"</td>";
 		
 		//console.log(transactionJSON[transaction]);
-		bookBarcode=transaction['bookBarcode'];
 		//console.log(bookISBN);
 		tableText += "<tr>"; //end the row
 	}
