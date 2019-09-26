@@ -49,6 +49,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 				createCheckOut(JSON.parse(this.responseText));
 			}catch (e) {
 				console.log(this.responseText);
+				console.log(e);
 			}
 		}
 	};
@@ -68,7 +69,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 	"check_all('renewBoxes[]','renewAll' )"></td>`; //check box that lets you renew 
 	tableText+=`<td><input type="checkbox" id='lostAll' onclick=
 	"check_all('lostBoxes[]','lostAll')"></td>`;//check box for marking things as lost
-	tableText+=`<td>Title</td><td>Author</td><td>Duedate</td><td>Renewed</td><td>Holds</td>`;
+	tableText+=`<td>Title</td><td>Author</td><td>Due date</td><td>Renewed</td><td>Holds</td>`;
 	tableText+=`</tr></thead>`;//end the head of the table
 	tableText+="<tbody>"; //Start table body 
 	var bookISBN ="";
