@@ -169,14 +169,17 @@ function renderProfessorCourses(update){
 	if(update || courseList[profID]==undefined ){
 		loadReserveList(getProfessorCourses,"loadCourses");
 	}
-	try {
-		document.getElementById("courseMenu").innerHTML = courseList[profID];
-		displayForm(); //display form after courses have loaded
+	else{
+		try {
+			document.getElementById("courseMenu").innerHTML = courseList[profID];
+			displayForm(); //display form after courses have loaded
+		}
+		catch(e){ //if course menu is gone
+		  	console.log(e);
+		  	//console.log(courseListText);
+		}
 	}
-	catch(e){ //if course menu is gone
-	  	console.log(e);
-	  	//console.log(courseListText);
-	}
+	
 	
 }
 /////////////////for librarians/////////////////////
