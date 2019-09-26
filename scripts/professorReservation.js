@@ -142,7 +142,7 @@ function getProfessorCourses(courseJSON){
 }
 /////////////////for librarians/////////////////////
 function getProfessors(professorJSON){
-  var professorListText =`<select id='courseSelection' form='reservationForm' onchange="displayForm();">`;
+  var professorListText =`<select id='professorSelection' form='reservationForm' onchange="displayForm();">`;
   for (professor of professorJSON){
     //set professor's ID as value
     professorListText +="<option value = '" + professor['professorID'] + "'>" ;
@@ -151,7 +151,7 @@ function getProfessors(professorJSON){
     professorListText += "</option> ";
   }
   
-  professorListText += "</select> <br> </div>";
+  professorListText += "</select> </div>";
   document.getElementById("professorMenu").innerHTML = professorListText;
 }
 /////////////////for add form ///////////////////////
