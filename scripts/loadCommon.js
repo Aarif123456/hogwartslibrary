@@ -114,8 +114,9 @@ function createNavbar(pageJSON){
 	var defaultHomeMenu ="";
 	for(var i=0;i<6;i++){ 
 		defaultHomeMenu += '<li class="'; //each page is part of the list
-    	defaultHomeMenu += (i==0)?"browse ":""; //first item is supposed to shine 
-    	if(pageNum == i && pageCategory != 'librarian'){
+        //first item is supposed to shine unless you are a librarian
+    	defaultHomeMenu += (i==0 && pageCategory != 'librarian')?"browse ":""; 
+    	if(pageNum == i ){
     		defaultHomeMenu += "active "; //if on the page make it shine 
     	}
     	// add the link to the page
