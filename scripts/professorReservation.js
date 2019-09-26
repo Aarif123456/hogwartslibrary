@@ -122,6 +122,7 @@ function loadReserveList(getList,listName){ //use Ajax to create needed list
       catch (e) {
         console.log(this.responseText);
     	console.log(e);
+    	console.log(listName);
       }
     }
   }
