@@ -59,6 +59,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
   courses profs teach will not change by modifying reservation*/
   displayForm();
   loadReserveList(getProfessorCourses,"loadCourses");
+  var profID=document.getElementById("professorSelection").value.trim();
+  if(profID !=-1){ //if you are a librarian
+  	loadReserveList(getProfessors,"loadProfessor");
+  }
 });
 //toggling add and delete form
 function displayForm(){
@@ -135,6 +139,20 @@ function getProfessorCourses(courseJSON){
   
   courseListText += "</select> <br> </div>";
   document.getElementById("courseMenu").innerHTML = courseListText;
+}
+/////////////////for librarians/////////////////////
+function getProfessorCourses(professorJSON){
+  var professorListText =`<select id='courseSelection' form='reservationForm' onchange="displayForm();">`;
+  for (professor of professorJSON){
+    //set professor's ID as value
+    professorListText +="<option value = '" + professor['professorID'] + "'>" ;
+    //display Id and Name in selection
+    professorListText +=  professor['professorID']+":     " + professor["fname"] +" " +professor["lname"];
+    professorListText += "</option> ";
+  }
+  
+  professorListText += "</select> <br> </div>";
+  document.getElementById("professorMenu").innerHTML = professorListText;
 }
 /////////////////for add form ///////////////////////
 //number of copies prof wants to reserve force stay between 1 and 10

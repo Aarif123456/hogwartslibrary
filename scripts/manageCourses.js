@@ -86,7 +86,6 @@ function deleteCourses(){
 }
 function getProfessorList(professorJSON){ //display list of professors in drop-down box
   var professorListText = `<select id="professorSelection" form = "addCoursesForm"> `;
-  
   for (professor of professorJSON){
     //set professor's ID as value
     professorListText +="<option value = '" + professor['professorID'] + "'>" ;

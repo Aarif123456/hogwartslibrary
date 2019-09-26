@@ -33,13 +33,7 @@
         <input type="hidden" id="pageNum" value="5" >
         <input type="hidden" id="pageCategory" value="librarian" >
         <script src="https://aarif123456.github.io/HogwartsLibrary/scripts/loadCommon.js"></script> 
-        <script src="https://aarif123456.github.io/HogwartsLibrary/scripts/professorReservation.js"> </script> 
-        <script>
-        	//librarian portion of reserving books
-        	//toggling add and delete form
-        	//load prof list
-        </script>
-        
+        <script src="https://aarif123456.github.io/HogwartsLibrary/scripts/professorReservation.js"> </script>         
 	</head> 
 
 	<body> 	 
@@ -74,8 +68,26 @@
 				</div>
 			</div>
 		</div>
+		<input type="radio" id='addMode' name='mode' value='add' checked  onchange="displayForm();">
+        <label for="addMode" >Add Reservations    </label>
+        <input type="radio" id='deleteMode' name='mode' value='delete' onchange="displayForm();">
+        <label for="deleteMode" >Delete Reservation</label>
+        <br>
+        <label for="professorSelection" >Professors:</label>
+        <div id="professorMenu"> 
+          <select id='professorSelection' form='reservationForm' onchange="displayForm();">
+            <option value ="0"></option>
+          </select>
+        <br>
+        <label for="courseSelection" >Courses:</label>
+        <div id="courseMenu"> 
+          <select id='courseSelection' form='reservationForm' onchange="displayForm();">
+            <option value ="0"></option>
+          </select>
+        </div>
+        <div id="reservationMenu">
 
-		<!-- add or delete reservation-->
+        </div>
 		<div id="commonFooter"></div>
 	</body>   
 </html> 
