@@ -170,12 +170,14 @@ function renderProfessorCourses(update){
 		loadReserveList(getProfessorCourses,"loadCourses");
 	}
 	try {
-		document.getElementById("courseMenu").innerHTML = courseList[profID];}
+		document.getElementById("courseMenu").innerHTML = courseList[profID];
+		displayForm(); //display form after courses have loaded
+	}
 	catch(e){ //if course menu is gone
-	  	//console.log(e);
+	  	console.log(e);
 	  	//console.log(courseListText);
 	}
-	displayForm(); //display form after courses have loaded
+	
 }
 /////////////////for librarians/////////////////////
 function getProfessors(professorJSON){
@@ -198,7 +200,7 @@ function getProfessors(professorJSON){
 		try {
 			document.getElementById("professorMenu").innerHTML = professorListText;}
 	  catch(e){ //if menu is gone
-	  	//console.log(e);
+	  	console.log(e);
 	  	//console.log(professorListText);
 	  }
 	}
@@ -219,7 +221,7 @@ function setNumberCopies(){
 	try {
 		document.getElementById("numCopies").value = String(numCopies);
 	}catch(e){
-		//console.log(e);
+		console.log(e);
 		//console.log(numCopies);
 	}
 
@@ -272,7 +274,7 @@ function renderCurrentReservation(update){
 	try {
 		document.getElementById("bookISBNMenu").innerHTML =reservationList[courseID] ;}
   	catch(e){ //if menu is gone
-  	//console.log(e);
+  	console.log(e);
   	//console.log(reservationList[courseID]);
   	}
 }
