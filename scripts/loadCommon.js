@@ -46,10 +46,14 @@ function loadNavbarHeader(){ //dynamically create navbar using page number
       	if(this.responseText.trim() != "not logged in!"){ //load customized header
       		//console.log(this.responseText);
       		headpart[0].innerHTML=this.responseText;
+            if(pageCategory=="signIn"){
+                window.location = "https://https://aarif123456.github.io/HogwartsLibrary/docs/catalogue/userDashboard";
+            }
       	}
       	else{
       		//if we arn't logged in and are not on home category pages then go to sign in page
-      		if(pageCategory=="home" || (pageCategory ==="catalogue" && pageNum==='0' )) {
+      		if(pageCategory=="home"||pageCategory=="signIn"||(pageCategory ==="catalogue"&& pageNum==='0'))
+            {
       			headpart[0].innerHTML=this.responseText = `<ul>
                             <li><a href="https://aarif123456.github.io/HogwartsLibrary/docs/home/register">Signup</a></li> 
                             <li><a href="https://aarif123456.github.io/HogwartsLibrary/docs/catalogue/signin">Login</a></li>
@@ -145,7 +149,7 @@ function loadNavbarMenu(){
 		  		menu[0].innerHTML =  createNavbar(JSON.parse(this.responseText));
 		  	}
 		  	else{
-		  		if(pageCategory==="home" || (pageCategory ==="catalogue" && pageNum==='0' )) {
+		  		if(pageCategory==="home" || (pageCategory ==="catalogue" && pageNum=='0' )) {
 	      			menu[0].innerHTML = createHomeNavbar();
                     //console.log("menu part" + pageCategory + pageNum);
 	      		}
