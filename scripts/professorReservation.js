@@ -58,11 +58,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
   /*load courses for both add and delete forms because the 
   courses profs teach will not change by modifying reservation*/
   displayForm();
-  loadReserveList(getProfessorCourses,"loadCourses");
   var profID=document.getElementById("professorSelection").value.trim();
   if(profID !=-1){ //if you are a librarian
   	loadReserveList(getProfessors,"loadProfessor");
   }
+  loadReserveList(getProfessorCourses,"loadCourses");
 });
 //toggling add and delete form
 function displayForm(){
