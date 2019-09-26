@@ -142,7 +142,8 @@ function getProfessorCourses(courseJSON){
 		displayForm();
 	}
 	else{ 
-		var courseListText =`<select id='courseSelection' form='reservationForm' onchange="displayForm();">`;
+		var courseListText=`<select id='courseSelection' form='reservationForm' 
+		onchange="displayForm();">`;
 		for (course of courseJSON){
 	    //set course's ID as value
 	    courseListText +="<option value = '" + course['courseID'] + "'>" ;
@@ -158,7 +159,7 @@ function getProfessorCourses(courseJSON){
 	  	//console.log(e);
 	  	//console.log(courseListText);
 	  }
-	  //renderCurrentReservation(false);
+	  renderCurrentReservation(false);
 	}
 }
 /////////////////for librarians/////////////////////
