@@ -17,7 +17,7 @@ function addReservation(){
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById("hint").innerHTML=this.responseText;
       renderCurrentReservation(true);
-      displayForm();
+      displayForm(); //clear form
     }
   }
   xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -25,7 +25,7 @@ function addReservation(){
   xmlhttp.send(par); 
 
   //clear fields
-  document.getElementById("reservationForm").reset();
+  //document.getElementById("reservationForm").reset();
 }
 //delete reservation 
 function deleteReservation(){
@@ -42,6 +42,7 @@ function deleteReservation(){
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById("hint").innerHTML=this.responseText;
       renderCurrentReservation(true);
+      displayForm(); //clear field while staying on same course
     }
   }
   xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -49,7 +50,7 @@ function deleteReservation(){
   xmlhttp.send(par); 
 
   //clear fields
-  document.getElementById("reservationForm").reset();
+  //document.getElementById("reservationForm").reset();
 }
 
 //load up the add reservation form when page loads up
