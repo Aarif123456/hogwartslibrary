@@ -79,7 +79,6 @@ function displayForm(){
   var reservationForm=document.getElementById("reservationMenu");
   var courseID=document.getElementById("courseSelection").value.trim();
   var profID=document.getElementById("professorSelection").value.trim();
-  var bookID=document.getElementById("bookISBNSelection").value.trim();
   reservationForm.innerHTML =  `<form autocomplete="off" name="reservationForm" 
   id="reservationForm" onsubmit="return false;">`;
   if(mode[0].checked){ //check if added
@@ -102,11 +101,15 @@ function displayForm(){
   	`<div id="bookISBNMenu">
   	</div>
   	<br>`;
-  	if(profID!=0 && courseID!=-1 && bookID!=-1){
-  		reservationForm.innerHTML+=`<button type="button" onclick="deleteReservation();">Delete reservation</button>`;
+  	if(profID!=0 && courseID!=-1 ){
+  		renderCurrentReservation(false);
+  		var bookID=document.getElementById("bookISBNSelection").value.trim();
+  		if(bookID!=-1){
+  			reservationForm.innerHTML+=`<button type="button" onclick="deleteReservation();
+  			">Delete reservation</button>`;
+  		}
   	}
-     //getCurrentely reserved books that looks at the currently chosen course in the drop-down
-     renderCurrentReservation(false);
+    //getCurrentely reserved books that looks at the currently chosen course in the drop-down
  }
  reservationForm.innerHTML+=`</form> <div id="hint"></div>`;
 }
