@@ -68,11 +68,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
 	var bookISBN ="";
 	for (var transaction of transactionJSON){
 		tableText += "<tr>"; //one row per transaction
-		tableText +="<td>"+ transaction['bookName'] +"</td";
-		tableText +="<td>"+ transaction['author'] +"</td";
-		tableText +="<td>"+ transaction['duedate'] +"</td";
-		tableText +="<td>"+ transaction['renewedTime'] +"</td";
-		tableText +="<td>"+ transaction['holds'] +"</td";
+		tableText +="<td>"+ transaction['bookName'] +"</td>";
+		tableText +="<td>"+ transaction['author'] +"</td>";
+		tableText +="<td>"+ transaction['duedate'] +"</td>";
+		tableText +="<td>"+ transaction['renewedTime'] +"</td>";
+		tableText +="<td>"+ transaction['holds'] +"</td>";
 		
 		//console.log(transactionJSON[transaction]);
 		bookBarcode=transaction['bookBarcode'];
