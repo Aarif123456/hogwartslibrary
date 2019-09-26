@@ -66,8 +66,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 //if you change professor reload courses
 function changeProfessor(){
-	displayForm();
 	loadReserveList(getProfessorCourses,"loadCourses");
+	displayForm();
 }
 //toggling add and delete form
 function displayForm(){
