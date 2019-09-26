@@ -20,7 +20,7 @@ function addReservation(){
   	if (this.readyState == 4 && this.status == 200) {
   		document.getElementById("hint").innerHTML=this.responseText;
   		renderCurrentReservation(true);
-      displayForm(); //clear form
+      	displayForm(); //clear form
   }
 }
 xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -90,7 +90,7 @@ function displayForm(){
   		<label for="bookISBN" >ISBN of book to reserve: </label>
   		<input id="bookISBN" type="text" name="bookISBN" placeholder="978-0-0953-8960-0">
   		</div>
-  		<button type="button" onclick="addReservation();">Reserve book for course!</button>`;
+  		<button type="button"  onclick="addReservation();">Reserve book for course!</button>`;
   	}
   	reservationForm.innerHTML+=`</form> <div id="hint"></div>`;
     //get bookISBN from text-box
@@ -102,12 +102,9 @@ function displayForm(){
   	</div>
   	<br>`;
   	if(profID!=0 && courseID!=-1 ){
-  		renderCurrentReservation(false);
-  		var bookID=document.getElementById("bookISBNSelection").value.trim();
-  		if(bookID!=-1){
-  			reservationForm.innerHTML+=`<button type="button" onclick="deleteReservation();
-  			">Delete reservation</button>`;
-  		}
+		reservationForm.innerHTML+=`<button type="button" id="deleteButton" onclick="deleteReservation();
+		">Delete reservation</button>`;
+		renderCurrentReservation(false);
   	}
     //getCurrentely reserved books that looks at the currently chosen course in the drop-down
  }
@@ -199,7 +196,8 @@ function getProfessors(professorJSON){
 		  //set professor's ID as value
 		  professorListText +="<option value = '" + professor['professorID'] + "'>" ;
 		  //display Id and Name in selection
-		  professorListText +=  professor['professorID']+":     " + professor["fname"] +" " +professor["lname"];
+		  professorListText +=  professor['professorID']+":     " + professor["fname"] +
+		  " " +professor["lname"];
 		  professorListText += "</option> ";
 		}
 		professorListText += "</select> </div>";
@@ -251,8 +249,7 @@ function getCurrentReservation(bookJSON){
 	var courseID=document.getElementById("courseSelection").value.trim();
 	if(bookJSON=="No rows"){
 		//don't let user try delete if there are no books reserved
-		reservationList[courseID] = `This course has no books reserved
-		<input type="hidden" id="bookISBNSelection" value="-1" >`;
+		reservationList[courseID] = `This course has no books reserved`;
 	}
 	else{
 		var bookISBNText = `<label for="bookISBNSelection" >Books reserved for course </label>
@@ -279,12 +276,19 @@ function renderCurrentReservation(update){
 		loadReserveList(getCurrentReservation,"loadReservedBooks");
 	}
 	else{
+		var deleteButton=document.getElementById("deleteButton");
 		try {
-			document.getElementById("bookISBNMenu").innerHTML =reservationList[courseID] ;}
+			if(reservationList[courseID]=="This course has no books reserved"){
+				deleteButton.style.display = "none";
+			}
+			else{
+				deleteButton.style.display = "inline";
+			}
+			document.getElementById("bookISBNMenu").innerHTML =reservationList[courseID] ;
+		}
 	  	catch(e){ //if menu is gone
 	  	console.log(e);
 	  	//console.log(reservationList[courseID]);
 	  	}
 	}
-	
 }
