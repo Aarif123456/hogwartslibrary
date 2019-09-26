@@ -141,7 +141,7 @@ function getProfessorCourses(courseJSON){
   document.getElementById("courseMenu").innerHTML = courseListText;
 }
 /////////////////for librarians/////////////////////
-function getProfessorCourses(professorJSON){
+function getProfessors(professorJSON){
   var professorListText =`<select id='courseSelection' form='reservationForm' onchange="displayForm();">`;
   for (professor of professorJSON){
     //set professor's ID as value
