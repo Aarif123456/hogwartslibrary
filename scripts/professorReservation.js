@@ -137,23 +137,7 @@ function loadReserveList(getList,listName){ //use Ajax to create needed list
   xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xmlhttp.send("listType="+listName+"&courseID="+courseID+"&userID="+profID);
 }
-//courses by prof drop-down 
-function renderProfessorCourses(update){
-	var profID=document.getElementById("professorSelection").value.trim();
-	if(profID==0){
-		return;
-	}
-	if(update || courseList[profID]==undefined ){
-		loadReserveList(getProfessorCourse,"loadCourses");
-	}
-	try {
-		document.getElementById("courseMenu").innerHTML = courseList[profID];}
-	catch(e){ //if course menu is gone
-	  	//console.log(e);
-	  	//console.log(courseListText);
-	}
-	displayForm(); //display form after courses have loaded
-}
+
 
 function getProfessorCourses(courseJSON){
 	var profID=document.getElementById("professorSelection").value.trim();
@@ -175,6 +159,23 @@ function getProfessorCourses(courseJSON){
 	courseList[profID] =courseListText;
 	}
 	renderProfessorCourses(false);
+}
+//courses by prof drop-down 
+function renderProfessorCourses(update){
+	var profID=document.getElementById("professorSelection").value.trim();
+	if(profID==0){
+		return;
+	}
+	if(update || courseList[profID]==undefined ){
+		loadReserveList(getProfessorCourse,"loadCourses");
+	}
+	try {
+		document.getElementById("courseMenu").innerHTML = courseList[profID];}
+	catch(e){ //if course menu is gone
+	  	//console.log(e);
+	  	//console.log(courseListText);
+	}
+	displayForm(); //display form after courses have loaded
 }
 /////////////////for librarians/////////////////////
 function getProfessors(professorJSON){
