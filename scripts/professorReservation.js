@@ -257,8 +257,11 @@ function getCurrentReservation(bookJSON){
 		for (book of bookJSON){
 			bookISBNText +="<option value = '" + book['bookISBN'] + "'>" ;
 	  		//display Id and Name in selection
-	  		bookISBNText +=  book["bookName"]+" - " + book["author"] +"-  reserved "+
-	  		book["numCopies"];
+	  		bookISBNText +=  book["bookName"];
+	  		if(book["author"]!="Unknown"){ //if author is Unknown then we don't need display it
+	  			bookISBNText += " by " + book["author"];
+	  		}
+	  		bookISBNText += +" -  reserved "+	book["numCopies"] +" copies";
 	  		bookISBNText += "</option> ";
 	  	}
   		bookISBNText += "</select> <br> </div>";
