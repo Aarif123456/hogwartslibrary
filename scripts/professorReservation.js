@@ -1,6 +1,6 @@
 //Abdullah Arif
 //handle reservation for professors
-var reserveList={};
+var reservationList={};
 //add reservation 
 function addReservation(){
   var courseID=document.getElementById("courseSelection").value.trim();
