@@ -1,13 +1,16 @@
 //Abdullah Arif
 //handle reservation for professors
 var reservationList={};
+var courseList={};
 //add reservation 
 function addReservation(){
 	var courseID=document.getElementById("courseSelection").value.trim();
+	var profID=document.getElementById("professorSelection").value.trim();
 	var bookISBN=document.getElementById("bookISBN").value.trim();
 	var numCopies=document.getElementById("numCopies").value.trim();
   //create parameter to send to server side
-  var par = "courseID="+courseID+"&bookISBN="+bookISBN+"&numCopies="+numCopies+"&add=yes";
+  var par = "courseID="+courseID+"&bookISBN="+bookISBN+"&numCopies="
+  +numCopies+"&add=yes"+"&userID="+profID;
 
   //Ajax insert
   var xmlhttp = new XMLHttpRequest();
@@ -30,9 +33,10 @@ xmlhttp.send(par);
 //delete reservation 
 function deleteReservation(){
 	var courseID=document.getElementById("courseSelection").value.trim();
+	var profID=document.getElementById("professorSelection").value.trim();
 	var bookISBN=document.getElementById("bookISBNSelection").value.trim();
   //create parameter to send to server side
-  var par = "courseID="+courseID+"&bookISBN="+bookISBN+"&delete=yes";
+  var par = "courseID="+courseID+"&bookISBN="+bookISBN+"&delete=yes"+"&userID="+profID;;
 
   //Ajax insert
   var xmlhttp = new XMLHttpRequest();
@@ -62,12 +66,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
   if(profID !=-1){ //if you are a librarian
   	loadReserveList(getProfessors,"loadProfessor");
   }
-  loadReserveList(getProfessorCourses,"loadCourses");
+  renderProfessorCourses();
 });
 //if you change professor reload courses
 function changeProfessor(){
-	loadReserveList(getProfessorCourses,"loadCourses");
-	displayForm();
+	renderProfessorCourses();
 }
 //toggling add and delete form
 function displayForm(){
@@ -135,11 +138,28 @@ function loadReserveList(getList,listName){ //use Ajax to create needed list
   xmlhttp.send("listType="+listName+"&courseID="+courseID+"&userID="+profID);
 }
 //courses by prof drop-down 
+function renderProfessorCourses(update){
+	var profID=document.getElementById("professorSelection").value.trim();
+	if(profID==0){
+		return;
+	}
+	if(update || courseList[profID]==undefined ){
+		loadReserveList(getProfessorCourse,"loadCourses");
+	}
+	try {
+		document.getElementById("courseMenu").innerHTML = courseList[profID];}
+	catch(e){ //if course menu is gone
+	  	//console.log(e);
+	  	//console.log(courseListText);
+	}
+	displayForm(); //display form after courses have loaded
+}
+
 function getProfessorCourses(courseJSON){
+	var profID=document.getElementById("professorSelection").value.trim();
 	if(courseJSON=="No rows"){
-		document.getElementById("courseMenu").innerHTML=`This professor is not teaching any courses
+		courseList[profID]=`This professor is not teaching any courses
 		<input type="hidden" id="courseSelection" value="-1" >`;
-		displayForm();
 	}
 	else{ 
 		var courseListText=`<select id='courseSelection' form='reservationForm' 
@@ -151,16 +171,10 @@ function getProfessorCourses(courseJSON){
 	    courseListText +=  course['courseID']+":     " + course["courseName"];
 	    courseListText += "</option> ";
 	}
-
 	courseListText += "</select> <br> </div>";
-	try {
-		document.getElementById("courseMenu").innerHTML = courseListText;}
-	  catch(e){ //if course menu is gone
-	  	//console.log(e);
-	  	//console.log(courseListText);
-	  }
-	  renderCurrentReservation(false);
+	courseList[profID] =courseListText;
 	}
+	renderProfessorCourses(false);
 }
 /////////////////for librarians/////////////////////
 function getProfessors(professorJSON){
@@ -186,7 +200,6 @@ function getProfessors(professorJSON){
 	  	//console.log(e);
 	  	//console.log(professorListText);
 	  }
-
 	}
 }
 /////////////////for add form ///////////////////////
@@ -230,7 +243,6 @@ function getCurrentReservation(bookJSON){
 	if(bookJSON=="No rows"){
 		//don't let user try delete if there are no books reserved
 		reservationList[courseID] = "This course has no books reserved";
-		renderCurrentReservation(false);
 	}
 	else{
 		var bookISBNText = `<label for="bookISBNSelection" >Books reserved for course </label>
@@ -244,8 +256,8 @@ function getCurrentReservation(bookJSON){
 	  	}
   		bookISBNText += "</select> <br> </div>";
   		reservationList[courseID] = bookISBNText;
-  		renderCurrentReservation(false);
   	}
+  	renderCurrentReservation(false);
 }
 
 function renderCurrentReservation(update){
