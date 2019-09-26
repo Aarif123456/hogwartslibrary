@@ -32,7 +32,7 @@ function renewBook(bookBarcode){
 			}
 		}
 	};
-	var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/lostBook.php";
+	var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/renewBook.php";
 	xmlhttps.open("POST", url, true); //Set get request with given parameter
 	xmlhttps.withCredentials = true;
 	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -63,13 +63,29 @@ window.addEventListener('DOMContentLoaded', (event) => {
 	function createCheckOut(transactionJSON){ //create table from json file
 	//var key= ""; //force make key an string
 	//create Table with given header
-	var tableText = "<table><thead><tr><td>Title</td><td>Holds</td><td>bookBarcode</td><td>Duedate</td><td>Renewed</td><td>Lost button</td><td>Renew button</td></tr></thead>";
+	var tableText = "<table><thead><tr><td>Title</td><td>Author</td><td>Duedate</td><td>Renewed</td><td>Holds</td><td>Lost button</td><td>Renew button</td></tr></thead>";
 	tableText+="<tbody>"; //Start table body 
 	var bookISBN ="";
-	for (var transaction in transactionJSON){
+	for (var transaction of transactionJSON){
 		tableText += "<tr>"; //one row per transaction
+		tableText +="<td>"+ transaction['bookName'] +"</td";
+		tableText +="<td>"+ transaction['author'] +"</td";
+		tableText +="<td>"+ transaction['duedate'] +"</td";
+		tableText +="<td>"+ transaction['renewedTime'] +"</td";
+		tableText +="<td>"+ transaction['holds'] +"</td";
+		
 		//console.log(transactionJSON[transaction]);
-		for (var key in transactionJSON[transaction]){
+		bookBarcode=transaction['bookBarcode'];
+		//console.log(bookISBN);
+		tableText +="<td>" + "<button type='submit' onclick='markLost(\""+bookBarcode+"\");'>Lost</button>" +"</td>";
+		tableText +="<td>" + "<button type='submit' onclick='renewBook(\""+bookBarcode+"\");'>Renew</button>" +"</td>";
+		tableText += "<tr>"; //end the row
+	}
+	tableText+= "</tbody> </table>";//close table
+	document.getElementById("checkout_table").innerHTML = tableText;	
+}
+
+/*for (var key in transactionJSON[transaction]){
 			if(key==="bookInfo"){
 				tableText += "<td>"+ transactionJSON[transaction][key]['bookName']+"</td>";
 				//tableText += "<td>"+ transactionJSON[transaction][key]['author']+"</td>";
@@ -84,12 +100,4 @@ window.addEventListener('DOMContentLoaded', (event) => {
 				}
 				bookBarcode = transactionJSON[transaction][key]['bookBarcode'];
 			}
-		}
-		//console.log(bookISBN);
-		tableText +="<td>" + "<button type='submit' onclick='markLost(\""+bookBarcode+"\");'>Lost</button>" +"</td>";
-		tableText +="<td>" + "<button type='submit' onclick='renewBook(\""+bookBarcode+"\");'>Renew</button>" +"</td>";
-		tableText += "<tr>"; //end the row
-	}
-	tableText+= "</tbody> </table>";//close table
-	document.getElementById("checkout_table").innerHTML = tableText;	
-}
+		}*/
