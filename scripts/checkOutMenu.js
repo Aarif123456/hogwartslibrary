@@ -62,13 +62,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 
 	function createCheckOut(transactionJSON){ //create table from json file
-	//var key= ""; //force make key an string
+	console.log(transactionJSON);
 	//create Table with given header
 	var tableText = "<table><thead><tr>";
-	tableText+=`<td><input type="checkbox" id='renewAll' onclick=
-	"check_all('renewBoxes[]','renewAll' )"></td>`; //check box that lets you renew 
-	tableText+=`<td><input type="checkbox" id='lostAll' onclick=
-	"check_all('lostBoxes[]','lostAll')"></td>`;//check box for marking things as lost
+	tableText+=`<td><input type="checkbox" id='allBox' onclick=
+	"check_all('boxes[]','allBox' )"></td>`; //check box that lets you renew 
+	/*tableText+=`<td><input type="checkbox" id='lostAll' onclick=
+	"check_all('lostBoxes[]','lostAll')"></td>`;//check box for marking things as lost*/
 	tableText+=`<td>Title</td><td>Author</td><td>Due date</td><td>Renewed</td><td>Holds</td>`;
 	tableText+=`</tr></thead>`;//end the head of the table
 	tableText+="<tbody>"; //Start table body 
@@ -76,8 +76,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
 	for (var transaction of transactionJSON){
 		tableText += "<tr>"; //one row per transaction
 		bookBarcode=transaction['bookBarcode'];
-		tableText += `<td><input type="checkbox" name='renewBoxes[]' value ='`+bookBarcode+`'></td>`;
-		tableText += `<td><input type="checkbox" name='lostBoxes[]' value ='`+bookBarcode+`'></td>`;
+		tableText += `<td><input type="checkbox" name='boxes[]' value ='`+bookBarcode+`'></td>`;
+		//tableText += `<td><input type="checkbox" name='lostBoxes[]' value ='`+bookBarcode+`'></td>`;
 		tableText +="<td>"+ transaction['bookName'] +"</td>";
 		tableText +="<td>"+ transaction['author'] +"</td>";
 		tableText +="<td>"+ transaction['dueDate'] +"</td>";
