@@ -103,6 +103,7 @@ function loadReserveList(getList,listName){ //use Ajax to create needed list
       try {
       	if(this.responseText.trim()=="No rows" && listName=="loadReservedBooks"){
       		reservationList[courseID] = "This course has no books reserved";
+      		renderCurrentReservation(false);
       	}
       	else{
       		getList(JSON.parse(this.responseText));
@@ -177,7 +178,8 @@ function getCurrentReservation(bookJSON,update){
   }
   
   bookISBNText += "</select> <br> </div>";
-  reservationList[courseID] = bookISBNText
+  reservationList[courseID] = bookISBNText;
+  renderCurrentReservation(false);
 }
 
 function renderCurrentReservation(update){
