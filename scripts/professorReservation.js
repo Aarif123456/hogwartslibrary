@@ -79,6 +79,7 @@ function displayForm(){
   var reservationForm=document.getElementById("reservationMenu");
   var courseID=document.getElementById("courseSelection").value.trim();
   var profID=document.getElementById("professorSelection").value.trim();
+  var bookID=document.getElementById("bookISBNSelection").value.trim();
   reservationForm.innerHTML =  `<form autocomplete="off" name="reservationForm" 
   id="reservationForm" onsubmit="return false;">`;
   if(mode[0].checked){ //check if added
@@ -101,10 +102,9 @@ function displayForm(){
   	`<div id="bookISBNMenu">
   	</div>
   	<br>`;
-  	if(profID!=0 && courseID!=-1){
+  	if(profID!=0 && courseID!=-1 && bookID!=-1){
   		reservationForm.innerHTML+=`<button type="button" onclick="deleteReservation();">Delete reservation</button>`;
   	}
-
      //getCurrentely reserved books that looks at the currently chosen course in the drop-down
      renderCurrentReservation(false);
  }
@@ -248,7 +248,8 @@ function getCurrentReservation(bookJSON){
 	var courseID=document.getElementById("courseSelection").value.trim();
 	if(bookJSON=="No rows"){
 		//don't let user try delete if there are no books reserved
-		reservationList[courseID] = "This course has no books reserved";
+		reservationList[courseID] = `This course has no books reserved
+		<input type="hidden" id="bookISBNSelection" value="-1" >`;
 	}
 	else{
 		var bookISBNText = `<label for="bookISBNSelection" >Books reserved for course </label>
@@ -274,10 +275,13 @@ function renderCurrentReservation(update){
 	if(update || reservationList[courseID]==undefined ){
 		loadReserveList(getCurrentReservation,"loadReservedBooks");
 	}
-	try {
-		document.getElementById("bookISBNMenu").innerHTML =reservationList[courseID] ;}
-  	catch(e){ //if menu is gone
-  	console.log(e);
-  	//console.log(reservationList[courseID]);
-  	}
+	else{
+		try {
+			document.getElementById("bookISBNMenu").innerHTML =reservationList[courseID] ;}
+	  	catch(e){ //if menu is gone
+	  	console.log(e);
+	  	//console.log(reservationList[courseID]);
+	  	}
+	}
+	
 }
