@@ -9,18 +9,19 @@ function markLost(bookBarcode,bookName){
 	if (confirm("Do you really want to report book "+bookName+" with barcode " + bookBarcode+ " as lost?")) 
 	{
 	 var xmlhttps = new XMLHttpRequest();
-	 xmlhttps.open("POST", url, true); //Set get request with given parameter
+	 xmlhttps.open("POST","https://arif115.myweb.cs.uwindsor.ca/60334/projects/lostBook.php", true); 
+	 //Set get request with given parameter
 	 xmlhttps.onreadystatechange = function() {
 	 	if (this.readyState == 4 && this.status == 200) {
 	 		//create table using info from JSON file 
 	 		document.getElementById("lostStatus").innerHTML=this.responseText;
 	 		loadCheckOutMenu();
 	 	}
-	 };
-	 var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/lostBook.php";
-	 xmlhttps.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	 xmlhttps.withCredentials = true;
-	 xmlhttps.send("bookBarcode="+bookBarcode); 
+	};
+	xmlhttps.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xmlhttps.withCredentials = true;
+	xmlhttps.send("bookBarcode="+bookBarcode); 
+	
 	} 
 }
 function renewBook(bookBarcode){
