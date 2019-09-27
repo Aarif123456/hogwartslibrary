@@ -64,7 +64,8 @@ function setPage(mode,setPage){
   var fineMode=document.getElementById("mode").value; //get mode of displaying fine
   var maxRow =fineTable[fineMode].length;
   var numRows=document.getElementById("numRows").value;
-  var maxPage= Math.floor(maxRow/numRows); //number of pages depends on total rows and number of displayed rows 
+  var maxPage= Math.floor(maxRow/numRows); 
+  //number of pages depends on total rows and number of displayed rows 
   var currentPage=page.value;
   currentPage+=mode; //update page
   //if in setting mode then set page
@@ -93,6 +94,13 @@ function setPage(mode,setPage){
     page.value=currentPage;
     page.innerHTML=(currentPage+1);
     renderFineTable(true);
+  }
+  if(document.getElementById("frontPageButton").style.display==="none" &&
+     document.getElementById("backPageButton").style.display==="none"){
+      page.style.display="none";
+  }
+  else{
+    page.style.display="inline";
   }  
 }
 
