@@ -1,5 +1,5 @@
 //Abdullah Arif
-//create menu to check out books
+//create menu for books checked out to user -allows user to renew books and to report them as lost
 var renewBookList=[];
 var renewCount=0;
 var successRenewCount=0;
@@ -90,9 +90,11 @@ function loadCheckOutMenu(){
 			try {
 				if(this.responseText.trim()=="No rows"){
 					document.getElementById("checkout_table").innerHTML = "You have no books checked out";
+					document.getElementById("renewButton").style="none";//if no books hide button
 				}
 				else{
 					createCheckOut(JSON.parse(this.responseText));
+					document.getElementById("renewButton").style="inline";
 				}	
 			}catch (e) {
 				console.log(this.responseText);
