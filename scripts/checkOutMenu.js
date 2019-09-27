@@ -19,7 +19,7 @@ function markLost(bookBarcode,bookName){
 	 var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/lostBook.php";
 	 xmlhttps.open("POST", url, true); //Set get request with given parameter
 	 xmlhttps.withCredentials = true;
-	 xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	 xmlhttps.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	 xmlhttps.send("bookBarcode="+bookBarcode); 
 	} 
 }
@@ -55,7 +55,7 @@ function renewBook(bookBarcode){
 	var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/renewBook.php";
 	xmlhttps.open("POST", url, true); //Set post request with given parameter
 	xmlhttps.withCredentials = true;
-	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xmlhttps.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xmlhttps.send("bookBarcode="+bookBarcode); 
 }
 
@@ -98,7 +98,7 @@ function loadCheckOutMenu(){
 	xmlhttps.send(); 
 }
 function createCheckOut(transactionJSON){ //create table from json file
-	console.log(transactionJSON);
+	//console.log(transactionJSON);
 	//create Table with given header
 	var tableText = "<table><thead><tr>";
 	tableText+=`<td><input type="checkbox" id='allBox' onclick=
