@@ -39,6 +39,7 @@ function loadNavbarHeader(){ //dynamically create navbar using page number
     var pageNum =document.getElementById("pageNum").value.trim();
     var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/loadNavbarHeader";
     var headpart= document.getElementsByClassName("head-part");
+    var screenwidth=screen.width; //use this to send to php file
     xmlhttp.open('POST', url, true);
     xmlhttp.onreadystatechange = function() {
     //call function to load the home or custom
@@ -69,7 +70,7 @@ function loadNavbarHeader(){ //dynamically create navbar using page number
     }
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.withCredentials = true;
-    xmlhttp.send();                        
+    xmlhttp.send("screenwidth="+screenwidth);                        
 }
 
 function createHomeNavbar(){ //load navbar at home pages

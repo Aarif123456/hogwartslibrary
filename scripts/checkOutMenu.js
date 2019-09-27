@@ -1,44 +1,72 @@
 //Abdullah Arif
 //create menu to check out books
-
-function markLost(bookBarcode){
+var renewBookList=[];
+var renewCount=0;
+var successRenewCount=0;
+var failRenewCount=0;
+function markLost(bookBarcode,bookName){
 	//console.log(bookBarcode);//mark book as lost 
-	var xmlhttps = new XMLHttpRequest();
-	xmlhttps.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
-			//create table using info from JSON file 
-			try {
-				createCheckOut(JSON.parse(this.responseText));
-			}catch (e) {
-				console.log(this.responseText);
-			}
-		}
-	};
-	var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/lostBook.php";
-	xmlhttps.open("POST", url, true); //Set get request with given parameter
-	xmlhttps.withCredentials = true;
-	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xmlhttps.send("bookBarcode="+bookBarcode); 
+	if (confirm("Do you really want to report book "+bookName+" with barcode " + bookBarcode+ " as lost?")) 
+	{
+	 var xmlhttps = new XMLHttpRequest();
+	 xmlhttps.onreadystatechange = function() {
+	 	if (this.readyState == 4 && this.status == 200) {
+	 		//create table using info from JSON file 
+	 		document.getElementById("lostStatus").innerHTML=this.responseText;
+	 	}
+	 };
+	 var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/lostBook.php";
+	 xmlhttps.open("POST", url, true); //Set get request with given parameter
+	 xmlhttps.withCredentials = true;
+	 xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	 xmlhttps.send("bookBarcode="+bookBarcode); 
+	} 
 }
 function renewBook(bookBarcode){
 	var xmlhttps = new XMLHttpRequest();
 	xmlhttps.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
-			//create table using info from JSON file 
-			try {
-				createCheckOut(JSON.parse(this.responseText));
-			}catch (e) {
-				console.log(this.responseText);
+			if(this.responseText.trim()=="Book renewed!"){
+				successRenewCount++;
+			}
+			else{
+				failRenewCount++;
+				renewBookList.push("book with barcode:"+bookBarcode+"failed to renew because " +
+					this.responseText+"<br>");
+			}
+			if(successRenewCount+failRenewCount==renewCount && renewCount!=0){
+				//display response
+				var renewText ="successfully renewed " +successRenewCount +"book";
+				if(successRenewCount>1){ //if more that one book make it plural
+					renewText+='s';
+				}
+				renewText+="!<br>";
+				if(failRenewCount>0){
+					for(let r of renewBookList){
+						renewText +=r;
+					}
+				}
+				document.getElementById("renewStatus").innerHTML=renewText;
 			}
 		}
 	};
 	var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/renewBook.php";
-	xmlhttps.open("POST", url, true); //Set get request with given parameter
+	xmlhttps.open("POST", url, true); //Set post request with given parameter
 	xmlhttps.withCredentials = true;
 	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xmlhttps.send("bookBarcode="+bookBarcode); 
 }
 
+function renewAll(){
+	var checkedBoxes = document.getElementsByName("boxes[]");
+	var i; 
+	for (i = 0; i < checkedBoxes.length; i++){  
+		if(checkedBoxes[i].checked){
+			renewCount++; //count up all the books to renew
+			renewBook(checkedBoxes[i].value);
+		}
+	}
+}
 window.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById("checkout_table").innerHTML = "You have no books checked out";	
 	var xmlhttps = new XMLHttpRequest();
@@ -61,7 +89,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 
 
-	function createCheckOut(transactionJSON){ //create table from json file
+function createCheckOut(transactionJSON){ //create table from json file
 	console.log(transactionJSON);
 	//create Table with given header
 	var tableText = "<table><thead><tr>";
@@ -69,7 +97,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 	"check_all('boxes[]','allBox' )"></td>`; //check box that lets you renew 
 	/*tableText+=`<td><input type="checkbox" id='lostAll' onclick=
 	"check_all('lostBoxes[]','lostAll')"></td>`;//check box for marking things as lost*/
-	tableText+=`<td>Title</td><td>Author</td><td>Due date</td><td>Renewed</td><td>Holds</td>`;
+	tableText+=`<td></td><td>Title</td><td>Author</td><td>Due date</td><td>Renewed</td><td>Holds</td>`;
 	tableText+=`</tr></thead>`;//end the head of the table
 	tableText+="<tbody>"; //Start table body 
 	var bookISBN ="";
@@ -78,6 +106,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
 		bookBarcode=transaction['bookBarcode'];
 		tableText += `<td><input type="checkbox" name='boxes[]' value ='`+bookBarcode+`'></td>`;
 		//tableText += `<td><input type="checkbox" name='lostBoxes[]' value ='`+bookBarcode+`'></td>`;
+		tableText +="<td>" + `<input type='image' onclick='markLost(\"`+bookBarcode+ `\",
+		"`+transaction['bookName']+`");
+		src="https://aarif123456.github.io/HogwartsLibrary/resources/images/flag.png"'>
+		class="img-responsive" alt="flag lost"</td>`;
 		tableText +="<td>"+ transaction['bookName'] +"</td>";
 		tableText +="<td>"+ transaction['author'] +"</td>";
 		tableText +="<td>"+ transaction['dueDate'] +"</td>";
