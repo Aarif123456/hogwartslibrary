@@ -100,7 +100,7 @@ function setPage(mode,setPage){
 function createRelevantFines(finesJSON){
   console.log(finesJSON);
   if(totalFine===-1){ //waiting for ajax to call to change total fine value
-    setTimeout(createRelevantFines, 50);//wait 50 millisecnds then recheck
+    setTimeout(function(){createRelevantFines(finesJSON)}, 50);//wait 50 millisecnds then recheck
     return; 
   }
   fineTable['relevant']=[];
