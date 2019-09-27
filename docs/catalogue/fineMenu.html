@@ -79,13 +79,13 @@
   </div>
   <!-- ** In future implement recent -> organize by time span
     <option value='recent'>Show recent fines</option>-->
-  <select id="mode" style='float: right;'>
+  <select id="mode" style='float: right;' onchange="renderFineTable(false);">
     <option value='relevant'>Show current fines</option>
     <option value='all'>Show all fines</option>
     <option value='lost'>Show lost books</option>
   </select>
 
-  <select id="numRows">
+  <select id="numRows" onchange="renderFineTable(false);">
     <option value=10 >Display 10 rows</option>
     <option value=25>Display 25 rows</option>
     <option value=50>Display 50 rows</option>

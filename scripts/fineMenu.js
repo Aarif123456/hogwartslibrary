@@ -59,30 +59,37 @@ function renderFineTable(update){
 function setPage(mode,setPage){
   //check to see if you have rows on next page otherwise hide next button
   var page=document.getElementById("finePageNum");
-  var mode=document.getElementById("mode").value;
-  var maxRow =fineTable[mode].length;
+  var fineMode=document.getElementById("mode").value; //get mode of displaying fine
+  var maxRow =fineTable[fineMode].length;
   var numRows=document.getElementById("numRows").value;
   var maxPage= Math.floor(maxRow/numRows); //number of pages depends on total rows and number of displayed rows 
   var currentPage=page.value;
   currentPage+=mode; //update page
   //if in setting mode then set page
-  currentPage=(mode===0 && setPage!=null)?setPage:currentPage;
-  if(currentPage<=0){
-    currentPage=0;
-    document.getElementById("backPageButton").style.display="none"; 
+  if(mode===0 && setPage!=null){
+    currentPage=setPage;
+    page.value=currentPage;
+    page.innerHTML=(currentPage+1);
   }
   else{
-    document.getElementById("backPageButton").style.display="inline"; 
-  }
-  if(currentPage>=maxPage){
-    currentPage=maxPage;
-    document.getElementById("frontPageButton").style.display="none"; 
-  }
-  else{
-    document.getElementById("frontPageButton").style.display="inline"; 
-  }
-  page.value=currentPage;
-  page.innerHTML=(currentPage+1); 
+    if(currentPage<=0){
+      currentPage=0;
+      document.getElementById("backPageButton").style.display="none"; 
+    }
+    else{
+      document.getElementById("backPageButton").style.display="inline"; 
+    }
+    if(currentPage>=maxPage){
+      currentPage=maxPage;
+      document.getElementById("frontPageButton").style.display="none"; 
+    }
+    else{
+      document.getElementById("frontPageButton").style.display="inline"; 
+    }
+    page.value=currentPage;
+    page.innerHTML=(currentPage+1);
+    renderFineTable(true);
+  }  
 }
 
 //show fines that the user has to pay currently
