@@ -64,7 +64,7 @@ function createHoldTable(holdJSON){
     tableText +="<td>"+ hold['bookName'] +"</td>";
     tableText +="<td>"+ hold['author'] +"</td>";
     tableText +="<td>"+ hold['holdExpiryDate'] +"</td>";
-    if(hold['reservedCopy']!=null){
+    if(hold['reservedCopy']!=null || hold['queueNumber']===0){
       tableText +="<td>"+ 'Available' +"</td>";
     }
     else{
