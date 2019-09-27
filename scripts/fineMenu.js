@@ -38,9 +38,10 @@ function renderFineTable(update){
   if(!(update)){ //if we have new table reset page to 0
     setPage(0,0);
   }
-  var pageNum=document.getElementById("pageNum").value;
+  var finePageNum=document.getElementById("finePageNum").value;
   //this is common in all array so no point of putting it in the dictionary
-  var s=fineTable[mode].slice(pageNum*numRows,(pageNum+1)*numRows);
+  var endIndex =Math.min((finePageNum+1)*numRows,fineTable[mode].length);
+  var s=fineTable[mode].slice(finePageNum*numRows,endIndex);
   if(s.join().includes("<tr>")){ //if the dictionary contains a table then create a table
     tableText = "<table><thead><tr>"; 
     tableText += fineTable[mode+'Header']; //get the header for the correct mode
@@ -55,8 +56,33 @@ function renderFineTable(update){
 
 }
 //change page number mode:1 -increase, -1 decrease, 0 set to given page number
-function setPage(mode,page){
+function setPage(mode,setPage){
   //check to see if you have rows on next page otherwise hide next button
+  var page=document.getElementById("finePageNum");
+  var mode=document.getElementById("mode").value;
+  var maxRow =fineTable[mode].length;
+  var numRows=document.getElementById("numRows").value;
+  var maxPage= Math.floor(maxRow/numRows); //number of pages depends on total rows and number of displayed rows 
+  var currentPage=page.value;
+  currentPage+=mode; //update page
+  //if in setting mode then set page
+  currentPage=(mode===0 && setPage!=null)?setPage:currentPage;
+  if(currentPage<=0){
+    currentPage=0;
+    document.getElementById("backPageButton").style.display="none"; 
+  }
+  else{
+    document.getElementById("backPageButton").style.display="inline"; 
+  }
+  if(currentPage>=maxPage){
+    currentPage=maxPage;
+    document.getElementById("frontPageButton").style.display="none"; 
+  }
+  else{
+    document.getElementById("frontPageButton").style.display="inline"; 
+  }
+  page.value=currentPage;
+  page.innerHTML=(currentPage+1); 
 }
 
 //show fines that the user has to pay currently
@@ -110,6 +136,7 @@ function createRelevantFines(finesJSON){
     tableText="Congratulations! You don't have any relevant fines";
     fineTable['relevant'].push(tableText);
   }
+  renderFineTable(false); //load the tables after creating
 }
 
 //create all fines the user has
