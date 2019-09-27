@@ -33,13 +33,13 @@ function renewBook(bookBarcode){
 			}
 			else{
 				failRenewCount++;
-				renewBookList.push("book with barcode:"+bookBarcode+"failed to renew because " +
+				renewBookList.push("book with barcode:"+bookBarcode+" failed to renew because " +
 					this.responseText+"<br>");
 			}
 			if(successRenewCount+failRenewCount==renewCount && renewCount!=0){
 				//display response
 				if (successRenewCount>0){ 
-					var renewText ="successfully renewed " +successRenewCount +"book";
+					var renewText ="successfully renewed " +successRenewCount +" book";
 					if(successRenewCount>1){ //if more that one book make it plural
 						renewText+='s';
 					}
@@ -52,6 +52,10 @@ function renewBook(bookBarcode){
 				}
 				loadCheckOutMenu();
 				document.getElementById("renewStatus").innerHTML=renewText;
+				renewBookList=[];
+				renewCount=0;
+				successRenewCount=0;
+				failRenewCount=0;
 			}
 		}
 	};
