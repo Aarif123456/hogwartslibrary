@@ -5,6 +5,7 @@ totalFine=-1;
 //Tells use how much they owe right now
 function displayTotalFine(finesJSON){
   var displayText="";
+  console.log(finesJSON);
   try{
     totalFine=parseInt(finesJSON.fines);
     var blacklisted=(parseInt(finesJSON.blacklisted)===1)?true:false; //get blacklist status of user
@@ -96,6 +97,7 @@ function setPage(mode,setPage){
 
 //show fines that the user has to pay currently
 function createRelevantFines(finesJSON){
+  console.log(finesJSON);
   if(totalFine===-1){ //waiting for ajax to call to change total fine value
     setTimeout(createRelevantFines, 50);//wait 50 millisecnds then recheck
     return; 
