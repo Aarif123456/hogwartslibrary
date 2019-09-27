@@ -98,7 +98,7 @@ function setPage(mode,setPage){
 
 //show fines that the user has to pay currently
 function createRelevantFines(finesJSON){
-  console.log(finesJSON);
+  //console.log(finesJSON);
   if(totalFine===-1){ //waiting for ajax to call to change total fine value
     setTimeout(function(){createRelevantFines(finesJSON)}, 50);//wait 50 millisecnds then recheck
     return; 
@@ -149,7 +149,7 @@ function createRelevantFines(finesJSON){
     fineTable['relevant'].push(tableText);
   }
   renderFineTable(false); //load the tables after creating
-  setPage(0,0);
+  setPage(0);
 }
 
 //create all fines the user has
