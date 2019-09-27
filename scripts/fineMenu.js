@@ -45,7 +45,7 @@ function renderFineTable(update){
   if(s.join().includes("<tr>")){ //if the dictionary contains a table then create a table
     tableText = "<table><thead><tr>"; 
     tableText += fineTable[mode+'Header']; //get the header for the correct mode
-    tableText+=s.join();//make the sub array into one string
+    tableText+=s.join(" ");//make the sub array into one string
     //close table -> cannot be in dictionary because we don't know where the end is when creating it
     tableText+= "</tbody> </table>";
   }
