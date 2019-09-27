@@ -9,6 +9,7 @@ function markLost(bookBarcode,bookName){
 	if (confirm("Do you really want to report book "+bookName+" with barcode " + bookBarcode+ " as lost?")) 
 	{
 	 var xmlhttps = new XMLHttpRequest();
+	 xmlhttps.open("POST", url, true); //Set get request with given parameter
 	 xmlhttps.onreadystatechange = function() {
 	 	if (this.readyState == 4 && this.status == 200) {
 	 		//create table using info from JSON file 
@@ -17,14 +18,14 @@ function markLost(bookBarcode,bookName){
 	 	}
 	 };
 	 var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/lostBook.php";
-	 xmlhttps.open("POST", url, true); //Set get request with given parameter
-	 xmlhttps.withCredentials = true;
 	 xmlhttps.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	 xmlhttps.withCredentials = true;
 	 xmlhttps.send("bookBarcode="+bookBarcode); 
 	} 
 }
 function renewBook(bookBarcode){
 	var xmlhttps = new XMLHttpRequest();
+	xmlhttps.open("POST", url, true); //Set post request with given parameter
 	xmlhttps.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
 			if(this.responseText.trim()=="Book renewed!"){
@@ -52,10 +53,9 @@ function renewBook(bookBarcode){
 			}
 		}
 	};
-	var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/renewBook.php";
-	xmlhttps.open("POST", url, true); //Set post request with given parameter
-	xmlhttps.withCredentials = true;
+	var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/renewBooks.php";
 	xmlhttps.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xmlhttps.withCredentials = true;
 	xmlhttps.send("bookBarcode="+bookBarcode); 
 }
 
