@@ -87,10 +87,11 @@ function setPage(mode,setPage){
 
 //show fines that the user has to pay currently
 function createRelevantFines(finesJSON){
-  if(totalFine===-5){ //waiting for ajax to call to change total fine value
+  if(totalFine===-1){ //waiting for ajax to call to change total fine value
     setTimeout(createRelevantFines, 50);//wait 50 millisecnds then recheck
     return; 
   }
+  fineTable['relevant']=[];
   if(totalFine>0){
     var transactionFine=0.00;
     var tableText=`<td>Transaction Id</td><td>Title</td><td>Author</td>
@@ -98,7 +99,6 @@ function createRelevantFines(finesJSON){
     tableText+=`</tr></thead>`;//end the head of the table
     tableText+="<tbody>"; //Start table body 
     fineTable['relevantHeader']=tableText;
-    fineTable['relevant']=[];
     tableText="";
     for (var fine of finesJSON){
       try{ //fines are in descending order, so newest comes first
