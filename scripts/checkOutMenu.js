@@ -53,11 +53,10 @@ function renewBook(bookBarcode){
 			}
 		}
 	};
-	var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/renewBooks.php";
+	xmlhttps.open("POST","https://arif115.myweb.cs.uwindsor.ca/60334/projects/renewBooks.php", true);
 	xmlhttps.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xmlhttps.withCredentials = true;
 	xmlhttps.send("bookBarcode="+bookBarcode); 
-	xmlhttps.open("POST", url, true);
 }
 
 function renewAll(){
