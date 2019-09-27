@@ -38,8 +38,9 @@ function renewBook(bookBarcode){
 			}
 			if(successRenewCount+failRenewCount==renewCount && renewCount!=0){
 				//display response
+				var renewText="";
 				if (successRenewCount>0){ 
-					var renewText ="successfully renewed " +successRenewCount +" book";
+					renewText +="successfully renewed " +successRenewCount +" book";
 					if(successRenewCount>1){ //if more that one book make it plural
 						renewText+='s';
 					}
