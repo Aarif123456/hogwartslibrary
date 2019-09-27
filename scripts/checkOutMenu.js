@@ -75,15 +75,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 
 function loadCheckOutMenu(){
-	if(document.getElementById("checkout_table").innerHTML==""){
-		document.getElementById("checkout_table").innerHTML = "You have no books checked out";	
-	} 
 	var xmlhttps = new XMLHttpRequest();
 	xmlhttps.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
 			//create table using info from JSON file 
 			try {
-				createCheckOut(JSON.parse(this.responseText));
+				if(this.responseText.trim()=="No rows"){
+					document.getElementById("checkout_table").innerHTML = "You have no books checked out";
+				}
+				else{
+					createCheckOut(JSON.parse(this.responseText));
+				}	
 			}catch (e) {
 				console.log(this.responseText);
 				console.log(e);
