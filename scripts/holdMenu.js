@@ -4,7 +4,7 @@ function cancelHold(holdID){
   var xmlhttps = new XMLHttpRequest(); 
   xmlhttps.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      this.responseText.trim();
+      document.getElementByID("hold_status")=this.responseText.trim();
     }
   };
   xmlhttps.open("POST","https://arif115.myweb.cs.uwindsor.ca/60334/projects/cancelHoldBooks", true);
