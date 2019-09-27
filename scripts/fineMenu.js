@@ -79,7 +79,7 @@ function setPage(mode,setPage){
     else{
       document.getElementById("backPageButton").style.display="inline"; 
     }
-    if(currentPage>=maxPage){
+    if(currentPage>maxPage){
       currentPage=maxPage;
       document.getElementById("frontPageButton").style.display="none"; 
     }
