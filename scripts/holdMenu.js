@@ -1,10 +1,24 @@
 //Abdullah Arif
 //Handles creating the hold menu for users
+var holdStatus=[];
+var holdCount=0;
+var holdSuccess=0
+var holdFail=0;
 function cancelHold(holdID){
   var xmlhttps = new XMLHttpRequest(); 
   xmlhttps.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      document.getElementByID("hold_status")=this.responseText.trim();
+    	if(this.responseText.trim().include("Hold cancelled.")){
+    		holdSuccess++;
+    	}
+    	else{
+    		holdStatus.push(this.responseText.trim()+'<br>');
+    		holdFail++;
+    	}
+    	
+    	if(holdCount=== holdSuccess+holdFail && holdCount !=0){
+    		renderHoldStatus();
+    	}
     }
   };
   xmlhttps.open("POST","https://arif115.myweb.cs.uwindsor.ca/60334/projects/cancelHoldBooks", true);
@@ -12,12 +26,34 @@ function cancelHold(holdID){
   xmlhttps.withCredentials = true;
   xmlhttps.send("userID="+holdID); 
 }
+function renderHoldStatus(){
+	holdStatusText="";
+	if (holdSuccess>0){ 
+		holdStatusText +="You have successfully cancelled " +holdSuccess +" book";
+		if(holdSuccess>1){ //if more that one book make it plural
+			holdStatusText+='s';
+		}
+		holdStatusText+="!<br>";
+	}
+	if(holdFail>0){
+		for(let h of holdStatus){
+			holdStatusText +=h;
+		}
+	}
+	loadCheckOutMenu();
+	document.getElementByID("hold_status")=holdStatusText;
+	holdStatus=[];
+	holdCount=0;
+	holdSuccess=0;
+	holdFail=0;
+}
 function cancelAllHold(){
   var checkedBoxes = document.getElementsByName("boxes[]");
   var i; 
   for (i = 0; i < checkedBoxes.length; i++){  
     if(checkedBoxes[i].checked){
-      cancelHold(checkedBoxes[i].value);
+    	holdCount++;
+      	cancelHold(checkedBoxes[i].value);
     }
   }
 }
