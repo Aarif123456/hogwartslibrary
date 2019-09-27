@@ -25,8 +25,7 @@ function markLost(bookBarcode,bookName){
 }
 function renewBook(bookBarcode){
 	console.log(bookBarcode);
-	var xmlhttps = new XMLHttpRequest();
-	xmlhttps.open("POST", url, true); //Set post request with given parameter
+	var xmlhttps = new XMLHttpRequest(); 
 	xmlhttps.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
 			if(this.responseText.trim()=="Book renewed!"){
@@ -58,6 +57,7 @@ function renewBook(bookBarcode){
 	xmlhttps.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xmlhttps.withCredentials = true;
 	xmlhttps.send("bookBarcode="+bookBarcode); 
+	xmlhttps.open("POST", url, true);
 }
 
 function renewAll(){
