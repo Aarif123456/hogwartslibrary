@@ -114,9 +114,9 @@ function createCheckOut(transactionJSON){ //create table from json file
 		bookBarcode=transaction['bookBarcode'];
 		tableText += `<td><input type="checkbox" name='boxes[]' value ='`+bookBarcode+`'></td>`;
 		//tableText += `<td><input type="checkbox" name='lostBoxes[]' value ='`+bookBarcode+`'></td>`;
-		tableText +="<td>" + `<input type='image' onclick='markLost(\"`+bookBarcode+ `\",
-		"`+transaction['bookName']+`");
-		src="https://aarif123456.github.io/HogwartsLibrary/resources/images/flag.png"'>
+		tableText +="<td>" + `<input type='image' onclick='markLost("`+bookBarcode+ `","`
+		+transaction['bookName']+`");' 
+		src="https://aarif123456.github.io/HogwartsLibrary/resources/images/flag.png">
 		class="img-responsive" alt="flag lost"</td>`;
 		tableText +="<td>"+ transaction['bookName'] +"</td>";
 		tableText +="<td>"+ transaction['author'] +"</td>";
