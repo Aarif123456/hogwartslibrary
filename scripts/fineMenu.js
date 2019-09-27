@@ -20,7 +20,7 @@ function displayTotalFine(finesJSON){
     displayText+= "A student is blacklisted if they carry a balance of $10 or more.<br>";
     displayText+= "A teacher is blacklisted if they carry a balance of $50 or more.<br>";
   }
-  
+  console.log(totalFine);
   document.getElementById("totalFine").innerHTML= displayText;
   //if they are blacklisted
 }
