@@ -153,7 +153,7 @@ function createRelevantFines(finesJSON){
     }
   }
   else{
-    tableText="Congratulations! You don't have any relevant fines";
+    tableText="You don't have any fines to worry about";
     fineTable['relevant'].push(tableText);
   }
   renderFineTable(false); //load the tables after creating
@@ -224,7 +224,7 @@ function createLostBooks(finesJSON){
     tableText="";
   }
   if(fineTable['lost'].length==0){
-    tableText="Congratulations! You don't have not lost any books";
+    tableText="You don't have not lost any books";
     fineTable['lost'].push(tableText);
   }
 }
@@ -242,7 +242,7 @@ function loadFineMenu(listType){
       //create table using info from JSON file 
       try {
         if(this.responseText.trim()=="No rows"){
-          document.getElementById("fine_table").innerHTML = "Congratulations you have no fines at the moment!";
+          document.getElementById("fine_table").innerHTML = "You have no fines at the moment!";
         }
         else{
           if(listType.trim()=="loadTransactionList"){
