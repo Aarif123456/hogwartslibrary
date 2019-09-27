@@ -72,6 +72,7 @@ function setPage(mode,setPage){
     page.innerHTML=(currentPage+1);
   }
   else{
+    console.log(maxPage);
     if(currentPage<=0){
       currentPage=0;
       document.getElementById("backPageButton").style.display="none"; 
