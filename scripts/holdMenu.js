@@ -8,7 +8,7 @@ function cancelHold(holdID){
   var xmlhttps = new XMLHttpRequest(); 
   xmlhttps.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-    	if(this.responseText.trim().include("Hold cancelled.")){
+    	if(this.responseText.trim().includes("Hold cancelled.")){
     		holdSuccess++;
     	}
     	else{

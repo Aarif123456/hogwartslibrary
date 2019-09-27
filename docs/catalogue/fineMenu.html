@@ -34,9 +34,9 @@
         <input type="hidden" id="pageCategory" value="catalogue" >
         <script src="https://aarif123456.github.io/HogwartsLibrary/scripts/loadCommon.js"></script> 
 	<link rel="stylesheet" type="text/css" href="https://aarif123456.github.io/HogwartsLibrary/styles/table.css">
-	<script src="https://aarif123456.github.io/HogwartsLibrary/scripts/search.js"> </script> 
+	<script src="https://aarif123456.github.io/HogwartsLibrary/scripts/fineMenu.js"> </script> 
 	<link rel="stylesheet" type="text/css" href="https://aarif123456.github.io/HogwartsLibrary/styles/table.css">
-
+  
  <!-- create dashboard with function pass in checkout as location-->
 </head> 
 <body> 
@@ -77,10 +77,29 @@
       </div>
     </div>
   </div>
+  <!-- ** In future implement recent -> organize by time span
+    <option value='recent'>Show recent fines</option>-->
+  <select id="mode" style='float: right;'>
+    <option value='relevant'>Show current fines</option>
+    <option value='all'>Show all fines</option>
+    <option value='lost'>Show lost books</option>
+  </select>
 
+  <select id="numRows">
+    <option value=10 >Display 10 rows</option>
+    <option value=25>Display 25 rows</option>
+    <option value=50>Display 50 rows</option>
+    <option value=100>Display 100 rows</option>
+    <option value=0>Show all rows!</option>
+  </select><br>
+    <div id="totalFine" style='float: center;'></div>
+    <div id="fine_status"></div> <!--Will use to display comment about the table--> 
+		<div id="fine_table"></div> <!--use to display the info about the files -->
+    
+<input type='image' onclick='setPage(-1);' src="https://aarif123456.github.io/HogwartsLibrary/resources/images/sub-arrow-flipped.png"class="img-responsive" alt="back button" style='float: center;'>
+<label id ='pageNum' style='float: center;' value=0> 0</label>
+<input type='image' onclick='setPage(1);' src="https://aarif123456.github.io/HogwartsLibrary/resources/images/sub-arrow.png"class="img-responsive" alt="nect button" style='float: center;'>
 
-		
-		</div>
+</body>
 <div id="commonFooter"></div>
-<!-- resources/images --></body>
 </html> 

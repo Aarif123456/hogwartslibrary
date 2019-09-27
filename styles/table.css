@@ -12,6 +12,9 @@ border: solid 1px black;
 
 #title{font-family: arial;
 }
+.lostChild {
+	color: red;
+	background: #000}
 thead {
 font-family: arial;
 background-color: #ccddee;
