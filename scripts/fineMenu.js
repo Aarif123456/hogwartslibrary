@@ -75,14 +75,14 @@ function setPage(mode,setPage){
   else{
     console.log(maxPage);
     console.log(currentPage);
-    if(currentPage<=0){
+    if(currentPage<=0 || maxPage===0){
       currentPage=0;
       document.getElementById("backPageButton").style.display="none"; 
     }
     else{
       document.getElementById("backPageButton").style.display="inline"; 
     }
-    if(currentPage>maxPage){
+    if(currentPage>=maxPage || maxPage===0){
       currentPage=maxPage;
       document.getElementById("frontPageButton").style.display="none"; 
     }
