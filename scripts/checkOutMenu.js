@@ -13,6 +13,7 @@ function markLost(bookBarcode,bookName){
 	 	if (this.readyState == 4 && this.status == 200) {
 	 		//create table using info from JSON file 
 	 		document.getElementById("lostStatus").innerHTML=this.responseText;
+	 		loadCheckOutMenu();
 	 	}
 	 };
 	 var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/lostBook.php";
@@ -46,6 +47,7 @@ function renewBook(bookBarcode){
 						renewText +=r;
 					}
 				}
+				loadCheckOutMenu();
 				document.getElementById("renewStatus").innerHTML=renewText;
 			}
 		}
@@ -68,7 +70,14 @@ function renewAll(){
 	}
 }
 window.addEventListener('DOMContentLoaded', (event) => {
-    document.getElementById("checkout_table").innerHTML = "You have no books checked out";	
+    loadCheckOutMenu();
+});
+
+
+function loadCheckOutMenu(){
+	if(document.getElementById("checkout_table").innerHTML==""){
+		document.getElementById("checkout_table").innerHTML = "You have no books checked out";	
+	} 
 	var xmlhttps = new XMLHttpRequest();
 	xmlhttps.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
@@ -85,10 +94,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 	xmlhttps.open("GET", url, true); //Set get request with given parameter
 	xmlhttps.withCredentials = true;
 	xmlhttps.send(); 
-});
-
-
-
+}
 function createCheckOut(transactionJSON){ //create table from json file
 	console.log(transactionJSON);
 	//create Table with given header
