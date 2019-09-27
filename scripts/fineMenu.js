@@ -22,7 +22,7 @@ function displayTotalFine(finesJSON){
     displayText+= "A student is blacklisted if they carry a balance of $10 or more.<br>";
     displayText+= "A teacher is blacklisted if they carry a balance of $50 or more.<br>";
   }
-  console.log(totalFine);
+  //console.log(totalFine);
   document.getElementById("totalFine").innerHTML= displayText;
   //if they are blacklisted
 }
@@ -75,8 +75,8 @@ function setPage(mode,setPage){
     page.innerHTML=(currentPage+1);
   }
   else{
-    console.log(maxPage);
-    console.log(currentPage);
+    //console.log(maxPage);
+    //console.log(currentPage);
     if(currentPage<=0 || maxPage===0){
       currentPage=0;
       document.getElementById("backPageButton").style.display="none"; 
