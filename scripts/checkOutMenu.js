@@ -90,11 +90,11 @@ function loadCheckOutMenu(){
 			try {
 				if(this.responseText.trim()=="No rows"){
 					document.getElementById("checkout_table").innerHTML = "You have no books checked out";
-					document.getElementById("renewButton").style="none";//if no books hide button
+					document.getElementById("renewButton").style.display ="none";//if no books hide button
 				}
 				else{
 					createCheckOut(JSON.parse(this.responseText));
-					document.getElementById("renewButton").style="inline";
+					document.getElementById("renewButton").style.display ="inline";
 				}	
 			}catch (e) {
 				console.log(this.responseText);

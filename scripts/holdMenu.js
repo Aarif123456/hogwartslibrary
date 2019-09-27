@@ -70,11 +70,11 @@ function loadHoldMenu(){
       try {
         if(this.responseText.trim()=="No rows"){
           document.getElementById("hold_table").innerHTML = "You have no holds right now";
-          document.getElementById("cancelButton").style="none";
+          document.getElementById("cancelButton").style.display ="none";
         }
         else{
           createHoldTable(JSON.parse(this.responseText));
-          document.getElementById("cancelButton").style="inline";
+          document.getElementById("cancelButton").style.display ="inline";
         } 
       }catch (e) {
         console.log(this.responseText);
