@@ -149,6 +149,7 @@ function createRelevantFines(finesJSON){
     fineTable['relevant'].push(tableText);
   }
   renderFineTable(false); //load the tables after creating
+  setPage(0,0);
 }
 
 //create all fines the user has
