@@ -5,7 +5,7 @@ totalFine=-1;
 //Tells use how much they owe right now
 function displayTotalFine(finesJSON){
   var displayText="";
-  console.log(finesJSON);
+  console.log(finesJSON[0]);
   try{
     totalFine=parseInt(finesJSON.fines);
     var blacklisted=(parseInt(finesJSON.blacklisted)===1)?true:false; //get blacklist status of user
