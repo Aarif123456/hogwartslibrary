@@ -74,7 +74,7 @@ function createRelevantFines(finesJSON){
     fineTable['relevantHeader']=tableText;
     fineTable['relevant']=[];
     tableText="";
-    for (var fine of fineJSON){
+    for (var fine of finesJSON){
       try{ //fines are in descending order, so newest comes first
          transactionFine+=parseFloat(fine['fine']); //get fine from transaction
       }catch(e){
@@ -122,7 +122,7 @@ function createAllFines(finesJSON){
   fineTable['allHeader']=tableText;
   fineTable['all']=[];
   tableText="";
-  for (var fine of fineJSON){
+  for (var fine of finesJSON){
     tableText += "<tr>";
     tableText +="<td>"+ fine['transactionID'] +"</td>";
     tableText +="<td>"+ fine['bookName'] +"</td>";
@@ -160,7 +160,7 @@ function createLostBooks(finesJSON){
   fineTable['lostHeader']=tableText;
   fineTable['lost']=[];
   tableText="";
-  for (var fine of fineJSON){
+  for (var fine of finesJSON){
     if(fine['lostDate']==null){ //if not lost then it is not relevant
       continue;
     }
