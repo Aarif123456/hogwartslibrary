@@ -179,8 +179,6 @@ function renderProfessorCourses(update){
 		  	//console.log(courseListText);
 		}
 	}
-	
-	
 }
 /////////////////for librarians/////////////////////
 function getProfessors(professorJSON){
