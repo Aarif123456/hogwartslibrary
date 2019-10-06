@@ -9,7 +9,9 @@ function searchBooks(){
 			if (this.readyState == 4 && this.status == 200) {
 				//create table using info from JSON file 
 				try {
-					createBookTable(JSON.parse(this.responseText));
+					if(this.responseText.trim() != "No rows"){ //no rows means no books were found
+						createBookTable(JSON.parse(this.responseText));
+					}	
 				}
 				catch (e) {
 					console.log(this.responseText);
@@ -29,7 +31,6 @@ function holdBook(bookISBN, bookName){
 	if (confirm("Do you want to hold book: "+bookName+ "?")){
 		//create parameter to send to server side
 		var par = "bookISBN="+bookISBN;
-		//
 		var xmlhttp = new XMLHttpRequest();
 		var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/holdBooks";
 		xmlhttp.open('POST', url, true);
@@ -47,7 +48,7 @@ function holdBook(bookISBN, bookName){
 }
 
 function createBookTable(bookJSON){ //create table from json file
-	console.log(bookJSON);
+	// console.log(bookJSON);
 	var key= ""; //force make key an string
 	//create Table with given header
 	var tableText = "<table><thead><tr><td></td><td>BookISBN</td><td>Title</td><td>Author</td><td>Pages</td><td>Edition</td><td>Status</td><td>Category</td><td>Holds</td></tr></thead>";
