@@ -25,16 +25,37 @@ function searchBooks(){
 	}
 }
 
+function holdBook(bookISBN, bookName){
+	if (confirm("Do you want to hold book: "+bookName+ "?")){
+		//create parameter to send to server side
+		var par = "bookISBN="+bookISBN;
+		//
+		var xmlhttp = new XMLHttpRequest();
+		var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/holdBooks";
+		xmlhttp.open('POST', url, true);
+		xmlhttp.onreadystatechange = function() {
+		  if (this.readyState == 4 && this.status == 200) {
+		    console.log( this.responseText);
+		    //**send them to  a page with the hold book confirmation or error
+		  }
+		}
+		xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xmlhttp.withCredentials = true;
+		xmlhttp.send(par); 
+	} 
+ 
+}
+
 function createBookTable(bookJSON){ //create table from json file
 	var key= ""; //force make key an string
 	//create Table with given header
-	var tableText = "<table><thead><tr><Hold><td>BookISBN</td><td>Title</td><td>Author</td><td>Pages</td><td>Edition</td><td>Status</td><td>Category</td><td>Holds</td></tr></thead>";
+	var tableText = "<table><thead><tr><td></td><td>BookISBN</td><td>Title</td><td>Author</td><td>Pages</td><td>Edition</td><td>Status</td><td>Category</td><td>Holds</td></tr></thead>";
 	tableText+="<tbody>"; //Start table body 
 	for (book of bookJSON){
 		tableText += "<tr>"; //star new row
 
 		tableText +="<td>" + `<button type="button" name='holdButton' onclick='holdBook("`+book['bookISBN']+
-		 `","`+book['bookName']+`");'></button>'</td>`;
+		 `","`+book['bookName']+`");'>Hold Book</button>'</td>`;
 		for (key in book) { //for each element in book create entry
 			tableText +="<td>";
 			if(book.hasOwnProperty(key)){ 
@@ -47,6 +68,4 @@ function createBookTable(bookJSON){ //create table from json file
 	
 	tableText+="</tbody> </table>";//close table
 	document.getElementById("books_table").innerHTML = tableText;
-
-	
 }

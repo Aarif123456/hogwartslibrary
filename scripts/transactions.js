@@ -76,14 +76,16 @@ function showAvailableUser(userJSON){ //find potential user from json file
 	var potentialUserText = "<select id='borrowedBy' form = 'checkOut'>";
 	for (user of userJSON){
 		//set user's ID as value
-		potentialUserText +="<option value = '" + user['memberID'] + "'>" ;
+    //**create on-change event that runs when drop-down is changed and if student if it gets the 
+		potentialUserText +="<option value = '" + user['memberID'] + "'>" ; 
 		//display Id and Name in selection
 		potentialUserText +=  user['memberID']+":     " + user["fname"] +" " +user["lname"];
 		potentialUserText += "</option> ";
-	}
-	
+	}	
 	potentialUserText += "</select> <br> </div>";
 	document.getElementById("userList").innerHTML = potentialUserText;
+
+  //** if in hold menu check to see if user is student if they are create a check box that will trigger a another drop-down with their courses when clicked
 
 	
 }
