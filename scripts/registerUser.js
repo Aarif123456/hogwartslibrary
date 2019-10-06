@@ -21,7 +21,7 @@ function registerUser(valid) {
 	  	if(!checkPassword()) { //make sure password matches
 	  		return;
 	  	}
-	  	checkUsername(createUser); //using a callback function to synchronize ajax call 
+	  	checkUsername(registerUser); //using a callback function to synchronize ajax call 
   	}
   	else{ 
 	  	//create parameter to send to server side
