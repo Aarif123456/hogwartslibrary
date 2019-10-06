@@ -51,6 +51,7 @@ function registerUser(valid) {
 
 function checkUsername(callback){
 	var username =document.getElementById("username").value.trim();
+	console.log(username);
 	var xmlhttp = new XMLHttpRequest();
 	if(username== ""){
 		document.getElementById("hint").innerHTML = "Please fill out all fields";
