@@ -72,7 +72,7 @@ function loadPotentialBorrower(){
     xmlhttp.withCredentials = true;
     xmlhttp.send("listType=loadPotentialBorrower");
 }
-function showAvailableUser(userJSON){ //find potential librarian from json file
+function showAvailableUser(userJSON){ //find potential user from json file
 	var potentialUserText = "<select id='borrowedBy' form = 'checkOut'>";
 	for (user of userJSON){
 		//set user's ID as value

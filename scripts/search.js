@@ -28,10 +28,13 @@ function searchBooks(){
 function createBookTable(bookJSON){ //create table from json file
 	var key= ""; //force make key an string
 	//create Table with given header
-	var tableText = "<table><thead><tr><td>BookISBN</td><td>Title</td><td>Author</td><td>Pages</td><td>Edition</td><td>Status</td><td>Category</td><td>Holds</td></tr></thead>";
+	var tableText = "<table><thead><tr><Hold><td>BookISBN</td><td>Title</td><td>Author</td><td>Pages</td><td>Edition</td><td>Status</td><td>Category</td><td>Holds</td></tr></thead>";
 	tableText+="<tbody>"; //Start table body 
 	for (book of bookJSON){
 		tableText += "<tr>"; //star new row
+
+		tableText +="<td>" + `<button type="button" name='holdButton' onclick='holdBook("`+book['bookISBN']+
+		 `","`+book['bookName']+`");'></button>'</td>`;
 		for (key in book) { //for each element in book create entry
 			tableText +="<td>";
 			if(book.hasOwnProperty(key)){ 
