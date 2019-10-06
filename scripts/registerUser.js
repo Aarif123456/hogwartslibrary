@@ -65,7 +65,6 @@ function checkUsername(callback){
       if (this.readyState == 4 && this.status == 200) {
       	if(this.responseText.trim() === "Username not taken"){  
       	//clear field username becomes valid but don't clear out any other error
-      		console.log(this.responseText);
       		document.getElementById("hint").innerHTML = "Username is not taken";
       		if(callback!=undefined){
       			callback(true);
@@ -80,7 +79,7 @@ function checkUsername(callback){
     }
     //search using given username
     var url= "https://arif115.myweb.cs.uwindsor.ca/60334/projects/verifyUser.php";
-    var par = "username= " + username + "&userType=user";
+    var par = "username=" + username + "&userType=user";
     xmlhttp.open('POST', url , true);
     xmlhttp.withCredentials = true;
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
