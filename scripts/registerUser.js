@@ -62,15 +62,16 @@ function checkUsername(callback){
 	}
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-      	if(this.responseText.trim() == "Username not taken"){  
+      	if(this.responseText.trim() === "Username not taken"){  
       	//clear field username becomes valid but don't clear out any other error
+      		console.log(this.responseText);
       		document.getElementById("hint").innerHTML = "Username is not taken";
       		if(callback!=undefined){
       			callback(true);
       		}
       		return true;
       	}
-      	else if(this.responseText.trim() == "Username is taken"){
+      	else if(this.responseText.trim() === "Username is taken"){
       		document.getElementById("hint").innerHTML = "Username is taken";
       		return false;
       	}
