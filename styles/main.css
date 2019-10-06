@@ -935,7 +935,7 @@ a.use:hover{
 	text-indent: 10px;
 	border: none;
 }
-.mail form input[type="submit"] {
+.mail form input[type="button"] {
 	background: #92e365;
 	padding: 0.5em 2em;
 	text-transform: uppercase;
@@ -947,7 +947,7 @@ a.use:hover{
 	border-radius: 5px;
 	text-transform: uppercase;
 }
-.mail form input[type="submit"]:hover{
+.mail form input[type="button"]:hover{
 	background:#2AACC8;
 	transition: 0.5s all;
 	-webkit-transition: 0.5s all;
@@ -1420,7 +1420,7 @@ ul.comment-list .desc h5 a {
 	background:#B9DEEB;
 	resize:none;
 }
-.comments-area input[type="submit"] {
+.comments-area input[type="button"] {
 	padding: 15px 20px;
 	color: #FFF;
 	background:#2aacc8;
@@ -1434,7 +1434,7 @@ ul.comment-list .desc h5 a {
 	-o-transition: all 0.5s ease-in-out;
 	transition: all 0.5s ease-in-out;
 }
-.comments-area input[type="submit"]:hover {
+.comments-area input[type="button"]:hover {
 	background:#189AB6;
 }
 /*--contact--*/
@@ -1476,7 +1476,7 @@ ul.comment-list .desc h5 a {
 	height:120px;
 	resize:none;
 }
-.form_details input[type="submit"] {
+.form_details input[type="button"] {
 	margin-top:1em;
 	color: #000;
 	font-size: 1.2em;
@@ -1502,7 +1502,7 @@ ul.comment-list .desc h5 a {
 	-moz-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5), 0px 1px 0px #94f7ff;
 	box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5), 0px 1px 0px #94f7ff;
 }
-.form_details input[type="submit"]:hover {
+.form_details input[type="button"]:hover {
  	background: url(https://abdullaharif.tech/HogwartsLibrary/resources/images/sub-arrow.png)no-repeat 20px 4px #17CCDF;
 }
 .text input[type="text"], .contact_bottom-textarea textarea {
@@ -1693,7 +1693,7 @@ a.b-home:hover{
 .login-right form div{
 	padding: 0 0 0.5em 0;
 }
-.login-right input[type="submit"]{
+.login-right input[type="button"]{
 	background: #32bcad;
 	color: #FFF;
 	font-size: 0.8em;
@@ -1713,7 +1713,7 @@ a.b-home:hover{
 	border-left: none;
 	border-top: none;
 }
-.login-right input[type="submit"]:hover{
+.login-right input[type="button"]:hover{
 	background: #1C1C20;
 	border-bottom: 4px solid #333;
 }
@@ -1819,7 +1819,7 @@ a.b-home:hover{
 .register-but{
 	margin-top:1em;
 }
-.register-but form input[type="submit"] {
+.register-but form input[type="button"] {
 	background: #32bcad;
 	color: #FFF;
 	font-size: 1.2em;
@@ -1833,7 +1833,7 @@ a.b-home:hover{
 	border: none;
 	outline: none;
 }
-.register-but input[type="submit"]:hover {
+.register-but input[type="button"]:hover {
 	background:#000;
 }
 div.register-bottom-grid {
@@ -2251,7 +2251,7 @@ a.toggleMenu {
 .subsc h5 {
 	font-size: 1.2em;
 }
-.mail form input[type="submit"] {
+.mail form input[type="button"] {
 	padding: 0.4em 2em;
 	font-size: 16px;
 }
@@ -2450,7 +2450,7 @@ a.use {
 	margin-bottom: 2%;
 	font-size: 18px;
 }
-.mail form input[type="submit"] {
+.mail form input[type="button"] {
 	padding: 0.3em 2em;
 	font-size: 15px;
 }
@@ -2759,12 +2759,12 @@ ul.about_right li.test_desc h4 a {
 ul.about_right li.test_desc p {
 	font-size: 0.875em;
 }
-.form_details input[type="submit"] {
+.form_details input[type="button"] {
 	color: #000;
 	font-size: 1.1em;
 	background: url(https://abdullaharif.tech/HogwartsLibrary/resources/images/sub-arrow.png)no-repeat 18px 1px #26DFF2;
 }
-.form_details input[type="submit"]:hover{
+.form_details input[type="button"]:hover{
 	background: url(https://abdullaharif.tech/HogwartsLibrary/resources/images/sub-arrow.png)no-repeat 18px 1px  #17CCDF;
 }
 .map_background h6 {
@@ -2782,7 +2782,7 @@ ul.about_right li.test_desc p {
 .register-top-grid h3, .register-bottom-grid h3 {
 	font-size: 1em;
 }
-.register-but form input[type="submit"] {
+.register-but form input[type="button"] {
 	font-size: 0.875em;
 	padding: 0.6em 1.5em;
 }
@@ -2976,7 +2976,7 @@ a.use {
 	width:50%;
 	text-align:center;
 }
-.mail form input[type="submit"] {
+.mail form input[type="button"] {
 	padding: 0.3em 1em;
 	font-size: 12px;
 }
@@ -3080,7 +3080,7 @@ ul.comment-list .desc h5 a {
 .comments-area textarea {
 	height: 100px;
 }
-.comments-area input[type="submit"] {
+.comments-area input[type="button"] {
 	padding: 10px 12px;
 	font-size: 0.875em;
 }
@@ -3135,12 +3135,12 @@ ul.about_right li.test_desc {
 .form_details textarea {
 	height: 110px;
 }
-.form_details input[type="submit"] {
+.form_details input[type="button"] {
 	font-size: 1em;
 	background: url(https://abdullaharif.tech/HogwartsLibrary/resources/images/sub-arrow.png)no-repeat 2px -4px #26DFF2;
 	padding: 0.5em 1.5em 0.5em 2.5em;
 }
-.form_details input[type="submit"]:hover {
+.form_details input[type="button"]:hover {
 	background: url(https://abdullaharif.tech/HogwartsLibrary/resources/images/sub-arrow.png)no-repeat 2px -4px #17CCDF;
 }
 .contact_left {
@@ -3166,7 +3166,7 @@ ul.about_right li.test_desc {
 .login-main {
 	padding: 1em 0em 3em;
 }
-.login-right input[type="submit"] {
+.login-right input[type="button"] {
 	padding: 0.3em 1.2em;
 }
 .acount-btn {

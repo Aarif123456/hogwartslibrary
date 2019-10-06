@@ -40,6 +40,7 @@ License URL: https://creativecommons.org/licenses/by/3.0/
 	<input type="hidden" id="pageNum" value="0" >
 	<input type="hidden" id="pageCategory" value="home" >
 	<script src="https://abdullaharif.tech/HogwartsLibrary/scripts/loadCommon.js"></script> 
+	<script src="https://abdullaharif.tech/HogwartsLibrary/scripts/registerUser.js"> </script>
 </head>
 <body>
 <!-- header -->
@@ -52,7 +53,7 @@ License URL: https://creativecommons.org/licenses/by/3.0/
 				</div>
 				<div class="head-part">
 					<ul>
-						<li><a href="https://abdullaharif.tech/HogwartsLibrary/docs/home/register">Signup</a></li> <!-- add in link to register**-->
+						<li><a href="https://abdullaharif.tech/HogwartsLibrary/docs/home/register">Signup</a></li> 
 						<li><a href="https://abdullaharif.tech/HogwartsLibrary/docs/catalogue/signin">Login</a></li>
 							<div class="clearfix"> </div>
 					</ul>
@@ -87,45 +88,67 @@ License URL: https://creativecommons.org/licenses/by/3.0/
 		<div class="login-main">
 		<div class="container">
 			<div class="register">
-		  	  <form> 
+		  	  <form id="addForm" >
 				 <div class="register-top-grid">
 					<h3>PERSONAL INFORMATION</h3>
 					 <div class="wow fadeInLeft" data-wow-delay="0.4s">
 						<span>First Name<label>*</label></span>
-						<input type="text"> 
+						<input type="text" id ="fname" name="fname" >
 					 </div>
 					 <div class="wow fadeInRight" data-wow-delay="0.4s">
 						<span>Last Name<label>*</label></span>
-						<input type="text"> 
+						<input type="text" id ="lname" name="lname">
 					 </div>
 					 <div class="wow fadeInRight" data-wow-delay="0.4s">
 						 <span>Username<label>*</label></span>
-						 <input type="text"> 
+						 <input type="text" onkeyup="checkUsername();" id ="username" name="username">
+					 </div>
+					 <div class="wow fadeInRight" data-wow-delay="0.4s">
+						 <span>Security Passcode<label>*</label></span>
+						 <input type="text" id ="passcode" name="passcode">
 					 </div>
 					 
+						<a class="news-letter" href="#"> 
+					   </a>
+					 
+				</div>
 				     <div class="register-bottom-grid">
 						    <h3>LOGIN INFORMATION</h3>
 							 <div class="wow fadeInLeft" data-wow-delay="0.4s">
 								<span>Password<label>*</label></span>
-								<input type="text">
+								<input type="password" id ="password" name="password">
 							 </div>
 							 <div class="wow fadeInRight" data-wow-delay="0.4s">
 								<span>Confirm Password<label>*</label></span>
-								<input type="text">
+								<input type="password" id ="confirmPassword">
 							 </div>
 					 </div>
+					<div class="wow fadeInRight" data-wow-delay="0.4s">
+					<label for="studentUserType" >User Type:   </label>
+					<input type="radio" onchange="displayFields();" name="userType" id ="studentUserType" value="student" > 
+					<label for="studentUserType" >Student   </label>
+					<input type="radio" onchange="displayFields();"name="userType" id ="teacherUserType" value="professor">
+					<label for="teacherUserType" >Professor  </label>
+					<div id="userCategoryText"></div> <input type="text" id ="userCategory" name="userCategory" style="display: none;">
+					<div id="houseText"></div><select name="house" id="house" form = "addForm" style="display: none;">
+					  <option value = "Gryffindor">Gryffindor</option> 
+					  <option value = "Hufflepuff">Hufflepuff</option>
+					  <option value = "Ravenclaw">Ravenclaw</option>
+					  <option value = "Slytherin">Slytherin</option>
+					</select><br><br>
 				</form>
 				<div class="clearfix"> </div>
 				<div class="register-but">
 				   <form>
-					   <input type="submit" value="submit">
+					   <button type="button" onclick="registerUser(false);">Create User!</button>
 					   <div class="clearfix"> </div>
 				   </form>
 				</div>
 		   </div>
 		 </div>
 	</div>
+	<p> <span id="hint"></span></p> <!-- Holds interactive prompt for user-->
 <!-- registration -->
-<div id="commonFooter"></div>
 </body>
+<div id="commonFooter"></div>
 </html>
