@@ -1,6 +1,6 @@
 //Abdullah Arif 
 //Allows headmaster to reset user password
-
+"use strict";
 window.addEventListener('DOMContentLoaded', (event) => {
  loadList(getUserList,"loadUsers");
 });

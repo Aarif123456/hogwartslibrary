@@ -1,5 +1,6 @@
 //Abdullah Arif
 //handle reservation for professors
+"use strict";
 var reservationList={};
 var courseList={};
 //add reservation 

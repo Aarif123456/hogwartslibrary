@@ -1,5 +1,6 @@
 //Abdullah Arif
 //Search for books
+"use strict";
 function searchBooks(){
 	var keyword=document.getElementById('searchWord').value;
 	var searchType=document.getElementById('searchType').value.trim();

@@ -1,5 +1,6 @@
 //Abdullah Arif
 //Create more librarian
+"use strict";
 function modifyLibrarian(mode) {
   	var userID=document.getElementById("librarianSelection").value.trim();
   	//create parameter to send to server side

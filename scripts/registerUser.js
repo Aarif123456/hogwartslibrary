@@ -1,5 +1,6 @@
 //Abdullah Arif 
 //Create user from scratch
+"use strict";
 function registerUser(valid) {
   	var fname =document.getElementById("fname").value.trim();
   	var lname =document.getElementById("lname").value.trim();

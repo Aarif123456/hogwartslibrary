@@ -1,5 +1,6 @@
 //Abdullah Arif
 //Handle student reservation
+"use strict";
 var reservationList={};
 function loadReserveList(getList,listName){ //use Ajax to create needed list
   var xmlhttp = new XMLHttpRequest();

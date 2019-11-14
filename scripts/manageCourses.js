@@ -1,6 +1,7 @@
 //Abdullah Arif 
 //Js files handles adding and deleting courses for headmaster
 //load after page loads
+"use strict";
 window.addEventListener('DOMContentLoaded', (event) => {
   displayForm();
   loadList( getProfessorList,"loadProfessor");

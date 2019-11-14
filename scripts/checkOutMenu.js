@@ -1,5 +1,6 @@
 //Abdullah Arif
 //create menu for books checked out to user -allows user to renew books and to report them as lost
+"use strict";
 var renewBookList=[];
 var renewCount=0;
 var successRenewCount=0;

@@ -1,6 +1,6 @@
 //Abdullah Arif
 //Handle librarian taking user payment
-
+"use strict";
 function payFine() {
   	var userID=document.getElementById("userID").value.trim();
   	//create parameter to send to server side

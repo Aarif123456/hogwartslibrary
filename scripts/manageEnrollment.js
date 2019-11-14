@@ -1,3 +1,5 @@
+//Abdullah Arif
+"use strict";
 window.addEventListener('DOMContentLoaded', (event) => {
   displayForm();
 });

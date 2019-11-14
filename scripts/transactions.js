@@ -1,6 +1,6 @@
 //Abdullah Arif
 //Handle librarian signing books out to user
-
+"use strict";
 function checkOutBook() {
   	var borrowedBy=document.getElementById("borrowedBy").value.trim();
   	//create parameter to send to server side

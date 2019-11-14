@@ -1,6 +1,6 @@
 //Abdullah Arif
 //Verify user login
-
+"use strict";
 function verifyUser() {
   	var username =document.getElementById("username").value.trim();
   	var password =document.getElementById("password").value;//spaces count on passwords

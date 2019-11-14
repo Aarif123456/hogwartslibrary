@@ -1,6 +1,6 @@
 //Abdullah Arif
 //handles books being returned
-
+"use strict";
 //potentially autofill for books
 //function suggestBarcode(barcode){}
 

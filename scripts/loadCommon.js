@@ -1,5 +1,6 @@
 //Abdullah Arif
 //create dynamic html pages
+"use strict";
 window.onload = function(){ //create common elements
 	 loadNavbarHeader(); //get variable values
 	 loadNavbarMenu()

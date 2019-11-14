@@ -1,5 +1,6 @@
 //Abdullah Arif
 //Handles creating the hold menu for users
+"use strict";
 var holdStatus=[];
 var holdCount=0;
 var holdSuccess=0
