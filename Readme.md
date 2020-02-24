@@ -1,5 +1,69 @@
 Basic library management system with ability to create users - search database for books
 
+Login
+Headmaster
+dDeveloper
+*Message me for the headmaster password*
+
+Students
+harryPotter1
+chosen1
+
+rWealey1
+password123
+
+llove
+Crumple-Horned Snorkack
+
+mad-eye
+constant_vigilance_Veritaserum
+
+magicalNewton
+moonsArrowShotCerberus
+
+HClaw
+mothersCursediadem
+
+theSeer
+OculusRift
+
+hGranger
+actors1Reserve9Vegas7Portugal9Plants
+
+stargazer102
+theFaultinOurStars
+
+ffCharms
+spellCharms
+
+pureBlooded
+winning
+
+gWeasely
+harry
+
+Teachers
+realLibrarian1991
+booksAreaAwesome
+
+Snape1
+lily
+
+Librarians
+realLibrarian1991
+booksAreaAwesome
+
+hGranger
+actors1Reserve9Vegas7Portugal9Plants
+
+HClaw
+mothersCursediadem
+
+llove
+Crumple-Horned Snorkack
+
+magicalNewton
+moonsArrowShotCerberus
 
 ------------------------------------------------------------------------
 References

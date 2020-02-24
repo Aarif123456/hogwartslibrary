@@ -18,8 +18,8 @@ function loadCommonFooter(){ //load common footer -this makes it easier to make 
                 <div class="footer-bottom">
                     <div class="footer-nav">
                         <ul>
-                            <li><a href="https://abdullaharif.tech/HogwartsLibrary/">home </a></li>
-                            <li><a href="https://abdullaharif.tech/HogwartsLibrary/docs/home/contact">contact </a></li>
+                            <li><a href="https://abdullaharif.tech/hogwartslibrary/">home </a></li>
+                            <li><a href="https://abdullaharif.tech/hogwartslibrary/docs/home/contact">contact </a></li>
                             <li><a href="about.html">about</a></li>
                             <div class="clearfix"> </div>
                         </ul>
@@ -49,7 +49,7 @@ function loadNavbarHeader(){ //dynamically create navbar using page number
       		//console.log(this.responseText);
       		headpart[0].innerHTML=this.responseText;
             /*if(pageCategory=="signIn"){
-                window.location = "https://https://abdullaharif.tech/HogwartsLibrary/docs/catalogue/userDashboard";
+                window.location = "https://https://abdullaharif.tech/hogwartslibrary/docs/catalogue/userDashboard";
             }*/
       	}
       	else{
@@ -57,14 +57,14 @@ function loadNavbarHeader(){ //dynamically create navbar using page number
       		if(pageCategory=="home"||pageCategory=="signIn"||(pageCategory ==="catalogue"&& pageNum==='0'))
             {
       			headpart[0].innerHTML=this.responseText = `<ul>
-                            <li><a href="https://abdullaharif.tech/HogwartsLibrary/docs/home/register">Signup</a></li> 
-                            <li><a href="https://abdullaharif.tech/HogwartsLibrary/docs/catalogue/signin">Login</a></li>
+                            <li><a href="https://abdullaharif.tech/hogwartslibrary/docs/home/register">Signup</a></li> 
+                            <li><a href="https://abdullaharif.tech/hogwartslibrary/docs/catalogue/signin">Login</a></li>
                                 <div class="clearfix"> </div>
                         </ul> `;
                 //console.log(pageCategory +pageNum);
       		}
             else{
-                window.location = "https://abdullaharif.tech/HogwartsLibrary/docs/catalogue/signin";
+                window.location = "https://abdullaharif.tech/hogwartslibrary/docs/catalogue/signin";
             }
       	}
       }
@@ -91,13 +91,13 @@ function createHomeNavbar(){ //load navbar at home pages
     		defaultHomeMenu += "active "; //if on the page make it shine 
     	}
     	// add the link to the page
-    	defaultHomeMenu += 'nav-item"><a href="https://abdullaharif.tech/HogwartsLibrary/docs/'; 
+    	defaultHomeMenu += 'nav-item"><a href="https://abdullaharif.tech/hogwartslibrary/docs/'; 
     	defaultHomeMenu += (i==0)?'catalogue/':'home/'; //catalogue links to the catalogue pages
     	defaultHomeMenu += pageLinks[i] + '" class="';
     	//if page has sub menu make it root
     	defaultHomeMenu +=(pageList[i]>0)?('root">'+pageTitle[i] +'</a> <ul class="drdw">'):'nav-link">';
     	for(var j=0;j<pageList[i];j++){
-    		defaultHomeMenu += '<li><a href="https://abdullaharif.tech/HogwartsLibrary/docs/home/charts/';
+    		defaultHomeMenu += '<li><a href="https://abdullaharif.tech/hogwartslibrary/docs/home/charts/';
     		defaultHomeMenu += pageListLinks[i][j];
     		defaultHomeMenu += '">' +pageListTitle[i][j] +'</a></li>'; 
     	}
@@ -122,7 +122,7 @@ function createNavbar(pageJSON){
     		defaultHomeMenu += "active "; //if on the page make it shine 
     	}
     	// add the link to the page
-    	defaultHomeMenu += 'nav-item"><a href="https://abdullaharif.tech/HogwartsLibrary/docs/'; 
+    	defaultHomeMenu += 'nav-item"><a href="https://abdullaharif.tech/hogwartslibrary/docs/'; 
     	defaultHomeMenu += pageJSON.pageLinks[key[i]] + '" class="';
     	//if page has sub menu make it root
     	defaultHomeMenu +='nav-link">';
@@ -157,7 +157,7 @@ function loadNavbarMenu(){
                     //console.log("menu part" + pageCategory + pageNum);
 	      		}
 	      		else{
-                    window.location = "https://abdullaharif.tech/HogwartsLibrary/docs/catalogue/signin";
+                    window.location = "https://abdullaharif.tech/hogwartslibrary/docs/catalogue/signin";
 	      		}
 	      	}
 		  }
