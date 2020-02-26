@@ -10,7 +10,7 @@ window.onload = function(){ //create common elements
 
 function loadCommonFooter(){ //load common footer -this makes it easier to make changes 
 	var d = new Date();
-    footerText = `<div class="footer">
+    var footerText = `<div class="footer">
         <div class="container">
             <div class="footer-top">
                 <div class="subsc">
