@@ -30,7 +30,7 @@ function cancelHold(holdID){
 function renderHoldStatus(){
 	holdStatusText="";
 	if (holdSuccess>0){ 
-		holdStatusText +="You have successfully cancelled " +holdSuccess +" book";
+		holdStatusText +="You have successfully canceled " +holdSuccess +" book";
 		if(holdSuccess>1){ //if more that one book make it plural
 			holdStatusText+='s';
 		}
@@ -42,7 +42,7 @@ function renderHoldStatus(){
 		}
 	}
 	loadCheckOutMenu();
-	document.getElementByID("hold_status")=holdStatusText;
+	document.getElementByID("hold_status").innerHTML=holdStatusText;
 	holdStatus=[];
 	holdCount=0;
 	holdSuccess=0;
