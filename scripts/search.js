@@ -59,7 +59,7 @@ function createBookTable(bookJSON){ //create table from json file
 		tableText += "<tr>"; //star new row
 		if(book.hasOwnProperty('bookName') && book.hasOwnProperty('bookISBN')){
 			tableText +="<td>" + `<button type="button" name='holdButton' onclick='holdBook("`+
-			book['bookISBN']+ `","` + book['bookName']+`");'>Hold Book</button>'</td>`;
+			book['bookISBN']+ `","` + book['bookName']+`");'>Hold Book</button></td>`;
 		}
 		
 		for (key in book) { //for each element in book create entry

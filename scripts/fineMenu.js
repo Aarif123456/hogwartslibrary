@@ -244,6 +244,8 @@ function loadFineMenu(listType){
       try {
         if(this.responseText.trim()=="No rows"){
           document.getElementById("fine_table").innerHTML = "You have no fines at the moment!";
+          document.getElementById("frontPageButton").style.display="none"
+          document.getElementById("backPageButton").style.display="none"
         }
         else{
           if(listType.trim()=="loadTransactionList"){
