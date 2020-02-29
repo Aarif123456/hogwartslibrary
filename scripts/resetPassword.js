@@ -49,7 +49,7 @@ function resetPassword() {
 function getUserList(userJSON){ //display list of users in drop-down box
  var userListText = `<label for="userSelection" >Active Users:   </label>
 <select id="userSelection" form = "resetForm">`;
- for (user of userJSON){
+ for (let user of userJSON){
    userListText +="<option value = '" + user['userID'] + "'>" ;
    //display Id and Name in selection
    userListText +=  user["userName"] ;
@@ -63,19 +63,19 @@ function getUserList(userJSON){ //display list of users in drop-down box
 
 //will use to get list of user **will use this to bring up suggestion
 function loadList(getList,listName){ //use Ajax to create needed list
-   var xmlhttp = new XMLHttpRequest();
-   xmlhttp.onreadystatechange = function() {
-       if (this.readyState == 4 && this.status == 200) {
-         try {
-       getList(JSON.parse(this.responseText));
-     }
-     catch (e) {
-       console.log(this.responseText);
-     }
-       }
-     }
-     xmlhttp.open('POST',"https://arif115.myweb.cs.uwindsor.ca/60334/projects/loadList", true);
-     xmlhttp.withCredentials = true;
-     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-     xmlhttp.send("listType="+listName);
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      try {
+        getList(JSON.parse(this.responseText));
+     }catch (e) {
+        console.log(e);
+        console.log(this.responseText);
+      }
+    }
+  }
+  xmlhttp.open('POST',"https://arif115.myweb.cs.uwindsor.ca/60334/projects/loadList", true);
+  xmlhttp.withCredentials = true;
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xmlhttp.send("listType="+listName);
 }

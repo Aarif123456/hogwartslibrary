@@ -55,19 +55,19 @@ function displayForm(){
 function loadLibrarianList(listName){ //use Ajax to get list of librarian or potential librarian
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          try {
-        getUserList(JSON.parse(this.responseText));
-      }
-      catch (e) {
-        console.log(this.responseText);
-      }
+      if (this.readyState == 4 && this.status == 200) {
+        try {
+          getUserList(JSON.parse(this.responseText));
+        }catch (e) {
+          console.log(e);
+          console.log(this.responseText);
         }
       }
-      xmlhttp.open('POST',"https://arif115.myweb.cs.uwindsor.ca/60334/projects/loadList", true);
-      xmlhttp.withCredentials = true;
-      xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      xmlhttp.send("listType="+listName);
+    }
+    xmlhttp.open('POST',"https://arif115.myweb.cs.uwindsor.ca/60334/projects/loadList", true);
+    xmlhttp.withCredentials = true;
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send("listType="+listName);
 }
 //load after page loads
 window.addEventListener('DOMContentLoaded', (event) => {
@@ -76,7 +76,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 function getUserList(userJSON){ //find potential librarian from json file
 	var userListText = "<select id='librarianSelection' form = 'updateLibrarian'>";
-	for (user of userJSON){
+	for (let user of userJSON){
 		//set user's ID as value
 		userListText +="<option value = '" + user['memberID'] + "'>" ;
 		//display Id and Name in selection

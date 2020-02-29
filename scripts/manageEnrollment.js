@@ -93,7 +93,7 @@ function deleteEnrollment(){
 function getStudentList(studentJSON){ //display list of students in drop-down box
   var studentListText = ` <select id="studentSelection" form = "addForm"> `;
   
-  for (student of studentJSON){
+  for (let student of studentJSON){
     //set student's ID as value
     studentListText +="<option value = '" + student['studentID'] + "'>" ;
     //display Id and Name in selection
@@ -108,7 +108,7 @@ function getStudentList(studentJSON){ //display list of students in drop-down bo
 
 function getCourseList(courseJSON){ //display list of courses in drop-down box
   var courseListText = `<select id='courseSelection' form = 'addForm'>`;
-  for (course of courseJSON){
+  for (let course of courseJSON){
     //set course's ID as value
     courseListText +="<option value = '" + course['courseID'] + "'>" ;
     //display Id and Name in selection
@@ -123,7 +123,7 @@ function getCourseList(courseJSON){ //display list of courses in drop-down box
 
 function getEnrollmentList(enrollmentJSON){ //display list of enrollments in drop-down box
   var enrollmentListText = ` <select id='enrollmentSelection' form = 'deleteForm'>`;
-  for (enrollment of enrollmentJSON){
+  for (let enrollment of enrollmentJSON){
     //set enrollment's ID as value
     enrollmentListText +="<option value = '" + enrollment['enrollmentID'] + "'>" ;
     //display Id and Name in selection
@@ -141,17 +141,17 @@ function getEnrollmentList(enrollmentJSON){ //display list of enrollments in dro
 function loadList(getList,listName){ //use Ajax to create needed list
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
+      if (this.readyState == 4 && this.status == 200) {
           try {
         getList(JSON.parse(this.responseText));
-      }
-      catch (e) {
-        console.log(this.responseText);
-      }
+        }catch (e) {
+          console.log(e);
+          console.log(this.responseText);
         }
       }
-      xmlhttp.open('POST',"https://arif115.myweb.cs.uwindsor.ca/60334/projects/loadList", true);
-      xmlhttp.withCredentials = true;
-      xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      xmlhttp.send("listType="+listName);
+    }
+    xmlhttp.open('POST',"https://arif115.myweb.cs.uwindsor.ca/60334/projects/loadList", true);
+    xmlhttp.withCredentials = true;
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send("listType="+listName);
 }

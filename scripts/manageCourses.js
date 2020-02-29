@@ -87,7 +87,7 @@ function deleteCourses(){
 }
 function getProfessorList(professorJSON){ //display list of professors in drop-down box
   var professorListText = `<select id="professorSelection" form = "addCoursesForm"> `;
-  for (professor of professorJSON){
+  for (let professor of professorJSON){
     //set professor's ID as value
     professorListText +="<option value = '" + professor['professorID'] + "'>" ;
     //display Id and Name in selection
@@ -102,7 +102,7 @@ function getProfessorList(professorJSON){ //display list of professors in drop-d
 
 function getCourseList(courseJSON){ //display list of courses in drop-down box
   var courseListText = `<select id='courseSelection' form = 'deleteCoursesForm'>`;
-  for (course of courseJSON){
+  for (let course of courseJSON){
     //set course's ID as value
     courseListText +="<option value = '" + course['courseID'] + "'>" ;
     //display Id and Name in selection
@@ -120,18 +120,17 @@ function getCourseList(courseJSON){ //display list of courses in drop-down box
 function loadList(getList,listName){ //use Ajax to create needed list
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
+      if (this.readyState == 4 && this.status == 200) {
           try {
-        getList(JSON.parse(this.responseText));
-      }
-      catch (e) {
-        console.log(this.responseText);
-      }
+        getList(JSON.parse(this.responseText));}
+        catch (e) {
+          console.log(this.responseText);
         }
       }
-      xmlhttp.open('POST',"https://arif115.myweb.cs.uwindsor.ca/60334/projects/loadList", true);
-      xmlhttp.withCredentials = true;
-      xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      xmlhttp.send("listType="+listName);
+    }
+    xmlhttp.open('POST',"https://arif115.myweb.cs.uwindsor.ca/60334/projects/loadList", true);
+    xmlhttp.withCredentials = true;
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send("listType="+listName);
 }
  

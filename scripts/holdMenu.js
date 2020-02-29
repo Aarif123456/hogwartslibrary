@@ -95,7 +95,7 @@ function createHoldTable(holdJSON){
   tableText+=`<td>Title</td><td>Author</td><td>Expiry date</td><td>Available for pick up</td><td>Number in Queue </td>`;
   tableText+=`</tr></thead>`;//end the head of the table
   tableText+="<tbody>"; //Start table body 
-  for (var hold of holdJSON){
+  for (let hold of holdJSON){
     tableText += "<tr>"; //one row per hold
     tableText += `<td><input type="checkbox" name='boxes[]' value ='`+hold['holdID']+`'></td>`;
     tableText +="<td>"+ hold['bookName'] +"</td>";

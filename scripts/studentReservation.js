@@ -37,7 +37,7 @@ function getStudentCourses(courseJSON){
   else{ 
     var courseListText=`<select id='courseSelection' form='reservationForm' 
     onchange="renderCurrentReservation(false);">`;
-    for (course of courseJSON){
+    for (let course of courseJSON){
       //set course's ID as value
       courseListText +="<option value = '" + course['courseID'] + "'>" ;
       //display Id and Name in selection
@@ -60,7 +60,7 @@ function getCurrentReservation(bookJSON){
   else{
     var bookISBNText = `<label for="bookISBNSelection" >Books reserved for course: </label>
     <select id='bookISBNSelection' form = 'reservationForm'>`;
-    for (book of bookJSON){
+    for (let book of bookJSON){
       bookISBNText +="<option value = '" + book['bookISBN'] + "'>" ;
         //display Id and Name in selection
         bookISBNText +=  book["bookName"];

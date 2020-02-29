@@ -38,23 +38,24 @@ window.addEventListener('DOMContentLoaded', (event) => {
 function loadFinedUsers(){
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-      	try {
-			showAvailableUser(JSON.parse(this.responseText));
-		}
-		catch (e) {
-			console.log(this.responseText);
-		}
-      }
-  	}
-    xmlhttp.open('POST',"https://arif115.myweb.cs.uwindsor.ca/60334/projects/loadList", true);
-    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xmlhttp.withCredentials = true;
-    xmlhttp.send("listType=loadFinedMember");
+    if (this.readyState == 4 && this.status == 200) {
+      try {
+			 showAvailableUser(JSON.parse(this.responseText));
+		  }catch (e) {
+        console.log(e);
+			  console.log(this.responseText);
+		  }
+    }
+  }
+  xmlhttp.open('POST',"https://arif115.myweb.cs.uwindsor.ca/60334/projects/loadList", true);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xmlhttp.withCredentials = true;
+  xmlhttp.send("listType=loadFinedMember");
 }
+
 function showAvailableUser(userJSON){ //show all users with fines from json file
 	var potentialUserText = "<select id='userID' form = 'fineForm'>";
-	for (user of userJSON){
+	for (let user of userJSON){
 		//set user's ID as value
 		potentialUserText +="<option value = '" + user['memberID'] + "'>" ;
 		//display Id and Name in selection

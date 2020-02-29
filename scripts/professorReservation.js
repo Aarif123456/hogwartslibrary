@@ -149,7 +149,7 @@ function getProfessorCourses(courseJSON){
 	else{ 
 		var courseListText=`<select id='courseSelection' form='reservationForm' 
 		onchange="displayForm();">`;
-		for (var course of courseJSON){
+		for (let course of courseJSON){
 	    //set course's ID as value
 	    courseListText +="<option value = '" + course['courseID'] + "'>" ;
 	    //display Id and Name in selection
@@ -191,7 +191,7 @@ function getProfessors(professorJSON){
 	else{ 
 		var professorListText =`<select id='professorSelection' form='reservationForm' 
 		onchange="changeProfessor();">`;
-		for (professor of professorJSON){
+		for (let professor of professorJSON){
 		  //set professor's ID as value
 		  professorListText +="<option value = '" + professor['professorID'] + "'>" ;
 		  //display Id and Name in selection
@@ -232,7 +232,7 @@ function setNumberCopies(){
 /*book ISBN drop for now will later turn to text field **
 function getBookISBN(bookJSON){
   var bookISBNText = `<select id='bookISBN' form = 'reservationForm'>`;
-  for (book of bookJSON){
+  for (let book of bookJSON){
     bookISBNText +="<option value = '" + book['bookISBN'] + "'>" ;
     //display Id and Name in selection
     bookISBNText +=  book["bookName"]+" - " + book["author"];
@@ -253,7 +253,7 @@ function getCurrentReservation(bookJSON){
 	else{
 		var bookISBNText = `<label for="bookISBNSelection" >Books reserved for course </label>
 		<select id='bookISBNSelection' form = 'reservationForm'>`;
-		for (book of bookJSON){
+		for (let book of bookJSON){
 			bookISBNText +="<option value = '" + book['bookISBN'] + "'>" ;
 	  		//display Id and Name in selection
 	  		bookISBNText +=  book["bookName"];

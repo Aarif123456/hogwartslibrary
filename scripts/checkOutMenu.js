@@ -120,7 +120,7 @@ function createCheckOut(transactionJSON){ //create table from json file
 	tableText+=`</tr></thead>`;//end the head of the table
 	tableText+="<tbody>"; //Start table body 
 	var bookISBN ="";
-	for (var transaction of transactionJSON){
+	for (let transaction of transactionJSON){
 		tableText += "<tr>"; //one row per transaction
 		bookBarcode=transaction['bookBarcode'];
 		tableText += `<td><input type="checkbox" name='boxes[]' value ='`+bookBarcode+`'></td>`;

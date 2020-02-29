@@ -15,6 +15,7 @@ function searchBooks(){
 					}	
 				}
 				catch (e) {
+					console.log(e);
 					console.log(this.responseText);
 				}
 				
@@ -54,7 +55,7 @@ function createBookTable(bookJSON){ //create table from json file
 	//create Table with given header
 	var tableText = "<table><thead><tr><td></td><td>BookISBN</td><td>Title</td><td>Author</td><td>Pages</td><td>Edition</td><td>Status</td><td>Category</td><td>Holds</td></tr></thead>";
 	tableText+="<tbody>"; //Start table body 
-	for (book of bookJSON){
+	for (let book of bookJSON){
 		tableText += "<tr>"; //star new row
 		if(book.hasOwnProperty('bookName') && book.hasOwnProperty('bookISBN')){
 			tableText +="<td>" + `<button type="button" name='holdButton' onclick='holdBook("`+

@@ -58,23 +58,25 @@ window.addEventListener('DOMContentLoaded', (event) => {
 function loadPotentialBorrower(){
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-      	try {
-			showAvailableUser(JSON.parse(this.responseText));
-		}
-		catch (e) {
-			console.log(this.responseText);
-		}
-      }
-  	}
-    xmlhttp.open('POST',"https://arif115.myweb.cs.uwindsor.ca/60334/projects/loadList", true);
-    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xmlhttp.withCredentials = true;
-    xmlhttp.send("listType=loadPotentialBorrower");
+    if (this.readyState == 4 && this.status == 200) {
+      try {
+		    showAvailableUser(JSON.parse(this.responseText));
+	    }catch (e) {
+        console.log(e);
+    		console.log(this.responseText);
+		  }
+    }
+  }
+  xmlhttp.open('POST',"https://arif115.myweb.cs.uwindsor.ca/60334/projects/loadList", true);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xmlhttp.withCredentials = true;
+  xmlhttp.send("listType=loadPotentialBorrower");
 }
-function showAvailableUser(userJSON){ //find potential user from json file
+
+//find potential user from json file
+function showAvailableUser(userJSON){ 
 	var potentialUserText = "<select id='borrowedBy' form = 'checkOut'>";
-	for (user of userJSON){
+	for (let  user of userJSON){
 		//set user's ID as value
     //**create on-change event that runs when drop-down is changed and if student if it gets the 
 		potentialUserText +="<option value = '" + user['memberID'] + "'>" ; 

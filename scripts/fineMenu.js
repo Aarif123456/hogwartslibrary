@@ -121,7 +121,7 @@ function createRelevantFines(finesJSON){
     tableText+="<tbody>"; //Start table body 
     fineTable['relevantHeader']=tableText;
     tableText="";
-    for (var fine of finesJSON){
+    for (let fine of finesJSON){
       try{ //fines are in descending order, so newest comes first
          transactionFine+=parseFloat(fine['fine']); //get fine from transaction
       }catch(e){
@@ -171,7 +171,7 @@ function createAllFines(finesJSON){
   fineTable['allHeader']=tableText;
   fineTable['all']=[];
   tableText="";
-  for (var fine of finesJSON){
+  for (let fine of finesJSON){
     tableText += "<tr>";
     tableText +="<td>"+ fine['transactionID'] +"</td>";
     tableText +="<td>"+ fine['bookName'] +"</td>";
@@ -209,7 +209,7 @@ function createLostBooks(finesJSON){
   fineTable['lostHeader']=tableText;
   fineTable['lost']=[];
   tableText="";
-  for (var fine of finesJSON){
+  for (let fine of finesJSON){
     if(fine['lostDate']==null){ //if not lost then it is not relevant
       continue;
     }
@@ -251,8 +251,7 @@ function loadFineMenu(listType){
           }
           else if(listType.trim()=="loadTotalFine"){
             displayTotalFine(JSON.parse(this.responseText));
-          }
-          
+          } 
         } 
       }catch (e) {
         console.log(this.responseText);
