@@ -1,8 +1,8 @@
 //Abdullah Arif
 //Handles displaying user fines on their accounts
 "use strict";
-fineTable={}; //holds arrays for the types of tables:all,relevant, recent and lost books
-totalFine=-1;
+var fineTable={}; //holds arrays for the types of tables:all,relevant, recent and lost books
+var totalFine=-1;
 //Tells use how much they owe right now
 function displayTotalFine(finesJSON){
   var displayText="";
