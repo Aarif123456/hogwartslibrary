@@ -4,23 +4,27 @@
 
 
 ### Headmaster ###
-dDeveloper
+<details>
+<summary> Albus Dumbledore </summary>
+<p>Username: dDeveloper<br>
 *Message me for the headmaster password*
+</p>
+</details>
 
 ### Students ##
 <details>
 <summary>Harry Potter</summary>
-<p>Username: harryPotter1 <br>
+<p>Username: harryPotter1<br>
 Password: chosen1
- </p>
- </details>
+</p>
+</details>
 
 <details>
 <summary>Hermione Granger</summary>
 <p>Username: hGranger<br>
 Password: actors1Reserve9Vegas7Portugal9Plants
- </p>
- </details>
+</p>
+</details>
 
 <details>
 <summary>Ron Weasly</summary>
