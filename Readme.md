@@ -1,67 +1,84 @@
-Basic library management system with ability to create users - search database for books
+# Basic library management system with ability to create users - search database for book #
 
-Login
-Headmaster
+## Login ##
+
+
+### Headmaster ###
 dDeveloper
 *Message me for the headmaster password*
 
-Students
+### Students ##
+**Harry Potter**
 harryPotter1
 chosen1
 
+**Hermione Granger**
+hGranger
+actors1Reserve9Vegas7Portugal9Plants
+
+**Ron Weasly**
 rWealey1
 password123
 
+**Luna Lovegood**
 llove
 Crumple-Horned Snorkack
 
+**Alastor Moody (Mad-eye)**
 mad-eye
 constant_vigilance_Veritaserum
 
+**Newt Scamander**
 magicalNewton
 moonsArrowShotCerberus
 
+**Helena Ravenclaw (Grey Lady)**
 HClaw
 mothersCursediadem
 
-theSeer
-OculusRift
-
-hGranger
-actors1Reserve9Vegas7Portugal9Plants
-
-stargazer102
-theFaultinOurStars
-
-ffCharms
-spellCharms
-
+**Draco Malfoy**
 pureBlooded
 winning
 
+**Ginny Weasly**
 gWeasely
 harry
 
-Teachers
+## Teachers ##
+**Irma Pince (Librarian)**
 realLibrarian1991
 booksAreaAwesome
 
+**Severus Snape**
 Snape1
 lily
 
-Librarians
+**Sybill Patricia Trelawney (Divination professor)**
+theSeer
+OculusRift
+
+**Aurora Sinistra (Astronomy professor)**
+stargazer102
+theFaultinOurStars
+
+**Filius Flitwick (Charms professor)**
+ffCharms
+spellCharms
+
+## Librarians ##
+**Irma Pince (Librarian)**
 realLibrarian1991
 booksAreaAwesome
-
+**Hermione Granger**
 hGranger
 actors1Reserve9Vegas7Portugal9Plants
-
+**Helena Ravenclaw (Grey Lady)**
 HClaw
 mothersCursediadem
-
+**Luna Lovegood**
 llove
 Crumple-Horned Snorkack
-
+**Newt Scamander**
 magicalNewton
 moonsArrowShotCerberus
 
