@@ -8,79 +8,138 @@ dDeveloper
 *Message me for the headmaster password*
 
 ### Students ##
-**Harry Potter**
-harryPotter1
-chosen1
+<details>
+<summary>Harry Potter</summary>
+<p>Username: harryPotter1 <br>
+Password: chosen1
+ </p>
+ </details>
 
-**Hermione Granger**
-hGranger
-actors1Reserve9Vegas7Portugal9Plants
+<details>
+<summary>Hermione Granger</summary>
+<p>Username: hGranger
+Password: actors1Reserve9Vegas7Portugal9Plants
+ </p>
+ </details>
 
-**Ron Weasly**
-rWealey1
-password123
+<details>
+<summary>Ron Weasly</summary>
+<p>Username: rWealey1
+Password: password123
+ </p>
+ </details>
 
-**Luna Lovegood**
-llove
-Crumple-Horned Snorkack
+<details>
+<summary>Luna Lovegood</summary>
+<p>Username: llove
+Password: Crumple-Horned Snorkack
+ </p>
+ </details>
 
-**Alastor Moody (Mad-eye)**
-mad-eye
-constant_vigilance_Veritaserum
+<details>
+<summary>Alastor Moody (Mad-eye)</summary>
+<p>Username: mad-eye
+Password: constant_vigilance_Veritaserum
+  
+<details>
+<summary>Newt Scamander</summary>
+<p>Username: magicalNewton
+Password: moonsArrowShotCerberus
+</p>
+</details>
 
-**Newt Scamander**
-magicalNewton
-moonsArrowShotCerberus
+<details>
+<summary>Helena Ravenclaw (Grey Lady)</summary>
+<p>Username: HClaw
+Password: mothersCursediadem
+</p>
+</details>
 
-**Helena Ravenclaw (Grey Lady)**
-HClaw
-mothersCursediadem
+<details>
+<summary>Draco Malfoy</summary>
+<p>Username: pureBlooded
+Password: winning
+</p>
+</details>
 
-**Draco Malfoy**
-pureBlooded
-winning
-
-**Ginny Weasly**
-gWeasely
-harry
+<details>
+<summary>Ginny Weasly</summary>
+<p>Username: gWeasely
+Password: harry
+</p>
+</details>
 
 ## Teachers ##
-**Irma Pince (Librarian)**
-realLibrarian1991
-booksAreaAwesome
+<details>
+<summary>Irma Pince (Librarian)</summary>
+<p>Username: realLibrarian1991
+Password: booksAreaAwesome
+</p>
+</details>
 
-**Severus Snape**
-Snape1
-lily
+<details>
+<summary>Severus Snape</summary>
+<p>Username: Snape1
+<p>Username: lily
+</p>
+</details>
 
-**Sybill Patricia Trelawney (Divination professor)**
-theSeer
-OculusRift
+<details>
+<summary>Sybill Patricia Trelawney (Divination professor)</summary>
+<p>Username: theSeer
+Password: OculusRift
+</p>
+</details>
 
-**Aurora Sinistra (Astronomy professor)**
-stargazer102
-theFaultinOurStars
+<details>
+<summary>Aurora Sinistra (Astronomy professor)</summary>
+<p>Username: stargazer102
+Password: theFaultinOurStars
+</p>
+</details>
 
-**Filius Flitwick (Charms professor)**
-ffCharms
-spellCharms
+<details>
+<summary>Filius Flitwick (Charms professor)</summary>
+<p>Username: ffCharms
+Password: spellCharms
+</p>
+</details>
 
 ## Librarians ##
-**Irma Pince (Librarian)**
-realLibrarian1991
-booksAreaAwesome
-**Hermione Granger**
-hGranger
-actors1Reserve9Vegas7Portugal9Plants
-**Helena Ravenclaw (Grey Lady)**
-HClaw
-mothersCursediadem
-**Luna Lovegood**
-llove
-Crumple-Horned Snorkack
-**Newt Scamander**
-magicalNewton
-moonsArrowShotCerberus
+<details>
+<summary>Irma Pince (Librarian)</summary>
+<p>Username: realLibrarian1991
+Password: booksAreaAwesome
+</p>
+</details>
+
+<details>
+<summary>Hermione Granger</summary>
+<p>Username: hGranger
+Password: actors1Reserve9Vegas7Portugal9Plants
+</p>
+</details>
+
+<details>
+<summary>Helena Ravenclaw (Grey Lady)</summary>
+<p>Username: HClaw
+Password: mothersCursediadem
+</p>
+</details>
+
+<details>
+<summary>Luna Lovegood</summary>
+<p>Username: llove
+Password: Crumple-Horned Snorkack
+</p>
+</details>
+
+<details>
+<summary>Newt Scamander</summary>
+<p>Username: magicalNewton
+Password: moonsArrowShotCerberus
+</p>
+</details>
 
 ------------------------------------------------------------------------
 References
