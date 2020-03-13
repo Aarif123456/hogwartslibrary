@@ -17,54 +17,56 @@ Password: chosen1
 
 <details>
 <summary>Hermione Granger</summary>
-<p>Username: hGranger
+<p>Username: hGranger<br>
 Password: actors1Reserve9Vegas7Portugal9Plants
  </p>
  </details>
 
 <details>
 <summary>Ron Weasly</summary>
-<p>Username: rWealey1
+<p>Username: rWealey1<br>
 Password: password123
- </p>
- </details>
+</p>
+</details>
 
 <details>
 <summary>Luna Lovegood</summary>
-<p>Username: llove
+<p>Username: llove<br>
 Password: Crumple-Horned Snorkack
- </p>
- </details>
+</p>
+</details>
 
 <details>
 <summary>Alastor Moody (Mad-eye)</summary>
-<p>Username: mad-eye
+<p>Username: mad-eye<br>
 Password: constant_vigilance_Veritaserum
-  
+</p>
+</details>
+
 <details>
 <summary>Newt Scamander</summary>
-<p>Username: magicalNewton
+<p>Username: magicalNewton<br>
 Password: moonsArrowShotCerberus
 </p>
 </details>
 
 <details>
 <summary>Helena Ravenclaw (Grey Lady)</summary>
-<p>Username: HClaw
+<p>Username: HClaw<br>
 Password: mothersCursediadem
 </p>
 </details>
 
 <details>
 <summary>Draco Malfoy</summary>
-<p>Username: pureBlooded
+<p>Username: pureBlooded<br>
 Password: winning
 </p>
 </details>
 
 <details>
 <summary>Ginny Weasly</summary>
-<p>Username: gWeasely
+<p>Username: gWeasely<br>
 Password: harry
 </p>
 </details>
@@ -72,35 +74,35 @@ Password: harry
 ## Teachers ##
 <details>
 <summary>Irma Pince (Librarian)</summary>
-<p>Username: realLibrarian1991
+<p>Username: realLibrarian1991<br>
 Password: booksAreaAwesome
 </p>
 </details>
 
 <details>
 <summary>Severus Snape</summary>
-<p>Username: Snape1
+<p>Username: Snape1<br>
 <p>Username: lily
 </p>
 </details>
 
 <details>
 <summary>Sybill Patricia Trelawney (Divination professor)</summary>
-<p>Username: theSeer
+<p>Username: theSeer<br>
 Password: OculusRift
 </p>
 </details>
 
 <details>
 <summary>Aurora Sinistra (Astronomy professor)</summary>
-<p>Username: stargazer102
+<p>Username: stargazer102<br>
 Password: theFaultinOurStars
 </p>
 </details>
 
 <details>
 <summary>Filius Flitwick (Charms professor)</summary>
-<p>Username: ffCharms
+<p>Username: ffCharms<br>
 Password: spellCharms
 </p>
 </details>
@@ -108,35 +110,35 @@ Password: spellCharms
 ## Librarians ##
 <details>
 <summary>Irma Pince (Librarian)</summary>
-<p>Username: realLibrarian1991
+<p>Username: realLibrarian1991<br>
 Password: booksAreaAwesome
 </p>
 </details>
 
 <details>
 <summary>Hermione Granger</summary>
-<p>Username: hGranger
+<p>Username: hGranger<br>
 Password: actors1Reserve9Vegas7Portugal9Plants
 </p>
 </details>
 
 <details>
 <summary>Helena Ravenclaw (Grey Lady)</summary>
-<p>Username: HClaw
+<p>Username: HClaw<br>
 Password: mothersCursediadem
 </p>
 </details>
 
 <details>
 <summary>Luna Lovegood</summary>
-<p>Username: llove
+<p>Username: llove<br>
 Password: Crumple-Horned Snorkack
 </p>
 </details>
 
 <details>
 <summary>Newt Scamander</summary>
-<p>Username: magicalNewton
+<p>Username: magicalNewton<br>
 Password: moonsArrowShotCerberus
 </p>
 </details>
