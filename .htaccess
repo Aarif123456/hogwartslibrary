@@ -23,4 +23,3 @@ AddDefaultCharset utf-8
 
 # Force UTF-8 for a number of file formats
 AddCharset utf-8 .atom .css .js .json .rss .vtt .xml
-Access-Control-Allow-Origin: *
