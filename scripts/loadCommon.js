@@ -56,7 +56,7 @@ function loadNavbarHeader(){ //dynamically create navbar using page number
       		//if we arn't logged in and are not on home category pages then go to sign in page
       		if(pageCategory=="home"||pageCategory=="signIn"||(pageCategory =="catalogue"&& pageNum=='0'))
             {
-      			headpart[0].innerHTML=this.responseText = `<ul>
+      			headpart[0].innerHTML= `<ul>
                             <li><a href="https://abdullaharif.tech/hogwartslibrary/docs/home/register">Signup</a></li> 
                             <li><a href="https://abdullaharif.tech/hogwartslibrary/docs/catalogue/signin">Login</a></li>
                                 <div class="clearfix"> </div>
