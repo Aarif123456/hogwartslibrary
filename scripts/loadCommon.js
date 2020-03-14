@@ -138,6 +138,7 @@ function createNavbar(pageJSON){
 function loadNavbarMenu(){
 	var menu = document.getElementsByClassName("nav");
     var pageCategory = document.getElementById("pageCategory").value.trim();
+    var pageNum = document.getElementById("pageNum").value;
 	if( pageCategory=="home") {
 		menu[0].innerHTML = createHomeNavbar();
 	}
