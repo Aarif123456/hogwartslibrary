@@ -289,7 +289,7 @@ function renderCurrentReservation(update){
 			document.getElementById("bookISBNMenu").innerHTML =reservationList[courseID] ;
 		}
 	  	catch(e){ //if menu is gone
-	  	console.log(e);
+	  		console.log(e);
 	  	//console.log(reservationList[courseID]);
 	  	}
 	}

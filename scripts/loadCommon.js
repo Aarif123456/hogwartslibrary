@@ -24,7 +24,7 @@ function loadCommonFooter(){ //load common footer -this makes it easier to make 
                             <div class="clearfix"> </div>
                         </ul>
                     </div>
-                    <p>Copyrights ©`;
+                    <p>Copyrights ©2019-`;
     
     footerText += d.getFullYear();
     footerText +=` 4useri All rights reserved | Template by <a href="https://w3layouts.com/">W3layouts</a></p>
@@ -54,7 +54,7 @@ function loadNavbarHeader(){ //dynamically create navbar using page number
       	}
       	else{
       		//if we arn't logged in and are not on home category pages then go to sign in page
-      		if(pageCategory=="home"||pageCategory=="signIn"||(pageCategory ==="catalogue"&& pageNum==='0'))
+      		if(pageCategory=="home"||pageCategory=="signIn"||(pageCategory =="catalogue"&& pageNum=='0'))
             {
       			headpart[0].innerHTML=this.responseText = `<ul>
                             <li><a href="https://abdullaharif.tech/hogwartslibrary/docs/home/register">Signup</a></li> 
@@ -76,11 +76,11 @@ function loadNavbarHeader(){ //dynamically create navbar using page number
 
 function createHomeNavbar(){ //load navbar at home pages
 	var pageNum = document.getElementById("pageNum").value;
-	var pageTitle = ['Browse catalogue', 'House Fines', 'Reading List','About Us','Contact Us','Hours'] ;
+	var pageTitle = ['Browse catalogue', 'House Fines', 'Reading List','About Us','Contact Us'] ;
 	var pageList = [0,0,3,0,0]; //holds the number of page items
-	var pageLinks = ['search','houseFine','readingList', 'about','contact','hours'];//link to the given page
+	var pageLinks = ['search','houseFine','readingList', 'about','contact'];//link to the given page
 	var pageListTitle = [[],[],['By book category','By student majors', 'All Time'],[],[],[]]; //sub page title
-	var pageListLinks =[[],[],['h','h','h'],[],[],[]];
+	var pageListLinks =[[],[],['bookCategory','studentMajor','AllTime'],[],[],[]];
 
     //default menu on home pages                 
     var defaultHomeMenu="";
@@ -152,7 +152,7 @@ function loadNavbarMenu(){
 		  		menu[0].innerHTML =  createNavbar(JSON.parse(this.responseText));
 		  	}
 		  	else{
-		  		if(pageCategory==="home" || pageCategory=="signIn"|| (pageCategory ==="catalogue" && pageNum==="0" )) {
+		  		if(pageCategory=="home" || pageCategory=="signIn"|| (pageCategory =="catalogue" && pageNum=="0" )) {
 	      			menu[0].innerHTML = createHomeNavbar();
                     //console.log("menu part" + pageCategory + pageNum);
 	      		}
