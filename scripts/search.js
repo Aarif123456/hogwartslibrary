@@ -38,8 +38,14 @@ function holdBook(bookISBN, bookName){
 		xmlhttp.open('POST', url, true);
 		xmlhttp.onreadystatechange = function() {
 		  if (this.readyState == 4 && this.status == 200) {
-		    console.log( this.responseText);
-		    //**send them to  a page with the hold book confirmation or error
+		  	if(this.responseText.trim()=="not logged in!"){
+		  		alert("You must be logged in to put a hold on a book!");
+		  		window.location = "https://abdullaharif.tech/hogwartslibrary/docs/catalogue/signin";
+		  	}
+		  	else{
+		  		alert(this.responseText);
+		  	}
+		    //** send them to  a page with the hold book confirmation or error ** 
 		  }
 		}
 		xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");

@@ -155,7 +155,7 @@ function loadNavbarMenu(){
 		  	else{
 		  		if(pageCategory=="home" || pageCategory=="signIn"|| (pageCategory =="catalogue" && pageNum=="0" )) {
 	      			menu[0].innerHTML = createHomeNavbar();
-                    console.log("menu part" + pageCategory + pageNum);
+                    console.log("menu part " + pageCategory + pageNum);
 	      		}
 	      		else{
                     window.location = "https://abdullaharif.tech/hogwartslibrary/docs/catalogue/signin";
