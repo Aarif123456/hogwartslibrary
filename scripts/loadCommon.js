@@ -80,7 +80,7 @@ function createHomeNavbar(){ //load navbar at home pages
 	var pageList = [0,0,3,0,0]; //holds the number of page items
 	var pageLinks = ['search','houseFine','readingList', 'about','contact'];//link to the given page
 	var pageListTitle = [[],[],['By book category','By student majors', 'All Time'],[],[],[]]; //sub page title
-	var pageListLinks =[[],[],['bookCategory','studentMajor','AllTime'],[],[],[]];
+	var pageListLinks =[[],[],['bookCategory','studentMajor','allTime'],[],[],[]];
 
     //default menu on home pages                 
     var defaultHomeMenu="";
@@ -97,7 +97,7 @@ function createHomeNavbar(){ //load navbar at home pages
     	//if page has sub menu make it root
     	defaultHomeMenu +=(pageList[i]>0)?('root">'+pageTitle[i] +'</a> <ul class="drdw">'):'nav-link">';
     	for(var j=0;j<pageList[i];j++){
-    		defaultHomeMenu += '<li><a href="https://abdullaharif.tech/hogwartslibrary/docs/home/charts/';
+    		defaultHomeMenu += '<li class=""><a href="https://abdullaharif.tech/hogwartslibrary/docs/home/charts/';
     		defaultHomeMenu += pageListLinks[i][j];
     		defaultHomeMenu += '">' +pageListTitle[i][j] +'</a></li>'; 
     	}
@@ -154,7 +154,7 @@ function loadNavbarMenu(){
 		  	else{
 		  		if(pageCategory=="home" || pageCategory=="signIn"|| (pageCategory =="catalogue" && pageNum=="0" )) {
 	      			menu[0].innerHTML = createHomeNavbar();
-                    //console.log("menu part" + pageCategory + pageNum);
+                    console.log("menu part" + pageCategory + pageNum);
 	      		}
 	      		else{
                     window.location = "https://abdullaharif.tech/hogwartslibrary/docs/catalogue/signin";
