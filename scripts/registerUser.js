@@ -26,9 +26,9 @@ function registerUser(valid) {
   	}
   	else{ 
 	  	//create parameter to send to server side
-	  	var par = "fname= "+fname+"&lname= "+lname+"&password= "+password+"&username= "+username+"&add=yes"+"&userType= "+userType+"&userCategory= "+userCategory+"&passcode= "+passcode;
+	  	var par = "fname="+fname+"&lname="+lname+"&password="+password+"&username="+username+"&add=yes"+"&userType="+userType+"&userCategory="+userCategory+"&passcode="+passcode;
 	  	if(userType== "student"){
-			par+= "&house= "+document.getElementById("house").value.trim();
+			par+= "&house="+document.getElementById("house").value.trim();
 	  	}
 	  	//Ajax insert
 	    var xmlhttp = new XMLHttpRequest();
