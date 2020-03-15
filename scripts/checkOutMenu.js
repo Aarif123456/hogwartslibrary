@@ -119,6 +119,7 @@ function createCheckOut(transactionJSON){ //create table from json file
 	tableText+=`<td></td><td>Title</td><td>Author</td><td>Due date</td><td>Renewed</td><td>Holds</td>`;
 	tableText+=`</tr></thead>`;//end the head of the table
 	tableText+="<tbody>"; //Start table body 
+	var bookBarcode;
 	var bookISBN ="";
 	for (let transaction of transactionJSON){
 		tableText += "<tr>"; //one row per transaction
