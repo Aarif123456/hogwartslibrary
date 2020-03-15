@@ -28,7 +28,7 @@ Password: actors1Reserve9Vegas7Portugal9Plants
 
 <details>
 <summary>Ron Weasly</summary>
-<p>Username: rWealey1<br>
+<p>Username: rWeasly1<br>
 Password: password123
 </p>
 </details>
