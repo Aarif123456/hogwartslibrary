@@ -20,6 +20,7 @@ function addReservation(){
   xmlhttp.onreadystatechange = function() {
   	if (this.readyState == 4 && this.status == 200) {
   		document.getElementById("hint").innerHTML=this.responseText;
+  		alert(this.responseText);
   		renderCurrentReservation(true);
       	displayForm(); //clear form
   }
@@ -46,6 +47,7 @@ function deleteReservation(){
   xmlhttp.onreadystatechange = function() {
   	if (this.readyState == 4 && this.status == 200) {
   		document.getElementById("hint").innerHTML=this.responseText;
+  		alert(this.responseText);
   		renderCurrentReservation(true);
       displayForm(); //clear field while staying on same course
   }
