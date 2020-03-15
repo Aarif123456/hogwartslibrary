@@ -211,7 +211,7 @@ function getProfessors(professorJSON){
 /////////////////for add form ///////////////////////
 //number of copies prof wants to reserve force stay between 1 and 10
 function setNumberCopies(){
-	numCopies = parseInt(document.getElementById("numCopies").value.trim(),10);
+	var numCopies = parseInt(document.getElementById("numCopies").value.trim(),10);
 	if(isNaN(numCopies)){
 		numCopies=0;
 	}

@@ -16,8 +16,7 @@ function deleteEnrollment(){
   xmlhttp.open('POST', url, true);
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      console.log( this.responseText);
-      displayForm();
+      displayForm(this.responseText);
     }
   }
   xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -42,8 +41,7 @@ function deleteEnrollment(){
   xmlhttp.open('POST', url, true);
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      console.log( this.responseText);
-      displayForm();
+      displayForm( this.responseText);
     }
   }
   xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -53,7 +51,7 @@ function deleteEnrollment(){
   //clear fields
   document.getElementById("addForm").reset();
 }
- function displayForm(){
+ function displayForm(prompt){
     //Set variables needed
     var mode=document.getElementsByName("mode");
     var enrollmentForm=document.getElementById("enrollmentForm"); //holds the entire html for both forms
@@ -86,8 +84,13 @@ function deleteEnrollment(){
          <br>
            <button type="button" onclick="deleteEnrollment();">Delete Enrollment</button>
          </form>`;
-         loadList(getEnrollmentList,"loadEnrollment");//load list of current enrollment
-        
+         loadList(getEnrollmentList,"loadEnrollment");//load list of current enrollment   
+    }
+    if(prompt == undefined){
+      document.getElementById("enrollmentHint").innerHTML = "";
+    }
+    else{
+      document.getElementById("enrollmentHint").innerHTML = prompt;
     }
 }
 function getStudentList(studentJSON){ //display list of students in drop-down box
