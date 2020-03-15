@@ -20,7 +20,7 @@ function verifyUser() {
       if (this.readyState == 4 && this.status == 200) {
         //if username not taken substring then the may have mistyped or meant to sign up
         if(this.responseText.trim().indexOf("Username not taken")!==-1){ 
-          document.getElementById("hint").innerHTML ="This user name is not taken<br> <a href='/signUp'>Click here</a> if you meant to sign up"; //**add in page
+          document.getElementById("hint").innerHTML ="This user name is not taken<br> <a href='abdullaharif.tech/hogwartslibrary/docs/catalogue/register'>Click here</a> if you meant to sign up"; //**add in page
         }
         else if(this.responseText.trim().indexOf("ERROR: database failure")!==-1){
           document.getElementById("hint").innerHTML= "Sorry the login server is down. <br>Please try again at a later time";
