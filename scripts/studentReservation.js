@@ -33,6 +33,7 @@ function getStudentCourses(courseJSON){
   if(courseJSON=="No rows"){
      courseListText=`This student is not enrolled in any courses
     <input type="hidden" id="courseSelection" value="-1" >`;
+    document.getElementById("holdButton").style.display = "none"; // Hide the hold button if there are no courses
   }
   else{ 
     var courseListText=`<select id='courseSelection' form='reservationForm' 
