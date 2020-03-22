@@ -16,7 +16,7 @@ function displayTotalFine(finesJSON){
     totalFine=-5;
   }
   if(totalFine>0){
-    displayText+="You currently have a balance of$"+totalFine+" on your account.<br> You can pay your fine through a librarian during our available hours<br>"
+    displayText+="You currently have a balance of $"+totalFine+" on your account.<br> You can pay your fine through a librarian during our available hours<br>"
   }
   if(blacklisted){
     displayText+= "You are considered a blacklisted user which means that some of your privileges have been revoked until you pay your fines.<br>";
@@ -40,6 +40,9 @@ function renderFineTable(update){
   var tableText ="";
   if(!(update)){ //if we have new table reset page to 0
     setPage(0,0);
+  }
+  if(numRows==0){
+    numRows = fineTable[mode].length;
   }
   var finePageNum=document.getElementById("finePageNum").value;
   //this is common in all array so no point of putting it in the dictionary
