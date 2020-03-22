@@ -28,7 +28,7 @@ function cancelHold(holdID){
   xmlhttps.send("userID="+holdID); 
 }
 function renderHoldStatus(){
-	holdStatusText="";
+	var holdStatusText="";
 	if (holdSuccess>0){ 
 		holdStatusText +="You have successfully canceled " +holdSuccess +" book";
 		if(holdSuccess>1){ //if more that one book make it plural
