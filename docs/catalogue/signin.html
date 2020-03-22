@@ -17,7 +17,6 @@
 	<link rel="stylesheet" href="https://abdullaharif.tech/hogwartslibrary/styles/swipebox.css">
 	<!------ Light Box ------>
 	<script src="https://abdullaharif.tech/hogwartslibrary/scripts/jquery/jquery.swipebox.min.js"></script> 
-	<script src="https://abdullaharif.tech/hogwartslibrary/scripts/loginUser.js"> </script>
 	<script type="text/javascript">
 		jQuery(function($) {
 			$(".swipebox").swipebox();
@@ -35,9 +34,10 @@
 	</script>
 	<input type="hidden" id="pageNum" value="-1" >
     <input type="hidden" id="pageCategory" value="signIn" >
-    <script src="https://abdullaharif.tech/hogwartslibrary/scripts/loadCommon.js"></script> 
 	<link rel="stylesheet" type="text/css" href="https://abdullaharif.tech/hogwartslibrary/styles/table.css">
-	<script src="https://abdullaharif.tech/hogwartslibrary/scripts/search.js"> </script> 
+	<script src="https://abdullaharif.tech/hogwartslibrary/scripts/loadCommon.js"></script> 
+	<script src="https://abdullaharif.tech/hogwartslibrary/scripts/loginUser.js?rndstr=<%= getRandomStr() %"> </script>
+	<!-- <script src="https://abdullaharif.tech/hogwartslibrary/scripts/search.js"> </script>  -->
 </head>
 <body>
 	<!-- header -->
