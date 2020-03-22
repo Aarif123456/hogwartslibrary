@@ -26,28 +26,28 @@ function verifyUser() {
         else{
           //clear fields on error
           document.getElementById("signIn").reset();
-        }
-
-        //if username not taken substring then the may have mistyped or meant to sign up
-        if(this.responseText.trim().indexOf("Username not taken")!==-1){ 
-          document.getElementById("hint").innerHTML ="This user name is not taken<br> <a href='abdullaharif.tech/hogwartslibrary/docs/catalogue/register'>Click here</a> if you meant to sign up"; //**add in page
-        }
-        else if(this.responseText.trim().indexOf("ERROR: database failure")!==-1){
-          document.getElementById("hint").innerHTML= "Sorry the login server is down. <br>Please try again at a later time";
-        }
-        else if(this.responseText.trim().indexOf("ERROR: Invalid user type")!==-1){
-          document.getElementById("hint").innerHTML="According to our server you are not an active librarian";
-        }
-        else if(this.responseText.trim().indexOf("Invalid password.")!==-1){
-          document.getElementById("hint").innerHTML="Incorrect password";
-          /*
-          loginAttempt+=1;
-          if(loginAttempt>=3){
-            document.getElementById("hint").innerHTML+="<br>If you have forgotten your password. You may reset with your email by<a href='/resetPassword'>clicking here.</a> <br>Otherwise you can contact your administrator to reset your password.";
-          }*/
-        }
-        else{
-          document.getElementById("hint").innerHTML = "Something went wrong:(";
+          console.log(this.responseText);
+          //if username not taken substring then the may have mistyped or meant to sign up
+          if(this.responseText.trim().indexOf("Username not taken")!==-1){ 
+            document.getElementById("hint").innerHTML ="This user name is not taken<br> <a href='abdullaharif.tech/hogwartslibrary/docs/catalogue/register'>Click here</a> if you meant to sign up"; //**add in page
+          }
+          else if(this.responseText.trim().indexOf("ERROR: database failure")!==-1){
+            document.getElementById("hint").innerHTML= "Sorry the login server is down. <br>Please try again at a later time";
+          }
+          else if(this.responseText.trim().indexOf("ERROR: Invalid user type")!==-1){
+            document.getElementById("hint").innerHTML="According to our server you are not an active librarian";
+          }
+          else if(this.responseText.trim().indexOf("Invalid password.")!==-1){
+            document.getElementById("hint").innerHTML="Incorrect password";
+            /*
+            loginAttempt+=1;
+            if(loginAttempt>=3){
+              document.getElementById("hint").innerHTML+="<br>If you have forgotten your password. You may reset with your email by<a href='/resetPassword'>clicking here.</a> <br>Otherwise you can contact your administrator to reset your password.";
+            }*/
+          }
+          else{
+            document.getElementById("hint").innerHTML = "Something went wrong:(";
+          }
         }
       }
     }
