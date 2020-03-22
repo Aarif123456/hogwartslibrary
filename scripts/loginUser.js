@@ -18,6 +18,16 @@ function verifyUser() {
     
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
+        if(this.responseText.trim().indexOf("Password is valid!")!==-1){
+          document.cookie = "username="+username; 
+          window.location = "https://abdullaharif.tech/hogwartslibrary/docs/catalogue/userDashboard";
+          //redirect to dashboard
+        }
+        else{
+          //clear fields on error
+          document.getElementById("signIn").reset();
+        }
+
         //if username not taken substring then the may have mistyped or meant to sign up
         if(this.responseText.trim().indexOf("Username not taken")!==-1){ 
           document.getElementById("hint").innerHTML ="This user name is not taken<br> <a href='abdullaharif.tech/hogwartslibrary/docs/catalogue/register'>Click here</a> if you meant to sign up"; //**add in page
@@ -30,33 +40,19 @@ function verifyUser() {
         }
         else if(this.responseText.trim().indexOf("Invalid password.")!==-1){
           document.getElementById("hint").innerHTML="Incorrect password";
-          loginAttempt+=1;/*
+          /*
+          loginAttempt+=1;
           if(loginAttempt>=3){
             document.getElementById("hint").innerHTML+="<br>If you have forgotten your password. You may reset with your email by<a href='/resetPassword'>clicking here.</a> <br>Otherwise you can contact your administrator to reset your password.";
           }*/
-
-        }
-        else if(this.responseText.trim().indexOf("Password is valid!")!==-1){
-          document.cookie = "username="+username; 
-          window.location = "https://abdullaharif.tech/hogwartslibrary/docs/catalogue/userDashboard";
-          //redirect to dashboard
         }
         else{
           document.getElementById("hint").innerHTML = "Something went wrong:(";
         }
-       
-
-
-      }
-      else{
-
       }
     }
     xmlhttp.open('POST', url , true);
     xmlhttp.withCredentials = true;
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xmlhttp.send(par); 
-
-    //clear fields
-    document.getElementById("signIn").reset();
+    xmlhttp.send(par);  
 }
