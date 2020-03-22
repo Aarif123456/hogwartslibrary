@@ -37,7 +37,8 @@ function verifyUser() {
 
         }
         else if(this.responseText.trim().indexOf("Password is valid!")!==-1){
-           window.location = "https://abdullaharif.tech/hogwartslibrary/docs/catalogue/userDashboard";
+          document.cookie = "username="+username; 
+          window.location = "https://abdullaharif.tech/hogwartslibrary/docs/catalogue/userDashboard";
           //redirect to dashboard
         }
         else{
