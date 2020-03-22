@@ -19,7 +19,8 @@ function verifyUser() {
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         if(this.responseText.trim().indexOf("Password is valid!")!==-1){
-          document.cookie = "username="+username; 
+          var d = new Date(); // date is used store the direct login attempt 
+          document.cookie = "username="+username+"_"+d.getTime();  
           window.location = "https://abdullaharif.tech/hogwartslibrary/docs/catalogue/userDashboard";
           //redirect to dashboard
         }
