@@ -41,7 +41,7 @@ function renderHoldStatus(){
 			holdStatusText +=h;
 		}
 	}
-	loadCheckOutMenu();
+	loadHoldMenu();
 	document.getElementByID("hold_status").innerHTML=holdStatusText;
 	holdStatus=[];
 	holdCount=0;
