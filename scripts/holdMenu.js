@@ -42,7 +42,7 @@ function renderHoldStatus(){
 		}
 	}
 	loadHoldMenu();
-	document.getElementByID("hold_status").innerHTML=holdStatusText;
+	document.getElementById("hold_status").innerHTML=holdStatusText;
 	holdStatus=[];
 	holdCount=0;
 	holdSuccess=0;
