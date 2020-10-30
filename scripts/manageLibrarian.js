@@ -1,18 +1,41 @@
 //Abdullah Arif
 //Create more librarian
 "use strict";
-function modifyLibrarian(mode) {
+function deleteLibrarian() {
   	var userID=document.getElementById("librarianSelection").value.trim();
   	//create parameter to send to server side
-  	var par = "userID="+userID+"&"+mode+"=yes";
+  	var par = "userID="+userID;
 
   	//Ajax insert
     var xmlhttp = new XMLHttpRequest();
-    var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/manageLibrarian.php";
+    var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/deleteLibrarian.php";
     xmlhttp.open('POST', url, true);
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
       	console.log( this.responseText);
+        displayForm();
+      }
+    }
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.withCredentials = true;
+    xmlhttp.send(par); 
+
+    //clear fields
+    document.getElementById("updateLibrarian").reset();
+}
+
+function addLibrarian() {
+    var userID=document.getElementById("librarianSelection").value.trim();
+    //create parameter to send to server side
+    var par = "userID="+userID;
+
+    //Ajax insert
+    var xmlhttp = new XMLHttpRequest();
+    var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/addLibrarian.php";
+    xmlhttp.open('POST', url, true);
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        console.log( this.responseText);
         displayForm();
       }
     }
@@ -35,7 +58,7 @@ function displayForm(){
           <div id="librarianMenu"> 
         <select id="librarianSelection" form = "updateLibrarian">
         </select><br></div>
-        <button type="button" onclick="modifyLibrarian('add');">Create librarian!</button>
+        <button type="button" onclick="addLibrarian();">Create librarian!</button>
       </form> `;
         loadLibrarianList("loadPotentialLibrarian"); //load the list of potential Librarian
       }
@@ -46,7 +69,7 @@ function displayForm(){
     <div id="librarianMenu"> 
       <select id="librarianSelection" form = "updateLibrarian">
       </select><br></div> 
-    <button type="button" onclick="modifyLibrarian('inactive');">Inactivate librarian</button>
+    <button type="button" onclick="deleteLibrarian();">Inactivate librarian</button>
   </form>`;
   loadLibrarianList("loadLibrarian");
       }
@@ -64,7 +87,7 @@ function loadLibrarianList(listName){ //use Ajax to get list of librarian or pot
         }
       }
     }
-    xmlhttp.open('POST',"https://arif115.myweb.cs.uwindsor.ca/60334/projects/loadList", true);
+    xmlhttp.open('POST',"https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/loadList", true);
     xmlhttp.withCredentials = true;
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send("listType="+listName);

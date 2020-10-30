@@ -11,11 +11,11 @@ function addReservation(){
 	var numCopies=document.getElementById("numCopies").value.trim();
   //create parameter to send to server side
   var par = "courseID="+courseID+"&bookISBN="+bookISBN+"&numCopies="
-  +numCopies+"&add=yes"+"&userID="+profID;
+  +numCopies+"&userID="+profID;
 
   //Ajax insert
   var xmlhttp = new XMLHttpRequest();
-  var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/manageReservation.php";
+  var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/addReservation.php";
   xmlhttp.open('POST', url, true);
   xmlhttp.onreadystatechange = function() {
   	if (this.readyState == 4 && this.status == 200) {
@@ -38,11 +38,11 @@ function deleteReservation(){
 	var profID=document.getElementById("professorSelection").value.trim();
 	var bookISBN=document.getElementById("bookISBNSelection").value.trim();
   //create parameter to send to server side
-  var par = "courseID="+courseID+"&bookISBN="+bookISBN+"&delete=yes"+"&userID="+profID;;
+  var par = "courseID="+courseID+"&bookISBN="+bookISBN+"&userID="+profID;;
 
   //Ajax insert
   var xmlhttp = new XMLHttpRequest();
-  var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/manageReservation.php";
+  var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/deleteReservation.php";
   xmlhttp.open('POST', url, true);
   xmlhttp.onreadystatechange = function() {
   	if (this.readyState == 4 && this.status == 200) {
@@ -135,7 +135,7 @@ function loadReserveList(getList,listName){ //use Ajax to create needed list
   		}
   	}
   }
-  xmlhttp.open('POST',"https://arif115.myweb.cs.uwindsor.ca/60334/projects/reservationList", true);
+  xmlhttp.open('POST',"https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/reservationList", true);
   xmlhttp.withCredentials = true;
   xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xmlhttp.send("listType="+listName+"&courseID="+courseID+"&userID="+profID);

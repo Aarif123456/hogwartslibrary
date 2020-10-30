@@ -10,7 +10,7 @@ function deleteCourses(){
   var courseID=document.getElementById("courseSelection").value.trim();
   var par = "courseID="+courseID +"&delete=yes";
   var xmlhttp = new XMLHttpRequest();
-  var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/manageCourses.php";
+  var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/deleteCourses.php";
   xmlhttp.open('POST', url, true);
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -37,7 +37,7 @@ function deleteCourses(){
 
   //Ajax insert
   var xmlhttp = new XMLHttpRequest();
-  var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/manageCourses.php";
+  var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/addCourses.php";
   xmlhttp.open('POST', url, true);
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -52,7 +52,8 @@ function deleteCourses(){
   //clear fields
   document.getElementById("addCoursesForm").reset();
 }
- function displayForm(){
+
+function displayForm(){
     //Set variables needed
     var mode=document.getElementsByName("mode");
     var courseForm=document.getElementById("coursesForm"); //holds the entire html for both forms
@@ -128,7 +129,7 @@ function loadList(getList,listName){ //use Ajax to create needed list
         }
       }
     }
-    xmlhttp.open('POST',"https://arif115.myweb.cs.uwindsor.ca/60334/projects/loadList", true);
+    xmlhttp.open('POST',"https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/loadList", true);
     xmlhttp.withCredentials = true;
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send("listType="+listName);

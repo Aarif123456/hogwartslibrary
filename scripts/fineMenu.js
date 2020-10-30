@@ -235,11 +235,11 @@ function createLostBooks(finesJSON){
 
 //Dynamically load up the fine information once 
 window.addEventListener('DOMContentLoaded', (event) => {
-    loadFineMenu("loadTransactionList");
-    loadFineMenu("loadTotalFine");
+    userFines("getTransactionWithFines");
+    userFines("getOutstandingFineOnAccount");
 });
 
-function loadFineMenu(listType){
+function userFines(listType){
   var xmlhttps = new XMLHttpRequest();
   xmlhttps.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -251,10 +251,10 @@ function loadFineMenu(listType){
           document.getElementById("backPageButton").style.display="none"
         }
         else{
-          if(listType.trim()=="loadTransactionList"){
+          if(listType.trim()=="getTransactionWithFines"){
             createFineTable(JSON.parse(this.responseText));
           }
-          else if(listType.trim()=="loadTotalFine"){
+          else if(listType.trim()=="getOutstandingFineOnAccount"){
             displayTotalFine(JSON.parse(this.responseText));
           } 
         } 
@@ -264,7 +264,7 @@ function loadFineMenu(listType){
       }
     }
   };
-  var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/loadFineMenu.php?listType="+listType;
+  var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/userFines.php?listType="+listType;
   xmlhttps.open("GET", url, true); //Set get request with given parameter
   xmlhttps.withCredentials = true;
   xmlhttps.send(); 

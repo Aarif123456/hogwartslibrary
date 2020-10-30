@@ -12,7 +12,7 @@ function deleteEnrollment(){
 
   //Ajax insert
   var xmlhttp = new XMLHttpRequest();
-  var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/manageEnrollment";
+  var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/deleteEnrollment";
   xmlhttp.open('POST', url, true);
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -37,7 +37,7 @@ function deleteEnrollment(){
 
   //Ajax insert
   var xmlhttp = new XMLHttpRequest();
-  var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/manageEnrollment";
+  var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/addEnrollment";
   xmlhttp.open('POST', url, true);
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -153,7 +153,7 @@ function loadList(getList,listName){ //use Ajax to create needed list
         }
       }
     }
-    xmlhttp.open('POST',"https://arif115.myweb.cs.uwindsor.ca/60334/projects/loadList", true);
+    xmlhttp.open('POST',"https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/loadList", true);
     xmlhttp.withCredentials = true;
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send("listType="+listName);

@@ -22,7 +22,7 @@ function cancelHold(holdID){
     	}
     }
   };
-  xmlhttps.open("POST","https://arif115.myweb.cs.uwindsor.ca/60334/projects/cancelHoldBooks", true);
+  xmlhttps.open("POST","https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/cancelHoldBooks", true);
   xmlhttps.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xmlhttps.withCredentials = true;
   xmlhttps.send("userID="+holdID); 
@@ -41,7 +41,7 @@ function renderHoldStatus(){
 			holdStatusText +=h;
 		}
 	}
-	loadHoldMenu();
+	userHolds();
 	document.getElementById("hold_status").innerHTML=holdStatusText;
 	holdStatus=[];
 	holdCount=0;
@@ -60,10 +60,10 @@ function cancelAllHold(){
 }
 //load up all books on hold for user
 window.addEventListener('DOMContentLoaded', (event) => {
-    loadHoldMenu();
+    userHolds();
 });
 
-function loadHoldMenu(){
+function userHolds(){
   var xmlhttps = new XMLHttpRequest();
   xmlhttps.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -83,7 +83,7 @@ function loadHoldMenu(){
       }
     }
   };
-  var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/loadHoldMenu.php";
+  var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/userHolds.php";
   xmlhttps.open("GET", url, true); //Set get request with given parameter
   xmlhttps.withCredentials = true;
   xmlhttps.send(); 

@@ -10,7 +10,7 @@ function returnBook() {
 
     //Ajax insert
     var xmlhttp = new XMLHttpRequest();
-    var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/returnBook";
+    var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/returnBook";
     xmlhttp.open('POST', url, true);
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {

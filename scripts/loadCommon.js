@@ -38,7 +38,7 @@ function loadNavbarHeader(){ //dynamically create navbar using page number
     var xmlhttp = new XMLHttpRequest();
     var pageCategory =document.getElementById("pageCategory").value.trim();
     var pageNum =document.getElementById("pageNum").value.trim();
-    var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/loadNavbarHeader";
+    var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/loadNavbarHeader";
     var headpart= document.getElementsByClassName("head-part");
     var screenwidth=screen.width; //use this to send to php file
     xmlhttp.open('POST', url, true);
@@ -144,7 +144,7 @@ function loadNavbarMenu(){
 	}
 	else{ //if in catalogue use custom options
 		var xmlhttp = new XMLHttpRequest();
-		var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/loadNavbarMenu";
+		var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/loadNavbarMenu";
 		xmlhttp.open('POST', url, true);
 		xmlhttp.onreadystatechange = function() {
 		//call function to load the home or custom

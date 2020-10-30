@@ -9,7 +9,7 @@ function checkOutBook() {
 
   	//Ajax insert
     var xmlhttp = new XMLHttpRequest();
-    var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/checkOut";
+    var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/checkOut";
     xmlhttp.open('POST', url, true);
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
@@ -34,7 +34,7 @@ function holdBook(){
 
     //Ajax insert
     var xmlhttp = new XMLHttpRequest();
-    var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/holdBooks";
+    var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/holdBooks";
     xmlhttp.open('POST', url, true);
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
@@ -67,7 +67,7 @@ function loadPotentialBorrower(){
 		  }
     }
   }
-  xmlhttp.open('POST',"https://arif115.myweb.cs.uwindsor.ca/60334/projects/loadList", true);
+  xmlhttp.open('POST',"https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/loadList", true);
   xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xmlhttp.withCredentials = true;
   xmlhttp.send("listType=loadPotentialBorrower");

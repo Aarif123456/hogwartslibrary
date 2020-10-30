@@ -10,13 +10,13 @@ function markLost(bookBarcode,bookName){
 	if (confirm("Do you really want to report book "+bookName+" with barcode " + bookBarcode+ " as lost?")) 
 	{
 	 var xmlhttps = new XMLHttpRequest();
-	 xmlhttps.open("POST","https://arif115.myweb.cs.uwindsor.ca/60334/projects/lostBook.php", true); 
+	 xmlhttps.open("POST","https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/lostBook.php", true); 
 	 //Set get request with given parameter
 	 xmlhttps.onreadystatechange = function() {
 	 	if (this.readyState == 4 && this.status == 200) {
 	 		//create table using info from JSON file 
 	 		document.getElementById("lostStatus").innerHTML=this.responseText;
-	 		loadCheckOutMenu();
+	 		userCheckedOut();
 	 	}
 	};
 	xmlhttps.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -53,7 +53,7 @@ function renewBook(bookBarcode){
 						renewText +=r;
 					}
 				}
-				loadCheckOutMenu();
+				userCheckedOut();
 				document.getElementById("renewStatus").innerHTML=renewText;
 				renewBookList=[];
 				renewCount=0;
@@ -62,7 +62,7 @@ function renewBook(bookBarcode){
 			}
 		}
 	};
-	xmlhttps.open("POST","https://arif115.myweb.cs.uwindsor.ca/60334/projects/renewBooks.php", true);
+	xmlhttps.open("POST","https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/renewBooks.php", true);
 	xmlhttps.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xmlhttps.withCredentials = true;
 	xmlhttps.send("bookBarcode="+bookBarcode); 
@@ -79,11 +79,11 @@ function renewAll(){
 	}
 }
 window.addEventListener('DOMContentLoaded', (event) => {
-    loadCheckOutMenu();
+    userCheckedOut();
 });
 
 
-function loadCheckOutMenu(){
+function userCheckedOut(){
 	var xmlhttps = new XMLHttpRequest();
 	xmlhttps.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
@@ -103,7 +103,7 @@ function loadCheckOutMenu(){
 			}
 		}
 	};
-	var url="https://arif115.myweb.cs.uwindsor.ca/60334/projects/loadCheckoutMenu.php";
+	var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/userCheckedOut.php";
 	xmlhttps.open("GET", url, true); //Set get request with given parameter
 	xmlhttps.withCredentials = true;
 	xmlhttps.send(); 
