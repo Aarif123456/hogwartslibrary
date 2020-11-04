@@ -10,7 +10,7 @@ function deleteCourses(){
   var courseID=document.getElementById("courseSelection").value.trim();
   var par = "courseID="+courseID +"&delete=yes";
   var xmlhttp = new XMLHttpRequest();
-  var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/courses/deleteCourses";
+  var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/headmaster/deleteCourses";
   xmlhttp.open('POST', url, true);
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -37,7 +37,7 @@ function deleteCourses(){
 
   //Ajax insert
   var xmlhttp = new XMLHttpRequest();
-  var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/courses/addCourses";
+  var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/headmaster/addCourses";
   xmlhttp.open('POST', url, true);
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {

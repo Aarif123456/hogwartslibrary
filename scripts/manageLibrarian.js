@@ -8,7 +8,7 @@ function deleteLibrarian() {
 
   	//Ajax insert
     var xmlhttp = new XMLHttpRequest();
-    var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/librarianManagement/deleteLibrarian";
+    var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/headmaster/deleteLibrarian";
     xmlhttp.open('POST', url, true);
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
@@ -31,7 +31,7 @@ function addLibrarian() {
 
     //Ajax insert
     var xmlhttp = new XMLHttpRequest();
-    var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/librarianManagement/addLibrarian";
+    var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/headmaster/addLibrarian";
     xmlhttp.open('POST', url, true);
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {

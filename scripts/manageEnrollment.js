@@ -12,7 +12,7 @@ function deleteEnrollment(){
 
   //Ajax insert
   var xmlhttp = new XMLHttpRequest();
-  var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/enrollment/deleteEnrollment";
+  var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/headmaster/deleteEnrollment";
   xmlhttp.open('POST', url, true);
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -37,7 +37,7 @@ function deleteEnrollment(){
 
   //Ajax insert
   var xmlhttp = new XMLHttpRequest();
-  var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/enrollment/addEnrollment";
+  var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/headmaster/addEnrollment";
   xmlhttp.open('POST', url, true);
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
