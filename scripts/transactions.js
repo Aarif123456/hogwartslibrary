@@ -9,7 +9,7 @@ function checkOutBook() {
 
   	//Ajax insert
     var xmlhttp = new XMLHttpRequest();
-    var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/checkOut";
+    var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/library/checkOut";
     xmlhttp.open('POST', url, true);
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
@@ -34,7 +34,7 @@ function holdBook(){
 
     //Ajax insert
     var xmlhttp = new XMLHttpRequest();
-    var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/holdBooks";
+    var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/library/holdBooks";
     xmlhttp.open('POST', url, true);
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {

@@ -33,7 +33,7 @@ function resetPassword() {
 
  //Ajax to reset
  var xmlhttp = new XMLHttpRequest();
- var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/resetPassword";
+ var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/userManagement/resetPassword";
  xmlhttp.open('POST', url, true);
  xmlhttp.onreadystatechange = function() {
    if (this.readyState == 4 && this.status == 200) {

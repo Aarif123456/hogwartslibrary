@@ -264,7 +264,7 @@ function userFines(listType){
       }
     }
   };
-  var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/userFines.php?listType="+listType;
+  var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/user/userFines?listType="+listType;
   xmlhttps.open("GET", url, true); //Set get request with given parameter
   xmlhttps.withCredentials = true;
   xmlhttps.send(); 

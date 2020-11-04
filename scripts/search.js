@@ -21,7 +21,7 @@ function searchBooks(){
 				
 			}
 		};
-		var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/search_div.php?";
+		var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/catalogue/search?";
 		var par="searchWord="+keyword+"&searchType="+searchType;
 		xmlhttps.open("GET", url + par, true); //Set get request with given parameter
 		//xmlhttp.withCredentials = true; don't need because you don't need authentication to search
@@ -34,7 +34,7 @@ function holdBook(bookISBN, bookName){
 		//create parameter to send to server side
 		var par = "bookISBN="+bookISBN;
 		var xmlhttp = new XMLHttpRequest();
-		var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/holdBooks";
+		var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/library/holdBooks";
 		xmlhttp.open('POST', url, true);
 		xmlhttp.onreadystatechange = function() {
 		  if (this.readyState == 4 && this.status == 200) {

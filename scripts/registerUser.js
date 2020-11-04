@@ -34,7 +34,7 @@ function registerUser(valid) {
 	  	}
 	  	//Ajax insert
 	    var xmlhttp = new XMLHttpRequest();
-	    var url= "https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/addUser.php";
+	    var url= "https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/userManagement/addUser";
 	    xmlhttp.open('POST', url, true);
 	    xmlhttp.onreadystatechange = function() {
 	      if (this.readyState == 4 && this.status == 200) {
@@ -81,7 +81,7 @@ function checkUsername(callback){
       }
     }
     //search using given username
-    var url= "https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/checkUserName.php";
+    var url= "https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/userManagement/checkUserName";
     var par = "username=" + username + "&userType=user";
     xmlhttp.open('POST', url , true);
     xmlhttp.withCredentials = true;

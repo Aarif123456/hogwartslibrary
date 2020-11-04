@@ -15,7 +15,7 @@ function addReservation(){
 
   //Ajax insert
   var xmlhttp = new XMLHttpRequest();
-  var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/addReservation.php";
+  var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/reservation/addReservation";
   xmlhttp.open('POST', url, true);
   xmlhttp.onreadystatechange = function() {
   	if (this.readyState == 4 && this.status == 200) {
@@ -42,7 +42,7 @@ function deleteReservation(){
 
   //Ajax insert
   var xmlhttp = new XMLHttpRequest();
-  var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/deleteReservation.php";
+  var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/reservation/deleteReservation";
   xmlhttp.open('POST', url, true);
   xmlhttp.onreadystatechange = function() {
   	if (this.readyState == 4 && this.status == 200) {
@@ -135,7 +135,7 @@ function loadReserveList(getList,listName){ //use Ajax to create needed list
   		}
   	}
   }
-  xmlhttp.open('POST',"https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/reservationList", true);
+  xmlhttp.open('POST',"https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/reservation/reservationList", true);
   xmlhttp.withCredentials = true;
   xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xmlhttp.send("listType="+listName+"&courseID="+courseID+"&userID="+profID);

@@ -10,7 +10,7 @@ function markLost(bookBarcode,bookName){
 	if (confirm("Do you really want to report book "+bookName+" with barcode " + bookBarcode+ " as lost?")) 
 	{
 	 var xmlhttps = new XMLHttpRequest();
-	 xmlhttps.open("POST","https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/lostBook.php", true); 
+	 xmlhttps.open("POST","https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/library/lostBook", true); 
 	 //Set get request with given parameter
 	 xmlhttps.onreadystatechange = function() {
 	 	if (this.readyState == 4 && this.status == 200) {
@@ -62,7 +62,7 @@ function renewBook(bookBarcode){
 			}
 		}
 	};
-	xmlhttps.open("POST","https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/renewBooks.php", true);
+	xmlhttps.open("POST","https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/library/renewBooks", true);
 	xmlhttps.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xmlhttps.withCredentials = true;
 	xmlhttps.send("bookBarcode="+bookBarcode); 
@@ -103,7 +103,7 @@ function userCheckedOut(){
 			}
 		}
 	};
-	var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/userCheckedOut.php";
+	var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/user/userCheckedOut";
 	xmlhttps.open("GET", url, true); //Set get request with given parameter
 	xmlhttps.withCredentials = true;
 	xmlhttps.send(); 

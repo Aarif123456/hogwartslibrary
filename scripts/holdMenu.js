@@ -22,7 +22,7 @@ function cancelHold(holdID){
     	}
     }
   };
-  xmlhttps.open("POST","https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/cancelHoldBooks", true);
+  xmlhttps.open("POST","https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/library/cancelHoldBooks", true);
   xmlhttps.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xmlhttps.withCredentials = true;
   xmlhttps.send("userID="+holdID); 
@@ -83,7 +83,7 @@ function userHolds(){
       }
     }
   };
-  var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/userHolds.php";
+  var url="https://arif115.myweb.cs.uwindsor.ca/hogwartslibrary/api/user/userHolds";
   xmlhttps.open("GET", url, true); //Set get request with given parameter
   xmlhttps.withCredentials = true;
   xmlhttps.send(); 
