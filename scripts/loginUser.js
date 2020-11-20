@@ -29,23 +29,29 @@ function verifyUser() {
 
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            if (this.responseText.trim().indexOf('Password is valid!') !== -1) {
-                var d = new Date(); // date is used store the direct login attempt
-                document.cookie = 'username=' + username + '_' + d.getTime();
-                window.location =
-                    'https://abdullaharif.tech/hogwartslibrary/docs/catalogue/userDashboard';
-                //redirect to dashboard
-            } else {
+            try{
+                data = JSON.parse(this.responseText);
+                console.log(data);
+                if(data.sucesss){
+                    var d = new Date(); // date is used store the direct login attempt
+                    document.cookie = 'username=' + username + '_' + d.getTime();
+                    window.location =
+                        'https://abdullaharif.tech/hogwartslibrary/docs/catalogue/userDashboard';
+                    //redirect to dashboard
+                }
+            } catch (e) {
+                console.log(this.responseText);
+                console.log(e);
                 //clear fields on error
                 document.getElementById('signIn').reset();
                 console.log(this.responseText);
                 //if username not taken substring then the may have mistyped or meant to sign up
                 if (
-                    this.responseText.trim().indexOf('Username not taken') !==
-                    -1
+                    this.responseText.trim().indexOf('Username not taken') !== -1
                 ) {
                     document.getElementById('hint').innerHTML =
-                        "This user name is not taken<br> <a href='abdullaharif.tech/hogwartslibrary/docs/catalogue/register'>Click here</a> if you meant to sign up"; //**add in page
+                        "This user name is not taken<br> <a href='abdullaharif.tech/hogwartslibrary/docs/catalogue/register'>Click here</a> "+
+                        " if you meant to sign up"; 
                 } else if (
                     this.responseText
                         .trim()
@@ -60,23 +66,13 @@ function verifyUser() {
                 ) {
                     document.getElementById('hint').innerHTML =
                         'According to our server you are not an active librarian';
-                } else if (
-                    this.responseText.trim().indexOf('Invalid password.') !== -1
-                ) {
-                    document.getElementById('hint').innerHTML =
-                        'Incorrect password';
-                    /*
-                        loginAttempt+=1;
-                        if(loginAttempt>=3){
-                          document.getElementById("hint").innerHTML+="<br>If you have forgotten your password. You may reset with your email by<a href='/resetPassword'>clicking here.</a> <br>Otherwise you can contact your administrator to reset your password.";
-                        }
-                    */
                 } else {
-                    document.getElementById('hint').innerHTML =
-                        'Something went wrong:(';
+                    document.getElementById('hint').innerHTML = 'Something went wrong:(';
                 }
+            } 
+        } else if(this.status == 403) {
+                document.getElementById('hint').innerHTML = 'Incorrect password';;
             }
-        }
     };
     xmlhttp.open('POST', url, true);
     xmlhttp.withCredentials = true;
