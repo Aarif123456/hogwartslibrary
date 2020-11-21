@@ -32,7 +32,7 @@ function verifyUser() {
             try{
                 var data = JSON.parse(this.responseText);
                 console.log(data);
-                if(data.sucesss){
+                if(data.success){
                     var d = new Date(); // date is used store the direct login attempt
                     document.cookie = 'username=' + username + '_' + d.getTime();
                     window.location =
