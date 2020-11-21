@@ -30,7 +30,7 @@ function verifyUser() {
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             try{
-                data = JSON.parse(this.responseText);
+                var data = JSON.parse(this.responseText);
                 console.log(data);
                 if(data.sucesss){
                     var d = new Date(); // date is used store the direct login attempt
