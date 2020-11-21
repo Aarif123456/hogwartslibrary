@@ -50,7 +50,7 @@ function verifyUser() {
                     this.responseText.trim().indexOf('Username not taken') !== -1
                 ) {
                     document.getElementById('hint').innerHTML =
-                        "This user name is not taken<br> <a href='abdullaharif.tech/hogwartslibrary/docs/catalogue/register'>Click here</a> "+
+                        "This user name is not taken<br> <a href='../catalogue/register'>Click here</a> "+
                         " if you meant to sign up"; 
                 } else if (
                     this.responseText

@@ -170,7 +170,7 @@ function createCheckOut(transactionJSON) {
             `","` +
             transaction['bookName'] +
             `");' 
-		src="https://abdullaharif.tech/hogwartslibrary/resources/images/flag.png"
+		src="../resources/images/flag.png"
 		class="img-responsive" alt="flag lost"></td>`;
         tableText += '<td>' + transaction['bookName'] + '</td>';
         tableText += '<td>' + transaction['author'] + '</td>';
